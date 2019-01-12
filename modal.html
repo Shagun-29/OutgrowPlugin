@@ -1,0 +1,51 @@
+
+
+<div id="myModal" class="modal" style="display: none; position: fixed; z-index: 1;  padding-top: 100px;  left: 0; top: 0; width: 100%;  height: 100%;overflow: auto; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.4);">
+            <!-- Modal content -->
+            <div class="modal-content" style="width:42%" class="modal-content-view"  id="modal-content" >
+              <!-- adding more -->
+            <div class="modal-close">
+                     <span id="close" onclick="hide()" style="float: right;font-size: 28px;">&times;</span> 
+                     <div class="modal-text">
+                         Get Embed Code
+                     </div>
+            <div class="button-group">
+                    <div class="modal-button b1" id="cat01" onclick="cat01()">EMBED + MOBILE FULL SCREEN<i class="la la-info-circle"></i>
+                    </div>
+                    <div class="modal-button-line"></div>
+                    <div class="modal-button" id="cat02" onclick="cat02()">EMBED + MOBILE IN PAGE<i class="la la-info-circle"></i>
+                    </div>
+                    <div class="modal-button-line"></div>
+                    <div class="modal-button" id="cat03" onclick="cat03()">POP UP</div>
+                    <div class="modal-button-line"></div>
+                    <div class="modal-button " id="cat04" onclick="cat04()">CHAT</div>
+                    <div class="modal-button-line"></div>
+                    <div class="modal-button b4" id="cat05" onclick="cat05()">CUSTOM EMBED</div>
+            </div>
+            <div class="text-head" id="super-extra-option">
+                <div id="extra-option" style="display: none">
+                    <div class='extra-option-button' onclick='classic()' id='classic cat031'>Classic</div>
+                    <div onclick='drawerL()' class='extra-option-button' id='drawer-l cat032'>Drawer L</div>
+                    <div onclick='drawerR()' class='extra-option-button' id='drawer-r cat033'>Drawer R</div>
+                </div>
+
+                <div class="super-get-code">
+                    <div class="get-code">
+                        Get Code
+                    </div>
+                <!-- ending adding more --> 
+                    <textarea id="text-inside" class="text-hidden" rows="10" style="margin-top:10px;margin-left: 23px;" onclick="copy()"  >
+        
+                    </textarea>
+
+                    <div id="click-copy-text" class="hide">
+                    Copied.!
+                    </div>
+                    
+                    <button class="msg-copy" onclick="copy()">Copy</button>
+                
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
