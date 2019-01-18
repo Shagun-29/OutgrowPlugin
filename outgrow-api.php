@@ -7,10 +7,100 @@ Author:  Outgrow
 Version: 1.0.0
 */
 
+//  include_once "callingDb.php";
+
+// $apis=array();
+
+// static $cArray=[];
+ class Outgrow_API_Class {
+ 
+    /**
+    * Constructor. Called when the plugin is initialised.
+    */
+    function __construct() {
+ 
+ 		if ( is_admin() ) {
+			add_action( 'init', array( &$this, 'setup_tinymce_plugin' ) );
+		    add_action( 'admin_enqueue_scripts', array( &$this, 'admin_scripts_css' ) );
+		}
+
+		static $header_script1;
+    }
+
+    /**
+	* Check if the current user can edit Posts or Pages, and is using the Visual Editor
+	* If so, add some filters so we can register our plugin
+	*/
+	function setup_tinymce_plugin() {
+	 
+	    // Check if the logged in WordPress User can edit Posts or Pages
+	    // If not, don't register our TinyMCE1 plugin
+	    if ( ! current_user_can( 'edit_posts' ) && ! current_user_can( 'edit_pages' ) ) {
+	        return;
+	    }
+	 
+	    // Check if the logged in WordPress User has the Visual Editor enabled
+	    // If not, don't register our TinyMCE1 plugin
+	    if ( get_user_option( 'rich_editing' ) !== 'true' ) {
+	        return;
+	    }
+	 
+	    // Setup some filters
+	    add_filter( 'mce_external_plugins', array( &$this, 'add_tinymce_plugin' ) );
+	    add_filter( 'mce_buttons', array( &$this, 'add_tinymce_toolbar_button' ) );
+        add_action( 'wp_enqueue_scripts', 'wpse_tinymce_scripts' );
+
+	}
+
+	/**
+	 * Adds a TinyMCE1 plugin compatible JS file to the TinyMCE1 / Visual Editor instance
+	 *
+	 * @param array $plugin_array Array of registered TinyMCE1 Plugins
+	 * @return array Modified array of registered TinyMCE1 Plugins
+	 */
+	function add_tinymce_plugin( $plugin_array ) {
+	 
+	    $plugin_array['custom_class'] = plugin_dir_url( __FILE__ ) . 'tinymce-custom-class.js';
+	    return $plugin_array;
+	 
+	}
+
+	/**
+	 * Adds a button to the TinyMCE1 / Visual Editor which the user can click
+	 * to insert a custom CSS class.
+	 *
+	 * @param array $buttons Array of registered TinyMCE1 Buttons
+	 * @return array Modified array of registered TinyMCE1 Buttons
+	 */
+	function add_tinymce_toolbar_button( $buttons ) {
+	 
+	    array_push( $buttons, 'custom_class' );
+	    return $buttons;
+	 
+	}
+
+	/**
+	* Enqueues CSS for TinyMCE1 Dashicons
+	*/
+	function admin_scripts_css() {
+
+		wp_enqueue_style( 'TinyMCE1-custom-class', plugins_url( 'tinymce-custom-class.css', __FILE__ ) );
+		// add_menu_page("Outgrow", "Outgrow", "manage_options", 'final_outgrow_calci_menu', "og_outgrow_calci_script_page", "dashicons-cake", 50);
+	}
+
+}
 
 
-static $header_script1;
+// add_action( 'calling_db_script_enq', 'calling_db_scripts');
 
+$outgrow_api_class = new Outgrow_API_Class;
+
+
+// ....others....
+// static $header_script1;
+static $cookie_value;
+
+static $apiArray="API";
 // include_once "fetch.php";
 add_action("admin_menu", "og_outgrow_calci");
 
@@ -30,13 +120,12 @@ wp_enqueue_script('my_plugin_script2');
 wp_register_script( 'my_plugin_script3', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), null, false );
 wp_enqueue_script('my_plugin_script3');
 
-
 register_activation_hook(__FILE__, 'og_outgrow_calci_api_table');
 register_activation_hook(__FILE__, 'og_outgrow_calci_table');
 register_deactivation_hook(__FILE__, 'og_deactivation_table');
 
 function og_enqueue_script(){
-    wp_enqueue_script('ajax', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'); 
+	wp_enqueue_script('ajax', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'); 
 }
 add_action('wp_enqueue_scripts','og_enqueue_script');
 // add_action('wp_enqueue_styles','og_enqueue_stylesheets');
@@ -48,6 +137,39 @@ function og_outgrow_calci(){
 
 }
 
+// ..................adding dropdown buttons...................
+function wdm_add_mce_button() {
+    // check user permissions
+    if ( !current_user_can( 'edit_posts' ) &&  !current_user_can( 'edit_pages' ) ) {
+               return;
+       }
+   // check if WYSIWYG is enabled
+   if ( 'true' == get_user_option( 'rich_editing' ) ) {
+       add_filter( 'mce_external_plugins', 'wdm_add_tinymce_plugin' );
+       add_filter( 'mce_buttons', 'wdm_register_mce_button' );
+       }
+}
+add_action('admin_head', 'wdm_add_mce_button');
+
+
+// register new button in the editor
+function wdm_register_mce_button( $buttons ) {
+    array_push( $buttons, 'wdm_mce_dropbutton' );
+    return $buttons;
+}
+
+
+// declare a script for the new button
+// the script will insert the shortcode on the click event
+function wdm_add_tinymce_plugin( $plugin_array ) {
+  $plugin_array['wdm_mce_dropbutton'] =  plugins_url('outgrowAPI/tinymce-custom-class.js');
+  return $plugin_array;
+}
+
+// ........................ends...................
+
+
+
 // include_once "database.php"; 
 
 if(isset($_POST['ajax']) && isset($_POST['show_data'])){
@@ -55,6 +177,7 @@ if(isset($_POST['ajax']) && isset($_POST['show_data'])){
     // abc();
      exit;
 }
+	
 
 if (isset($_POST['header_script1'])) {
     if($_POST['header_script1']!=""){
@@ -104,6 +227,8 @@ if (isset($_POST['header_script1'])) {
                     'title' => $res3[$i]->meta_data->title,
                     'image_url' => $res3[$i]->meta_data->image_url
                 )) == false) {
+                }else{
+                   
                 } 
     
             }
@@ -120,30 +245,35 @@ function og_outgrow_calci_script_page($api){
     if(!$db_result){
        apiWarning("Please add API Key"); 
     }else{
-    //     // for api-check at db
-    //     foreach($db_result as $db_row){
-    //         $headers    = array(
-    //             'API-KEY' => $db_row->api_key
-    //         );
-    //         // live api
-    //         $request    = Requests::get('https://api-calc.outgrow.co/api/v1/calculator?status=Live&type=All&sort=alpha_as', $headers);
-    //         $res        = json_decode($request->body);
-    //         // print_r($request);
-    //         if ($res->code == 401 ) {
-    //             $wpdb->delete('wp_outgrow_calci_api_table', array(
-    //                 'api_key' => $db_row->api_key
-    //             ));
-    //             $wpdb->delete('wp_outgrow_calci_table', array(
-    //                 'api_key' => $db_row->api_key
-    //             ));
-    //             apiWarning("Expired Key - $db_row->api_key");
-
-    //         }
-    //     }
+        // for api-check at db
+        foreach($db_result as $db_row){
+            $headers    = array(
+                'API-KEY' => $db_row->api_key
+            );
+            // live api
+            $request    = Requests::get('https://api-calc.outgrow.co/api/v1/calculator?status=Live&type=All&sort=alpha_as', $headers);
+            $res        = json_decode($request->body);
+            // print_r($request);
+            if ($res->code == 401 ) {
+                $wpdb->delete('wp_outgrow_calci_api_table', array(
+                    'api_key' => $db_row->api_key
+                ));
+                $wpdb->delete('wp_outgrow_calci_table', array(
+                    'api_key' => $db_row->api_key
+                ));
+                apiWarning("Expired Key - $db_row->api_key");
+            }else{
+                
+            }
+           
+            // apiCheckDb('gjfcgsjdfgcjdshfj');
+        }
+        // print_r("=========================------------------------=========================$apis");
     }
+    // print_r("----------------------------------------------".$apiArray);
 ?>
-    
-    <div class="super-class" id="content"style="position: static;background-image:url(<?php echo plugins_url('./images/og-banner.png', __FILE__) ?>); background-size: cover;background-repeat: no-repeat;background-position: center;">
+  
+    <div class="super-class"  id="content"style="position: static;background-image:url(<?php echo plugins_url('./images/og-banner.png', __FILE__) ?>); background-size: cover;background-repeat: no-repeat;background-position: center;">
     <!-- <div id="loader-div-class" class="loader-class" > -->
 
     <div id="loader-div-class" style="display:none;position:absolute;z-index:1;margin-left:45%;margin-top:20%;">
@@ -170,8 +300,9 @@ function og_outgrow_calci_script_page($api){
                 global $wpdb;
                 $db_result = $wpdb->get_results('select * from wp_outgrow_calci_api_table');
                 if($db_result){
-                  
                     foreach ($db_result as $db_row) {
+                        // cookies
+                        $apiArray=$apiArray.",".$db_row->api_key;
                         ?>
                         <li id="api-list">
                        
@@ -180,6 +311,9 @@ function og_outgrow_calci_script_page($api){
                         </li>
                         <?php
                     }
+                    // print_r($apiArray);
+                    // setcookie('API',$apiArray);
+                    // callCookieSetter($apiArray);
                 }
             ?>
             
@@ -280,9 +414,12 @@ if (isset($_POST['delete_data'])) {
             'api_key' => $item
         ));
         
+        
+    //    setcookie('username',$_POST['delete_data']);
+     
     }
 }
-
+// print_r("------------------------------------------------------------------------------------".$_COOKIE['username']);
 // delete API ends
 
 
@@ -400,8 +537,6 @@ function og_display_outgrow_calci($atts,$content,$tag){
         </style>
         <iframe id='og_iframe' src='$values[data_url]' style='border: none; overflow: hidden;' scrolling='yes'></iframe>";
         }  
-       	
-	return $output;	
 }
 add_shortcode('outgrow','og_display_outgrow_calci');
 
@@ -485,9 +620,11 @@ function checkRepeat($api){
             ?>
         <?php
         return "present";
+            }else{
             }
         } 
-    }else{        
+    }else{  
+
     }
 }
 
@@ -499,12 +636,31 @@ function apiWarning($msg){
             </div>
     <?php
 }
+// print_r(implode(",",$tryArray));
+// $apiStr=implode(",",$apis);
+// print_r("--------------------------------------------------==================".$apis);
+// foreach($apis as $api){}
+// print_r("--------------------------------------------------==================".$apiStr);
+
+if($_COOKIE['username']){
+    // print_r("--------------------------------------------------------------inside-----------------------".$_COOKIE['username']);
+    // print_r(explode(",",$_COOKIE['username']));
+    $valArray=explode(",",$_COOKIE['username']);
+    foreach($valArray as $val){
+        // print_r($val);
+    }
+    // array_push($delete_api,$_COOKIE['username']);
+}
+
+function callCookieSetter($api){
+    print_r($api);
+    // print_r("API GOT".$api);
+    // array_push($apiArray,$api);
+    // print_r("----.$apiArray");
+   
+  
+} 
+
+
 ?>
-
-
-
-
-
-
-
 

@@ -1,0 +1,55 @@
+i.mce-i-icon {
+	font: normal 20px/1 'dashicons';
+	padding: 0;
+	vertical-align: top;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin-left: -2px;
+	padding-right: 2px;
+}
+div#api-card-items {
+    margin-top: 20px;
+	margin-left: 30px;
+	cursor: pointer;
+}
+div#tiny-mce-custom-og-body {
+    overflow-y: overlay;
+}
+div#getAPI {
+    margin-left: 35%;
+    margin-top: 25px;
+}
+div#calci-card-row-id {
+    margin-top: 10px;
+    margin-bottom: 10px;
+	margin-left: 20px;
+	margin-right: 30px;
+	cursor: pointer;
+}
+div#section-div-1 {
+    float: left;
+    /* width: 16%; */
+	position: relative;
+	margin-top: 12px;
+	margin-bottom: 12px;
+}	
+div.embed {
+    border: 1px solid;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 50px;
+    position: relative;
+    margin-top: 2px;
+    padding-bottom: 5px;
+}
+div#section-div-2 {
+    margin-left: 50px;
+    float: left;
+}
+div#shortcode-div {
+    float: left;
+	margin-left: 70px;
+	margin-top: 50px;
+}

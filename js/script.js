@@ -1,7 +1,8 @@
 
-  console.log("-------------------------------------------");
 
- apiValue=false;
+console.log("-------------------------------------------");
+var apiSet=[];
+apiValue=false;
 function hiding(){
   document.getElementById("wpfooter").style.display="none";
   }
@@ -38,10 +39,6 @@ function hiding(){
     
   }
   
-  // function addActive(){
-  //   // document.getElementById("click-copy-text").classList.add('hide');
-  //   document.getElementById("result1").style.display="block";
-  // }
   
   function viewDetails(id,calci_url,short_url){
     console.log(calci_url);
@@ -58,12 +55,6 @@ function hiding(){
     url3=ex[0]+"?q=1";
   
     short_url_used=short_url;
-    // document.getElementById("cat01").classList.add('active-span');
-    // document.getElementById("cat02").classList.remove('active-span');
-    // document.getElementById("cat03").classList.remove('active-span');
-    // document.getElementById("cat04").classList.remove('active-span');
-    // document.getElementById("cat05").classList.remove('active-span');
-    // console.log("new ones",id,url,short_url);
     cat01();
     document.getElementById('text-inside').innerText='[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url+'" short_url="'+short_url+'"][/outgrow]';
     // document.getElementById('text-inside').innerText="<div><div class='op-interactive' id='"+ id +"' data-url='"+ url +"' data-surl='"+short_url+"' data-width='100%'></div><script src='https://dyv6f9ner1ir9.cloudfront.net/assets/js/sloader.js'></script><script>initIframe('"+id+"');</script></div>";
@@ -618,7 +609,6 @@ function getAPIheading(){
 
 
 
-
 function callAPI(api){
   $.ajax({
      url:'https://api-calc.outgrow.co/api/v1/calculator?status=Live&type=All&sort=alpha_as',
@@ -631,6 +621,13 @@ function callAPI(api){
     var refinedResponse=JSON.stringify(response);
     // console.log(response);
     if(response.success==true){
+
+      // set-cookies
+      apiSet.push(api);
+      // console.log(apiSet.toString());
+      console.log("---api set--",apiSet);
+      document.cookie="username="+apiSet;
+      
       document.body.backgroundColor="";
       document.body.style.backgroundColor="#f1f1f1";
       document.getElementById("loader-div-class").style.display="none";
@@ -855,4 +852,8 @@ function removeActiveClass(classname){
 }
 function addActiveClass(classname){
   document.getElementById(classname).classList.add('active-span');
+}
+
+function getAPIS(data){
+  console.log(" :: data got :: ",data);
 }
