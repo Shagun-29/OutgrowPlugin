@@ -555,6 +555,7 @@ function callAPI(api){
            <div class="calci-card-content" id="div-content">${element.meta_data.title}</div>
            </div>
           </div></div>`);
+          countc++;
         }
         if(element.type=="Quiz"){
           document.getElementById("result-quiz").insertAdjacentHTML('beforeend', 
@@ -565,6 +566,7 @@ function callAPI(api){
            <div class="calci-card-content" id="div-content">${element.meta_data.title}</div>
            </div>
           </div></div>`);
+          countq++;
         }
         if(element.type=="Poll"){
           countp++;
@@ -588,15 +590,15 @@ function callAPI(api){
        
       
        });
-      // if(countc==0){
-      //   document.getElementById('result1').insertAdjacentHTML('beforeend','<div id="no-found" class="no-calc">No Calculator Found</div>');
-      // }
-      // if(countq==0){
-      //   document.getElementById('result-quiz').insertAdjacentHTML('beforeend','<div id="no-found" class="no-calc">No Quiz Found</div>');
-      // } 
-      // if(countp==0){
-      //   document.getElementById('result3').insertAdjacentHTML('beforeend','<div id="no-found" class="no-calc">No Poll Found</div>');
-      // }
+      if(countc==0){
+        document.getElementById('result1').insertAdjacentHTML('beforeend','<div id="no-found" class="no-calc">No Calculator Found</div>');
+      }
+      if(countq==0){
+        document.getElementById('result-quiz').insertAdjacentHTML('beforeend','<div id="no-found" class="no-calc">No Quiz Found</div>');
+      } 
+      if(countp==0){
+        document.getElementById('result3').insertAdjacentHTML('beforeend','<div id="no-found" class="no-calc">No Poll Found</div>');
+      }
     }
     },
 

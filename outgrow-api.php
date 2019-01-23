@@ -325,9 +325,6 @@ function og_outgrow_calci_script_page($api){
                         </li>
                         <?php
                     }
-                    // print_r($apiArray);
-                    // setcookie('API',$apiArray);
-                    // callCookieSetter($apiArray);
                 }
             ?>
             
@@ -654,30 +651,6 @@ function apiWarning($msg){
             </div>
     <?php
 }
-// print_r(implode(",",$tryArray));
-// $apiStr=implode(",",$apis);
-// print_r("--------------------------------------------------==================".$apis);
-// foreach($apis as $api){}
-// print_r("--------------------------------------------------==================".$apiStr);
-
-if($_COOKIE['username']){
-    // print_r("--------------------------------------------------------------inside-----------------------".$_COOKIE['username']);
-    // print_r(explode(",",$_COOKIE['username']));
-    $valArray=explode(",",$_COOKIE['username']);
-    foreach($valArray as $val){
-        // print_r($val);
-    }
-    // array_push($delete_api,$_COOKIE['username']);
-}
-
-function callCookieSetter($api){
-    print_r($api);
-    // print_r("API GOT".$api);
-    // array_push($apiArray,$api);
-    // print_r("----.$apiArray");
-   
-  
-} 
 
 
 ?>
