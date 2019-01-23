@@ -1,15 +1,7 @@
-
-
-console.log("-------------------------------------------");
 var apiSet=[];
 apiValue=false;
-function hiding(){
-  document.getElementById("wpfooter").style.display="none";
-  }
-  
-  
-  var showForm=true;
-  var usedApi="";
+var showForm=true;
+var usedApi="";
   
   // for new variables
   var id_used="",id="";
@@ -32,21 +24,18 @@ function hiding(){
   
     var copyText = document.getElementById("text-inside");
     copyText.setAttribute('readonly', '');
-    // var copyText = document.querySelector('#modal-content');
     copyText.select();
     document.execCommand("copy");
-    // document.getElementById("click-copy-text").classList.remove('hide');
     removeHide('click-copy-text');
     
   }
   
   
   function viewDetails(id,calci_url,short_url){
-    console.log(calci_url);
     custom_url=calci_url;
     addHide("click-copy-text");
     id_used=id;
-    document.getElementById('myModal').style.display = "block";
+    displayBlock("myModal");
     // var id="5b9ab036a6aaea5e7f2481ac";
     url=calci_url;
     ex=url.split("?");
@@ -57,7 +46,6 @@ function hiding(){
     short_url_used=short_url;
     cat01();
     document.getElementById('text-inside').innerText='[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url+'" short_url="'+short_url+'"][/outgrow]';
-    // document.getElementById('text-inside').innerText="<div><div class='op-interactive' id='"+ id +"' data-url='"+ url +"' data-surl='"+short_url+"' data-width='100%'></div><script src='https://dyv6f9ner1ir9.cloudfront.net/assets/js/sloader.js'></script><script>initIframe('"+id+"');</script></div>";
   }
   
   window.onclick = function(event) {
@@ -77,21 +65,18 @@ function hiding(){
   
   
   function cat01(){
-    document.getElementById('extra-option').style.display="block";
+    displayBlock("extra-option");
     document.getElementById('extra-option').innerHTML="<div class='facebook-link'><div class='fb-link-text'>Facebook Comments</div><div class='span-fb-text'><i class='la la-question-circle la-2x'></i></div><div class='facebook-div' id='facebook-div' onclick='toggleSwitch()'><input type='text'  class='facebook-input-type' ><span class='facebook-span' id='facebook-span'></span></div></div>";
     document.getElementById('text-inside').classList.remove('text-area-enlarge');
-    // document.getElementById("cat01").classList.add('active-span');
     addActiveClass("cat01");
     removeActiveClass("cat02");
     removeActiveClass("cat03");
     removeActiveClass("cat04");
     removeActiveClass("cat05");
     document.getElementById('text-inside').innerText='[outgrow type="mobile_full_screen" id="'+id_used+ '" data_url="'+url+'" short_url="'+short_url_used+'"][/outgrow]';
-    // document.getElementById('text-inside').innerText="<div><div class='op-interactive' id='"+ id_used +"' data-url='"+ url +"' data-surl='"+short_url_used+"' data-width='100%'></div><script src='https://dyv6f9ner1ir9.cloudfront.net/assets/js/sloader.js'></script><script>initIframe('"+id_used+"');</script></div>";
-  
-  }
+    }
   function cat02(){
-    document.getElementById('extra-option').style.display="none";
+    displayNone("extra-option");
     document.getElementById('text-inside').classList.add('text-area-enlarge');
     addActiveClass("cat02");
     removeActiveClass("cat01");
@@ -99,13 +84,11 @@ function hiding(){
     removeActiveClass("cat04");
     removeActiveClass("cat05");
     addHide("click-copy-text");
-    // document.getElementById("click-copy-text").classList.add('hide');
     document.getElementById('text-inside').innerText='[outgrow type="mobile_in_page" id="'+id_used+ '" data_url="'+url2+'" short_url="'+short_url_used+'"][/outgrow]';
-    // document.getElementById('text-inside').innerText="<div><div class='op-interactive' id='"+ id_used +"' data-url='"+ url2 +"' data-surl='"+short_url_used+"' data-width='100%'></div><script src='https://dyv6f9ner1ir9.cloudfront.net/assets/js/nloader.js'></script><script>initIframe('"+id_used+"');</script></div>";
   
   }
   function cat03(){
-    document.getElementById('extra-option').style.display="block";
+    displayBlock("extra-option");
     document.getElementById('text-inside').classList.remove('text-area-enlarge');
     document.getElementById('extra-option').innerHTML=
     "<div class='main-div-option'>"+
@@ -129,12 +112,10 @@ function hiding(){
     removeActiveClass("cat04");
     removeActiveClass("cat05");
     addHide("click-copy-text");
-    // document.getElementById("click-copy-text").classList.add('hide');
     document.getElementById('text-inside').innerText='[outgrow type="pop_up" id="'+id_used+ '" data_url="'+url3+'" ][/outgrow]';
-    // document.getElementById('text-inside').innerText="<div><div id='"+ id_used +"' data-embedCookieDays='10' data-embedScheduling='false' data-embedTimed='true' data-embedExit='false' data-embedTimeFormat='0' data-embedTimeValue='5' data-embedBorderRadius='0' data-embedFontSize='12' data-textcolor='#fb5f66' data-bgcolor='#fb5f66' data-prop='outgrow-p' data-type='outgrow-l'  data-url='"+ url3 +"' data-text='Get Started'></div><script src='https://dyv6f9ner1ir9.cloudfront.net/assets/js/nloader.js'></script><script>initIframe('"+id_used+"');</script></div>";
   }
   function cat04(){
-    document.getElementById('extra-option').style.display="block";
+    displayBlock("extra-option");
     document.getElementById('text-inside').classList.remove('text-area-enlarge');
     document.getElementById('extra-option').innerHTML="<div class='extra-option-chat-button' onclick='chatLeft()' id='chatLeft'><div class='bottom-img'><img class='bottom-min' src='https://dlvkyia8i4zmz.cloudfront.net/o1PZBSLiQuq5HTCCyrMt_bottom_left.png'></div><div class='bottom-text'>Bottom Left</div></div><div onclick='chatRight()' class='extra-option-chat-button' id='bottomRight'><div class='bottom-img'><img class='bottom-min' class='bottom-img' src='https://dlvkyia8i4zmz.cloudfront.net/5uGcgvoRIie2dwQNk9kv_bottom_right.png'></div><div class='bottom-text'>Bottom Right</div></div>";
     
@@ -144,12 +125,10 @@ function hiding(){
     removeActiveClass("cat03");
     removeActiveClass("cat05");
     addHide("click-copy-text");
-    // document.getElementById("click-copy-text").classList.add('hide');
     document.getElementById('text-inside').innerText='[outgrow type="chat" " data_url="'+url3+'" ][/outgrow]';
-    // document.getElementById('text-inside').innerText="<div><div id='"+ id_used +"' data-embedCookieDays='10' data-embedScheduling='false' data-embedTimed='true' data-embedExit='false' data-embedTimeFormat='0' data-embedTimeValue='5' data-embedBorderRadius='0' data-embedFontSize='12' data-textcolor='#fb5f66' data-bgcolor='#fb5f66' data-prop='outgrow-p' data-type='outgrow-l'  data-url='"+ url3 +"' data-text='Get Started'></div><script src='https://dyv6f9ner1ir9.cloudfront.net/assets/js/nloader.js'></script><script>initIframe('"+id_used+"');</script></div>";
   }
   function cat05(){
-    document.getElementById('extra-option').style.display="block";
+    displayBlock("extra-option");
     document.getElementById('text-inside').classList.remove('text-area-enlarge');
     document.getElementById('extra-option').innerHTML="<div><div class='extra-option-custom' id='desktop'>"+
     "Desktop"+
@@ -213,12 +192,9 @@ function hiding(){
     removeActiveClass("cat04");
     addHide("click-copy-text");
     customOutput();
-    // document.getElementById('text-inside').innerText="<div><div id='"+ id_used +"' data-embedCookieDays='10' data-embedScheduling='false' data-embedTimed='true' data-embedExit='false' data-embedTimeFormat='0' data-embedTimeValue='5' data-embedBorderRadius='0' data-embedFontSize='12' data-textcolor='#fb5f66' data-bgcolor='#fb5f66' data-prop='outgrow-p' data-type='outgrow-l'  data-url='"+ url3 +"' data-text='Get Started'></div><script src='https://dyv6f9ner1ir9.cloudfront.net/assets/js/nloader.js'></script><script>initIframe('"+id_used+"');</script></div>";
   }
 
   function classic(){
-    console.log('-----Classic----');
-    console.log(document.getElementById('cat031'));
     addActiveClass("cat03");
     removeActiveClass("cat01");
     removeActiveClass("cat02");
@@ -228,11 +204,9 @@ function hiding(){
     document.getElementById("cat032").classList.remove("custom-active");
     document.getElementById("cat033").classList.remove("custom-active");
     addHide("click-copy-text");
-    // document.getElementById("click-copy-text").classList.add('hide');
     document.getElementById('text-inside').innerText='[outgrow type="pop_up_classic" id="'+id_used+ '" data_url="'+url3+'" ][/outgrow]';
   }
   function drawerL(){
-    console.log('---Drawer L---');
     addActiveClass("cat03");
     removeActiveClass("cat01");
     removeActiveClass("cat02");
@@ -242,11 +216,9 @@ function hiding(){
     document.getElementById("cat032").classList.add("custom-active");
     document.getElementById("cat033").classList.remove("custom-active");
     addHide("click-copy-text");
-    // document.getElementById("click-copy-text").classList.add('hide');
     document.getElementById('text-inside').innerText='[outgrow type="pop_up_l" id="'+id_used+ '" data_url="'+url3+'" ][/outgrow]';
   }
   function drawerR(){
-    console.log('---Drawer R---');
     addActiveClass("cat03");
     removeActiveClass("cat01");
     removeActiveClass("cat02");
@@ -256,7 +228,6 @@ function hiding(){
     document.getElementById("cat032").classList.remove("custom-active");
     document.getElementById("cat033").classList.add("custom-active");
     addHide("click-copy-text");
-    // document.getElementById("click-copy-text").classList.add('hide');
     document.getElementById('text-inside').innerText='[outgrow type="pop_up_r" id="'+id_used+ '" data_url="'+url3+'" ][/outgrow]';
   }
   
@@ -267,7 +238,6 @@ function hiding(){
     removeActiveClass("cat03");
     removeActiveClass("cat05");
     addHide("click-copy-text");
-    // document.getElementById("click-copy-text").classList.add('hide');
     document.getElementById('bottomRight').classList.remove('custom-active');
     document.getElementById('chatLeft').classList.add('custom-active');
     document.getElementById('text-inside').innerText='[outgrow type="chat_left" " data_url="'+url3+'" ][/outgrow]';
@@ -280,7 +250,6 @@ function hiding(){
     removeActiveClass("cat03");
     removeActiveClass("cat05");
     addHide("click-copy-text");
-    // document.getElementById("click-copy-text").classList.add('hide');
     document.getElementById('bottomRight').classList.add('custom-active');
     document.getElementById('chatLeft').classList.remove('custom-active');
     document.getElementById('text-inside').innerText='[outgrow type="chat_right" " data_url="'+url3+'" ][/outgrow]';
@@ -289,7 +258,6 @@ function hiding(){
   function getDesktopHeight(e){
     var count1=0;
     if(e.which >=48 && e.which <=57 || e.which == 8 || e.which == 46){
-      // console.log(e.key,'-------------Height----------------',e.which);
       window.onclick=function(){
         if(count1==0){
           var heightD=document.getElementById("heightDesktop").value;
@@ -297,7 +265,6 @@ function hiding(){
           customHeightD=heightD;
           // custom='[outgrow type="custom_desktop_height" " data_url="'+url3+'" "height"="'+heightD+'"][/outgrow]';
           // document.getElementById('text-inside').innerText='[outgrow type="custom_desktop_height" " data_url="'+url3+'" "height"="'+heightD+'"][/outgrow]';
-   
           customOutput();
           count1++; 
         }
@@ -311,10 +278,7 @@ function hiding(){
 
   function getTabletHeight(e){
     var count2=0;
-    // customDesktop(heightD);
     if(e.which >=48 && e.which <=57){
-      // console.log(e.key,'-------------Height----------------',e.which);
-
       window.onclick=function(){
         if(count2==0){
           var heightD=document.getElementById("heightTablet").value;
@@ -334,10 +298,7 @@ function hiding(){
 
   function getMobileHeight(e){
     var count3=0;
-    // customDesktop(heightD);
     if(e.which >=48 && e.which <=57){
-      // console.log(e.key,'-------------Height----------------',e.which);
-
       window.onclick=function(){
         if(count3==0){
           var heightD=document.getElementById("heightMobile").value;
@@ -379,7 +340,6 @@ function hiding(){
         if(count5==0){
           var widthD=document.getElementById("widthTablet").value;
            customWidthT=widthD;
-          console.log(customWidthT);
           customOutput();
 
           count5++;
@@ -397,7 +357,6 @@ function hiding(){
       window.onclick=function(){
         if(count6==0){
           var widthD=document.getElementById("widthMobile").value;
-          console.log(widthD);
           customWidthM=widthD;
           customOutput();
 
@@ -449,9 +408,9 @@ function hiding(){
       document.getElementById('icon-la-poll').classList.remove('icon-active');
       
       document.getElementById("get-calci-name").innerText="Calculator";
-      document.getElementById("result1").style.display="block";
-      document.getElementById("result-quiz").style.display="none";
-      document.getElementById("result3").style.display="none";
+      displayBlock("result1");
+      displayNone("result-quiz");
+      displayNone("result3");
       return type;
     }
     else if(type == 'Quiz'){
@@ -460,9 +419,9 @@ function hiding(){
       document.getElementById('icon-la-poll').classList.remove('icon-active');
 
       document.getElementById("get-calci-name").innerText="Quiz";
-      document.getElementById("result1").style.display="none";
-      document.getElementById("result-quiz").style.display="block";
-      document.getElementById("result3").style.display="none";
+      displayNone("result1");
+      displayBlock("result-quiz");
+      displayNone("result3");
       return type;
     }
     else if(type == 'Poll'){
@@ -470,9 +429,9 @@ function hiding(){
       document.getElementById('icon-la-quiz').classList.remove('icon-active');
       document.getElementById('icon-la-poll').classList.add('icon-active');
       document.getElementById("get-calci-name").innerText="Poll";
-      document.getElementById("result1").style.display="none";
-      document.getElementById("result-quiz").style.display="none";
-      document.getElementById("result3").style.display="block";
+      displayNone("result1");
+      displayNone("result-quiz");
+      displayBlock("result3");
       return type;
     }
     
@@ -492,12 +451,10 @@ function hiding(){
 
 function showOption(){
   var count = document.getElementById("api-list");
-  // console.log("-------Count------",count);
   if(count == null){
-    document.getElementById('main-section-option').style.display="none";
+    displayNone("main-section-option");
   }else{
     var x=document.getElementById('main-section-option');
-    // console.log(x.style.display);
     if (x.style.display === "none") {
      x.style.display = "block";
    } else {
@@ -508,9 +465,7 @@ function showOption(){
 }
 
 function getAPIheading(){
-  // console.log("inside fxn::");
   api=document.getElementById('setAPI').value;
-  // console.log(document.getElementById('setAPI').value);
   document.getElementById('setAPI').innerText=api;
 }
 
@@ -523,28 +478,18 @@ function callAPI(api){
     data: {ajax: 1},
     success: function(response){
     var refinedResponse=JSON.stringify(response);
-    // console.log(response);
     if(response.success==true){
 
       // set-cookies
       apiSet.push(api);
-      // console.log(apiSet.toString());
-      console.log("---api set--",apiSet);
-      // document.cookie="username="+apiSet;
-      
       document.body.backgroundColor="";
       document.body.style.backgroundColor="#f1f1f1";
-      document.getElementById("loader-div-class").style.display="none";
-      document.getElementById('section-round').classList.remove("hide");
-      document.getElementById('get-calci-name').classList.remove("hide");
-      // document.getElementById("get-calci-name").innerText="ALL";
+      displayNone("loader-div-class");
+      removeHide("section-round");
+      removeHide("get-calci-name");
        response.data.forEach(element => {
-        //  console.log(${element.meta_data.type});
-        document.getElementById('section-1').style.display="block";
-
-        // console.log(element.type);
+        displayBlock("section-1");
         if(element.type=="Calculator"){
-          // console.log(`${element.calc_url}`);
           var url0=element.calc_url.split("{");
           final_url=url0[0]+element.parentapp+"?sLead=1";
           document.getElementById("result1").insertAdjacentHTML('beforeend', 
@@ -570,8 +515,6 @@ function callAPI(api){
         }
         if(element.type=="Poll"){
           countp++;
-          console.log(countp);
-          // console.log("-----------LENGTH-------------",Object.values('Poll').length);
           // if(Object.values('Poll').length != 0){
             // if(countp > 0){
             document.getElementById("result3").insertAdjacentHTML('beforeend', 
@@ -603,35 +546,29 @@ function callAPI(api){
     },
 
     error: function(err){
-      // console.log('error',err.responseJSON.code);
       if(err.responseJSON.code==401){
-        // console.log('error',err.responseJSON.code);
       }
     }
    });
 }
 
 function selectKey(k){
-  // console.log("--clicked--");
   if(document.getElementById('api-warning')){
-    document.getElementById('api-warning').style.display="none";
+    displayNone("api-warning");
   }
-  document.getElementById("main-section-option").style.display="none";
-  document.getElementById("loader-div-class").style.display="block";
+  displayNone("main-section-option");
+  displayBlock("loader-div-class");
   document.body.style.backgroundColor="white";
-  document.getElementById('section-round').classList.add("hide");
-  document.getElementById('get-calci-name').classList.add("hide");
+  addHide("section-round");
+  addHide("get-calci-name");
   document.getElementById("result1").innerHTML="";
   document.getElementById("result-quiz").innerHTML="";
   document.getElementById("result3").innerHTML="";
   document.getElementById("header_script").value=k;
- 
-  // console.log(k);
-  callAPI(k);
+   callAPI(k);
 }
 
 function toggleSwitch(){
-  // console.log('------Toggle Switch------');
   document.getElementById('facebook-span').classList.toggle('toggle-on');
   $(document).ready(function(){
     if ( $('#facebook-span').hasClass('toggle-on') ) {
@@ -645,7 +582,6 @@ function toggleSwitch(){
 }
 
 function toggleSwitch2(){
-  // console.log('------Toggle Switch------');
   document.getElementById('time-span').classList.toggle('toggle-on');
   $(document).ready(function(){
     if ( $('#time-span').hasClass('toggle-on') ) {
@@ -667,33 +603,29 @@ timeOption.innerHTML="<div id='input-time'><label><input type='radio' name='sele
 }
 
 function customOutput(){
-  console.log(custom_url);
   curl=custom_url.split("?");
-  console.log(curl[0]);
   document.getElementById('text-inside').innerText='[outgrow type="custom_type" " data_url="'+curl[0]+'" "dh"="'+customHeightD+'" dhd="'+customHeightDDim+'" "dw"="'+customWidthD+'" dwd="'+customWidthDDim+'" "th"="'+customHeightT+'" thd="'+customHeightTDim+'" "tw"="'+customWidthT+'" twd="'+customWidthTDim+'" "mh"="'+customHeightM+'" mhd="'+customHeightMDim+'" "mw"="'+customWidthM+'" mwd="'+customWidthMDim+'"][/outgrow]';
 
   
 }
 
 function timed(){
-  document.getElementById('timed-div').style.display="block";
-  document.getElementById('exit-input-value').style.display='none';
+  displayBlock("timed-div");
+  displayNone("exit-input-value");
 
 }
 function exitIntend(){
-  document.getElementById('timed-div').style.display="none";
-  document.getElementById('exit-input-value').style.display='block';
+  displayNone("timed-div");
+  displayBlock("exit-input-value");
 }
 
 function updatePopTime(e){
-  console.log("---------------pop time----------------");
   var countp=0;
   if(e.which >=48 && e.which <=57){
     window.onclick=function(){
       if(countp==0){
         var popTime=document.getElementById("timeAfter").value;
        showExact=popTime;
-        console.log(showExact);
         customPop();
 
         countp++;
@@ -706,14 +638,12 @@ function updatePopTime(e){
 }
 
 function updatePopDay(e){
-  console.log("---------------pop time----------------");
   var countd=0;
   if(e.which >=48 && e.which <=57){
     window.onclick=function(){
       if(countd==0){
         var popDay=document.getElementById("get-day").value;
         repeatTime=popDay;
-        console.log(repeatTime);
         customPop();
 
         countd++;
@@ -726,20 +656,17 @@ function updatePopDay(e){
 }
 
 function getOptionPop(){
-  console.log('------------------------',document.getElementById('select-time-after').value);
   showExactD=document.getElementById('select-time-after').value;
   customPop();
 }
 
 function updatePopDay2(e){
-  console.log("---------------pop time----------------");
   var countd=0;
   if(e.which >=48 && e.which <=57){
     window.onclick=function(){
       if(countd==0){
         var popDay=document.getElementById("get-day2").value;
         repeatTime=popDay;
-        console.log(repeatTime);
         customPop();
 
         countd++;
@@ -767,4 +694,10 @@ function addHide(classname){
 }
 function removeHide(classname){
   document.getElementById(classname).classList.remove('hide');
+}
+function displayNone(id){
+  document.getElementById(id).style.display="none";
+}
+function displayBlock(id){
+  document.getElementById(id).style.display="block";
 }

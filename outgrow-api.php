@@ -184,7 +184,6 @@ if(isset($_POST['ajax']) && isset($_POST['show_data'])){
 if (isset($_POST['header_script1'])) {
     if($_POST['header_script1']!=""){
         $out=checkRepeat($_POST['header_script1']);
-        // print_r($out);
         if($out!="present"){
         global $wpdb;
         $apiKey     = sanitize_text_field($_POST['header_script1']);
@@ -198,27 +197,20 @@ if (isset($_POST['header_script1'])) {
         $res2       = json_encode($res->data);
         $res3       = json_decode($res2);
         $meta        = array();
-        // print_r($request);
         if($res->data){
             $calci_count = count($res->data);
         }
        
 
         if ($res->success == "true" || $res->code != 401 && $calci_count>0) {
-            // print_r("--------------Success--------------------");
             if ($wpdb->insert('wp_outgrow_calci_api_table', array(
                 'api_key' => $apiKey
             )) == false ) {
-                // print_r("--------------------------------------");
             } 
             $count=0;
             for ($i = 0; $i < $calci_count; $i++) {
-                // print_r(explode('{',$res3[$i]->calc_url));
                 $url1=explode('{',$res3[$i]->calc_url);
                     $final_url=$url1[0].$res3[$i]->$res3->parentapp.'?sLead=1';
-                // print_r();
-
-                // print("-----=====------------===-------".$res3[$i]->short_url);
                 if ($wpdb->insert('wp_outgrow_calci_table', array(
                     'name' => $res3[$i]->name,
                     'api_key' => $apiKey,
@@ -232,20 +224,11 @@ if (isset($_POST['header_script1'])) {
                 )) == false) {
                     
                 }else{
-                    // array_push($apiArray,$res3[$i]->id);
-                //     if($count == 0){
-                //         // $apiArray=$apiArray.$_POST['header_script1'].'NEXT';
-                //         array_push($apiArray,$_POST['header_script1']);
-                //         $count++;
-                //    }
+           
                 } 
     
             }
-            // $count=0;
-            // $apiArray=$apiArray.$apiArray0;
-            // print_r($apiArray);
-            // setcookie('API',JSON.stringify($apiArray), time() + (172800* 30), "/");
-
+           
         }else{
             apiWarning("No API Found - Please add your API to view Calculators.");
         } 
@@ -267,7 +250,6 @@ function og_outgrow_calci_script_page($api){
             // live api
             $request    = Requests::get('https://api-calc.outgrow.co/api/v1/calculator?status=Live&type=All&sort=alpha_as', $headers);
             $res        = json_decode($request->body);
-            // print_r($request);
             if ($res->code == 401 ) {
                 $wpdb->delete('wp_outgrow_calci_api_table', array(
                     'api_key' => $db_row->api_key
@@ -282,9 +264,7 @@ function og_outgrow_calci_script_page($api){
            
             // apiCheckDb('gjfcgsjdfgcjdshfj');
         }
-        // print_r("=========================------------------------=========================$apis");
     }
-    // print_r("----------------------------------------------".$apiArray);
 ?>
   
     <div class="super-class"  id="content"style="position: static;background-image:url(<?php echo plugins_url('./images/og-banner.png', __FILE__) ?>); background-size: cover;background-repeat: no-repeat;background-position: center;">
@@ -315,8 +295,6 @@ function og_outgrow_calci_script_page($api){
                 $db_result = $wpdb->get_results('select * from wp_outgrow_calci_api_table');
                 if($db_result){
                     foreach ($db_result as $db_row) {
-                        // cookies
-                        // $apiArray=$apiArray.",".$db_row->api_key;
                         ?>
                         <li id="api-list">
                        
@@ -387,8 +365,7 @@ function og_outgrow_calci_script_page($api){
         <div class="section-2" id="section-2">
         <div id="get-calci-name"></div>
 <?php
-        // $selectedAPI = $new_api_array[0];
-
+        
         include_once "view.php";                
     
 ?>
@@ -425,6 +402,9 @@ if (isset($_POST['delete_data'])) {
         $wpdb->delete('wp_outgrow_calci_table', array(
             'api_key' => $item
         ));
+        if(count($apiArray)==1){
+            setcookie('API', null, -1, '/');
+        }
     $dataGot=explode(" ",$_COOKIE["API"]);
     foreach($dataGot as $data){
         if($dataGot == $_POST['delete_data']){
@@ -625,7 +605,6 @@ function my_custom_favicon() {
 //repeated apis
 
 function checkRepeat($api){
-    // print_r("---------------------------".$api."------------------");
     global $wpdb;
     $db_result = $wpdb->get_results('select * from wp_outgrow_calci_api_table');
     if($db_result){

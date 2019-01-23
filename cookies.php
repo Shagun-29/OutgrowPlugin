@@ -9,7 +9,6 @@ if(!$db_result){
     foreach($db_result as $db_row){
         array_push($apiArray,$db_row->api_key);
     }
-    // print(implode(",",$apiArray));
       setcookie('API',implode(" ",$apiArray), time() + (172800* 30), "/");
 }
 ?>
