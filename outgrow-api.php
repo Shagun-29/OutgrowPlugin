@@ -100,23 +100,22 @@ $outgrow_api_class = new Outgrow_API_Class;
 // static $header_script1;
 static $cookie_value;
 
-static $apiArray="API";
+// static $apiArray="API";
+static $apiArray=array();
 // include_once "fetch.php";
 add_action("admin_menu", "og_outgrow_calci");
-
 wp_register_script('my_plugin_script', plugins_url('/js/script.js', __FILE__), array(
     'jquery'
 ));
 wp_enqueue_script('my_plugin_script');
-wp_register_style('my-plugin-style', plugins_url('outgrowAPI/css/style.css'));
-wp_register_style('my-plugin-style2', plugins_url('outgrowAPI/css/line-awesome/css/line-awesome-font-awesome.css'));
-wp_register_style('my-plugin-style3', plugins_url('outgrowAPI/css/line-awesome/css/line-awesome.css'));
+wp_register_style('my-plugin-style', plugins_url('outgrowPlugin/css/style.css'));
+wp_register_style('my-plugin-style2', plugins_url('outgrowPlugin/css/line-awesome/css/line-awesome-font-awesome.css'));
+wp_register_style('my-plugin-style3', plugins_url('outgrowPlugin/css/line-awesome/css/line-awesome.css'));
 wp_enqueue_style('my-plugin-style');
 wp_enqueue_style('my-plugin-style2');
 wp_enqueue_style('my-plugin-style3');
 wp_register_script( 'my_plugin_script2', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), null, false );
 wp_enqueue_script('my_plugin_script2');
-
 wp_register_script( 'my_plugin_script3', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), null, false );
 wp_enqueue_script('my_plugin_script3');
 
@@ -162,7 +161,7 @@ function wdm_register_mce_button( $buttons ) {
 // declare a script for the new button
 // the script will insert the shortcode on the click event
 function wdm_add_tinymce_plugin( $plugin_array ) {
-  $plugin_array['wdm_mce_dropbutton'] =  plugins_url('outgrowAPI/tinymce-custom-class.js');
+  $plugin_array['wdm_mce_dropbutton'] =  plugins_url('outgrowPlugin/tinymce-custom-class.js');
   return $plugin_array;
 }
 
@@ -178,6 +177,9 @@ if(isset($_POST['ajax']) && isset($_POST['show_data'])){
      exit;
 }
 	
+// Cookies area
+    include_once "cookies.php";
+// cookies area ends
 
 if (isset($_POST['header_script1'])) {
     if($_POST['header_script1']!=""){
@@ -209,6 +211,7 @@ if (isset($_POST['header_script1'])) {
             )) == false ) {
                 // print_r("--------------------------------------");
             } 
+            $count=0;
             for ($i = 0; $i < $calci_count; $i++) {
                 // print_r(explode('{',$res3[$i]->calc_url));
                 $url1=explode('{',$res3[$i]->calc_url);
@@ -227,11 +230,22 @@ if (isset($_POST['header_script1'])) {
                     'title' => $res3[$i]->meta_data->title,
                     'image_url' => $res3[$i]->meta_data->image_url
                 )) == false) {
+                    
                 }else{
-                   
+                    // array_push($apiArray,$res3[$i]->id);
+                //     if($count == 0){
+                //         // $apiArray=$apiArray.$_POST['header_script1'].'NEXT';
+                //         array_push($apiArray,$_POST['header_script1']);
+                //         $count++;
+                //    }
                 } 
     
             }
+            // $count=0;
+            // $apiArray=$apiArray.$apiArray0;
+            // print_r($apiArray);
+            // setcookie('API',JSON.stringify($apiArray), time() + (172800* 30), "/");
+
         }else{
             apiWarning("No API Found - Please add your API to view Calculators.");
         } 
@@ -302,7 +316,7 @@ function og_outgrow_calci_script_page($api){
                 if($db_result){
                     foreach ($db_result as $db_row) {
                         // cookies
-                        $apiArray=$apiArray.",".$db_row->api_key;
+                        // $apiArray=$apiArray.",".$db_row->api_key;
                         ?>
                         <li id="api-list">
                        
@@ -403,6 +417,7 @@ function og_outgrow_calci_script_page($api){
 
 if (isset($_POST['delete_data'])) {
     global $wpdb;
+
     $item = sanitize_text_field($_POST['delete_data']);
     
     if ($_POST['delete_data'] != "") {
@@ -413,13 +428,16 @@ if (isset($_POST['delete_data'])) {
         $wpdb->delete('wp_outgrow_calci_table', array(
             'api_key' => $item
         ));
-        
-        
-    //    setcookie('username',$_POST['delete_data']);
-     
+    $dataGot=explode(" ",$_COOKIE["API"]);
+    foreach($dataGot as $data){
+        if($dataGot == $_POST['delete_data']){
+            array_pop($apiArray,$_POST['delete_data']);
+        }
+    }
     }
 }
-// print_r("------------------------------------------------------------------------------------".$_COOKIE['username']);
+
+
 // delete API ends
 
 
@@ -598,7 +616,7 @@ function my_custom_favicon() {
     echo '
         <style>
         .dashicons-cake {
-            background-image: url("'.plugins_url().'/outgrowAPI/images/logo.png");
+            background-image: url("'.plugins_url().'/outgrowPlugin/images/logo.png");
             background-repeat: no-repeat;
             background-position: center; 
         }

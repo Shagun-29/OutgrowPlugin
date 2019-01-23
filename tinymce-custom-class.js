@@ -1,55 +1,64 @@
 // // editor
 editorShortcode="[outgrow][/outgrow]";
 // apiSet=["bc4c5eaac967061516d56310cb0002","fdb023359c49a0f2cd0a34242c9f1a"];
-(function(){
-  apiSet=[];
-  cookies=document.cookie;
+// (function(){
+//   apiSet=[];
+//   cookies=document.cookie;
   
-  // js logic
-  console.log(cookies);
+//   // js logic
+//   console.log(cookies);
+//   cookiesArray=cookies.split(";");
+//   // console.log(cookiesArray);
+//   if(cookiesArray.length>0){
+//     for(i=0;i<cookiesArray.length;i++){
+//       key=cookiesArray[i].split("=")[0];
+//       if(key=="username"){
+//         value=cookiesArray[i].split("=")[1];
+//         console.log("::--values--::",value);
+//       }
+//     }
+//     apiValues=value.split(",");
+//       apiValues.forEach(element => {
+//         console.log("-------",element);
+//         apiSet.push(element);
+//       });
+//   }else{
+//     apiSet=[];
+//   }
+
+  
+// })();
+
+// php lpogic
+(function(){
+  APIset=[];
+  cookies=document.cookie;
+  // console.log(cookies);
   cookiesArray=cookies.split(";");
   // console.log(cookiesArray);
   if(cookiesArray.length>0){
     for(i=0;i<cookiesArray.length;i++){
       key=cookiesArray[i].split("=")[0];
-      if(key=="username"){
+      // console.log("--keys--",key);
+      if(key == " API"){
         value=cookiesArray[i].split("=")[1];
-        console.log("::--values--::",value);
+        // console.log(value.split('+'));
+        // value=cookiesArray[i];
+        // console.log("::--values--::",value);
       }
     }
-    apiValues=value.split(",");
+    apiValues=value.split("+");
       apiValues.forEach(element => {
-        console.log("-------",element);
+        // console.log("-------",element);
         apiSet.push(element);
       });
   }else{
-    apiSet=[];
+    // apiSet=[];
   }
 
   
 })();
 
-// php lpogic
-// carray=cookies.split(',');
-
-// // console.log("-----",cookiearray.split(','));
-// for(var i=0; i<carray.length; i++) {
-//   cookiearray=carray[i].split(';');
-//   console.log("-----",carray[i].split(';'));
-// }
-
-// for(i=0;i<cookiearray.length;i++){
-//   key = cookiearray[i].split('=')[0];
-//   // console.log(key);
-//   value = cookiearray[i].split('=')[1];
-//   console.log("Key is : " + key + " and Value is : " + value);
-//   if(key=='username'){
-//     console.log("--inside--");
-//     apiSet.push(value);
-//   }else{
-//     console.log("--outside--");
-//   }
-// }
 // php logic ends
 console.log("--------API SET------",apiSet);
 
@@ -181,7 +190,7 @@ function viewDetails(id,url,s_url){
       document.getElementById(id).innerHTML="";
     }
   });  
-  
+    
 }
 
 

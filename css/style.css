@@ -1373,3 +1373,6 @@ div#exit-input-cover {
 .main-div-option {
     position: absolute;
 }
+.calc{
+    position: relative;
+}
