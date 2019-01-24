@@ -108,9 +108,9 @@ wp_register_script('my_plugin_script', plugins_url('/js/script.js', __FILE__), a
     'jquery'
 ));
 wp_enqueue_script('my_plugin_script');
-wp_register_style('my-plugin-style', plugins_url('outgrowAPI/css/style.css'));
-wp_register_style('my-plugin-style2', plugins_url('outgrowAPI/css/line-awesome/css/line-awesome-font-awesome.css'));
-wp_register_style('my-plugin-style3', plugins_url('outgrowAPI/css/line-awesome/css/line-awesome.css'));
+wp_register_style('my-plugin-style', plugins_url('OutgrowPlugin/css/style.css'));
+wp_register_style('my-plugin-style2', plugins_url('OutgrowPlugin/css/line-awesome/css/line-awesome-font-awesome.css'));
+wp_register_style('my-plugin-style3', plugins_url('OutgrowPlugin/css/line-awesome/css/line-awesome.css'));
 wp_enqueue_style('my-plugin-style');
 wp_enqueue_style('my-plugin-style2');
 wp_enqueue_style('my-plugin-style3');
@@ -119,6 +119,12 @@ wp_enqueue_script('my_plugin_script2');
 
 wp_register_script( 'my_plugin_script3', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), null, false );
 wp_enqueue_script('my_plugin_script3');
+// fonts
+wp_register_style('fonts1','https://fonts.googleapis.com/css?family=Montserrat',array(),null,false);
+wp_enqueue_style('fonts1');
+wp_register_style('fonts2','https://fonts.googleapis.com/css?family=Montserrat:300',array(),null,false);
+wp_enqueue_style('fonts2');
+// font ends
 
 register_activation_hook(__FILE__, 'og_outgrow_calci_api_table');
 register_activation_hook(__FILE__, 'og_outgrow_calci_table');
@@ -162,7 +168,7 @@ function wdm_register_mce_button( $buttons ) {
 // declare a script for the new button
 // the script will insert the shortcode on the click event
 function wdm_add_tinymce_plugin( $plugin_array ) {
-  $plugin_array['wdm_mce_dropbutton'] =  plugins_url('outgrowAPI/tinymce-custom-class.js');
+  $plugin_array['wdm_mce_dropbutton'] =  plugins_url('OutgrowPlugin/tinymce-custom-class.js');
   return $plugin_array;
 }
 
@@ -273,13 +279,13 @@ function og_outgrow_calci_script_page($api){
     // print_r("----------------------------------------------".$apiArray);
 ?>
   
-    <div class="super-class"  id="content"style="position: static;background-image:url(<?php echo plugins_url('./images/og-banner.png', __FILE__) ?>); background-size: cover;background-repeat: no-repeat;background-position: center;">
+    <div class="super-class">
     <!-- <div id="loader-div-class" class="loader-class" > -->
 
     <div id="loader-div-class" style="display:none;position:absolute;z-index:1;margin-left:45%;margin-top:20%;">
         <img class="loader-image" src="https://d1httwb3aso1fd.cloudfront.net/logoAnim.gif" alt="">
     </div>
-    <div class="main-section">
+    <div class="main-section" style="position: static;background-image:url(<?php echo plugins_url('./images/og-banner.png', __FILE__) ?>); background-size: cover;background-repeat: no-repeat;background-position: center;">
         <p class="main-heading">Outgrow Quizzess</p>
 
         <!-- start -->
@@ -598,7 +604,7 @@ function my_custom_favicon() {
     echo '
         <style>
         .dashicons-cake {
-            background-image: url("'.plugins_url().'/outgrowAPI/images/logo.png");
+            background-image: url("'.plugins_url().'/OutgrowPlugin/images/logo.png");
             background-repeat: no-repeat;
             background-position: center; 
         }
