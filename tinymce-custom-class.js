@@ -42,7 +42,7 @@ editorShortcode="[outgrow][/outgrow]";
         var win = editor.windowManager.open({
               title:'Outgrow API',
               width:800,
-              height:400,
+              height:465,
               id:"tiny-mce-custom-og",
               buttons:{
                   text:'Cancel',
