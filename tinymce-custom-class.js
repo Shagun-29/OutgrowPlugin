@@ -55,7 +55,7 @@ editorShortcode="[outgrow][/outgrow]";
                   },
               }
           });
-          document.getElementById("tiny-mce-custom-og-body").innerHTML="<div id='getAPI'><div id='selectAPI'><form method='post'><select name='inptProduct' id='select-custom-api' onclick='selectAPI()'>"
+          document.getElementById("tiny-mce-custom-og-body").innerHTML="<div id='getAPI'><div id='selectAPI'><form method='post'><select name='inptProduct' Placeholder='Enter API KEY' id='select-custom-api' onclick='selectAPI()'>"
        +"</select></form></div></div>";
 
     if(apiSet.length>0){
