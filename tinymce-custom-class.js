@@ -83,9 +83,9 @@ function selectAPI(){
 
   if(response.success==true){
     refinedResponse.forEach(element => {
-      document.getElementById("api-card").insertAdjacentHTML(`afterend`,`<div class="calci-card-row" id="calci-card-row-id"><div class="calci-card-col">
-      <div class="calci-card-body">
-       <div class="calci-card-content" id="${element.id}" onclick="viewDetails('${element.id}','${element.calc_url}','${element.short_url}')">${element.meta_data.title}</div>
+      document.getElementById("api-card").insertAdjacentHTML(`afterend`,`<div class="shortcodecard-row" id="shortcodecard-row-id"><div class="shortcodecard-col">
+      <div class="shortcodecard-body">
+       <div class="shortcodecard-content" id="${element.id}" onclick="viewDetails('${element.id}','${element.calc_url}','${element.short_url}')">${element.meta_data.title}</div>
        </div>
       </div></div>`);
     });
@@ -114,7 +114,11 @@ function viewDetails(id,url,s_url){
       `</div>`+
       `<div id="section-div-2"><div id="shortcode-text">COPY HERE</div></div></div>`;
 
-     
+      // editor.addButton('myblockquotebtn', {
+      //   title: 'My Blockquote',
+      //   cmd: 'myBlockquoteBtnCmd'
+      //   // image: url + '/img/quote.png'
+      // });
 
   // toggle starts
     // document.getElementById(id).classList.toggle('toggle-on');
