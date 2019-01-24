@@ -561,6 +561,7 @@ function selectKey(k){
   document.body.style.backgroundColor="white";
   addHide("section-round");
   addHide("get-calci-name");
+  result("Calculator");
   document.getElementById("result1").innerHTML="";
   document.getElementById("result-quiz").innerHTML="";
   document.getElementById("result3").innerHTML="";

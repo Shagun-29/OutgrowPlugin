@@ -25,10 +25,7 @@ editorShortcode="[outgrow][/outgrow]";
 
 //read cookies end
 
-
-
 (function() {
-
   tinymce.PluginManager.add( 'custom_class', function( editor, url ) {
       // // Add Button to Visual Editor Toolbar
       editor.addButton('custom_class', {
@@ -86,9 +83,9 @@ function selectAPI(){
 
   if(response.success==true){
     refinedResponse.forEach(element => {
-      document.getElementById("api-card").insertAdjacentHTML(`afterend`,`<div class="calci-card-row" id="calci-card-row-id"><div class="calci-card-col" onclick="viewDetails('${element.id}','${element.calc_url}','${element.short_url}')">
+      document.getElementById("api-card").insertAdjacentHTML(`afterend`,`<div class="calci-card-row" id="calci-card-row-id"><div class="calci-card-col">
       <div class="calci-card-body">
-       <div class="calci-card-content" id="div-content">${element.meta_data.title}<div id=${element.id}></div></div>
+       <div class="calci-card-content" id="${element.id}" onclick="viewDetails('${element.id}','${element.calc_url}','${element.short_url}')">${element.meta_data.title}</div>
        </div>
       </div></div>`);
     });
@@ -106,22 +103,46 @@ function selectAPI(){
 }
 
 function viewDetails(id,url,s_url){
-  document.getElementById(id).classList.toggle('toggle-on');
-  $(document).ready(function(){
-    if ( $('#'+id).hasClass('toggle-on') ) {
-      // document.getElementById("div-content").innerHTML="<div id='copy-shortcode'></div>";
-  document.getElementById(id).innerHTML=`<div class="section-header"><div id="section-div-1"><div id="embed1" class="embed" onclick="getEmbedCode('embed-1')">embed1</div><div id="embed2" class="embed" onclick="getEmbedCode('embed-2')">embed2</div><div id="embed3" class="embed" onclick="getEmbedCode('embed-3')">embed3</div><div id="embed4" class="embed" onclick="getEmbedCode('embed-4')">embed4</div><div id="embed5" class="embed" onclick="getEmbedCode('embed-5')">embed5</div></div>`+
-  `<div class="section-code" id="shortcode-div">---------------Welcome--------------- </div></div>`;
-    }else{
-      document.getElementById(id).innerHTML="";
-    }
-  });  
+  console.log("::id::",id,"::url::",url,"::surl::",s_url);
+  document.getElementById(id).innerHTML=`<div id="shortcode-header"></div>`+
+      `<div id="main-div-section"><div id="section-div-1">`+
+      `<div id="embed1" class="embed" onclick="getEmbedCode('embed1')">EMBED + MOBILE FULL SCREEN</div>`+
+      `<div id="embed2" class="embed" onclick="getEmbedCode('embed2')">EMBED + MOBILE IN PAGE</div>`+
+      `<div id="embed3" class="embed" onclick="getEmbedCode('embed3')">POP UP</div>`+
+      `<div id="embed4" class="embed" onclick="getEmbedCode('embed4')">CHAT</div>`+
+      `<div id="embed5" class="embed" onclick="getEmbedCode('embed5')">CUSTOM EMBED</div>`+
+      `</div>`+
+      `<div id="section-div-2"><div id="shortcode-text">COPY HERE</div></div></div>`;
+
+     
+
+  // toggle starts
+    // document.getElementById(id).classList.toggle('toggle-on');
+    // $(document).ready(function(){
+    //   if ( $('#'+id).hasClass('toggle-on') ) {
+    //     document.getElementById("div-content").innerHTML="<div id='copy-shortcode'></div>";
+    // document.getElementById(id).innerHTML=`<div class="section-header">`+
+    //   `<div id="section-div-1">`+
+    //   `<div id="embed1" class="embed" onclick="getEmbedCode('embed1')">EMBED + MOBILE FULL SCREEN</div>`+
+    //   `<div id="embed2" class="embed" onclick="getEmbedCode('embed2')">EMBED + MOBILE IN PAGE</div>`+
+    //   `<div id="embed3" class="embed" onclick="getEmbedCode('embed3')">POP UP</div>`+
+    //   `<div id="embed4" class="embed" onclick="getEmbedCode('embed4')">CHAT</div>`+
+    //   `<div id="embed5" class="embed" onclick="getEmbedCode('embed5')">CUSTOM EMBED</div>`+
+    //   `</div></div>`
+    // `<div id="shortcode-text"><div id="shgn">---------------Welcome---------------</div></div>`;
+      //   }else{
+      //     document.getElementById(id).innerHTML="";
+      //   }
+      // });
+  //toggle ends 
     
 }
 
-
 function getEmbedCode(type){
-  document.getElementById('shortcode-div').innerText=type;
+  console.log("-----------------------",type,"-----------------------");
+  console.log(document.getElementById("shortcode-text"));
+  document.getElementById("shortcode-text").innerText=type;  
+  // document.getElementById(type).style.backgroundColor="red";
 }
 
 // dropbutton starts
