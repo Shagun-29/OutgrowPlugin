@@ -1531,3 +1531,6 @@ select.select-custom{
 .calc{
     position: relative;
 }
+.get-full{
+    width:100%;
+}
