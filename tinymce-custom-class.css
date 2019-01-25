@@ -170,8 +170,18 @@ div#shortcodecard-row-id {
 }
 #tiny-mce-custom-og {
     background: #fafafa!important;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
+. {
+    font-size: 14px;
+    font-family: "Material";
+    color: rgb( 251, 95, 102 );
+    position: absolute;
+    left: 565.044px;
+    top: 391.22px;
+    z-index: 151;
+  }
+  
 
   
 
