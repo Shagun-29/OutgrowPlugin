@@ -44,6 +44,7 @@ editorShortcode="[outgrow][/outgrow]";
               width:800,
               height:465,
               id:"tiny-mce-custom-og",
+              class:"editor-window",
               buttons:{
                   text:'Cancel',
                   onclick: function() {
