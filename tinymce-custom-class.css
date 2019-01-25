@@ -56,3 +56,123 @@ div#section-div-2 {
 	margin-left: 70px;
 	margin-top: 50px;
 }
+
+  
+div#tiny-mce-custom-og-head{
+    border: 0;
+    min-height: 0;
+    float: left;
+    width: 100%;
+    background: #fafafa;
+  }
+
+  div#tiny-mce-custom-og-title{
+    padding: 0;
+    text-align: center;
+    float: left;
+    width: 100%;
+    position: relative;
+    color: #fb5f66;
+    line-height: 18px;
+    font-size: 24px;
+    font-family: Montserrat;
+    margin: 20px 0;
+  }
+  div#tiny-mce-custom-og-dragh{
+      width: 0;
+  }
+  #tiny-mce-custom-og-head .mce-close{
+    right: -4px;
+    top: -14px;
+    width: 0px;
+    height: 0px; 
+  }
+  #tiny-mce-custom-og-head .mce-close i.mce-ico.mce-i-remove{
+  height: 20px;
+    width: 20px;
+  }
+  #tiny-mce-custom-og-head .mce-close i.mce-ico.mce-i-remove::after {
+    content: '\f191';
+    font: normal normal normal 24px/1 LineAwesome;
+    color: rgba( 255, 255, 255, 0.502 );
+    line-height: 0.75;
+}
+#tiny-mce-custom-og-head .mce-close i.mce-ico.mce-i-remove::before{
+display :none;
+}
+div#tiny-mce-custom-og-body {
+    float: left;
+    width: 100%;
+    padding: 0 24px;
+}
+div#getAPI {
+    margin: 0;
+    float: left;
+    width: 100%;
+}
+.div-input-field .input-field-text {
+    border: 0;
+    box-shadow: none;
+    font-family: Montserrat;
+    font-size: 12px;
+    color: rgba( 102, 102, 102, 0.6 );
+    user-select: none;
+    cursor: pointer;
+    background: #fafafa;
+}
+div#mceu_62.mce-container {
+    float: left;
+    width: 100%;
+}
+div#selectAPI {
+    float: left;
+    width: 100%;
+    margin: 10px 0 20px 0!important;
+    position: relative!important;
+}
+.toggle-on{
+    margin: 0!important;
+}
+form {
+    float: left!important;
+    width: 100%!important;
+   
+}
+div#selectAPI form::after{
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid rgb( 102, 102, 102 );
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    
+}
+
+select#select-custom-api {
+    padding: 0;
+    float: left;
+    width: 100%;
+    box-shadow: none;
+    -webkit-appearance: none;
+    font-family: Montserrat;
+    color: rgb( 102, 102, 102 );
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba( 0, 0, 0,0.102 );
+}
+div#shortcodecard-row-id {
+    float: left;
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid rgb( 226, 226, 226 );
+    border-bottom: 0;
+}
+#tiny-mce-custom-og {
+    background: #fafafa!important;
+    overflow: hidden;
+}
+
+  
+
+  
