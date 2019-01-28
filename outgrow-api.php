@@ -111,7 +111,7 @@ wp_enqueue_script('my_plugin_script');
 wp_register_style('my-plugin-style', plugins_url('outgrowPlugin/css/style.css'));
 wp_register_style('my-plugin-style2', plugins_url('outgrowPlugin/css/line-awesome/css/line-awesome-font-awesome.css'));
 wp_register_style('my-plugin-style3', plugins_url('outgrowPlugin/css/line-awesome/css/line-awesome.css'));
-wp_register_style('my-plugin-style4', plugins_url('https://fonts.googleapis.com/icon?family=Material+Icons'));
+wp_register_style('my-plugin-style4','https://fonts.googleapis.com/icon?family=Material+Icons');
 wp_enqueue_style('my-plugin-style');
 wp_enqueue_style('my-plugin-style2');
 wp_enqueue_style('my-plugin-style3');
