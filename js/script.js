@@ -65,6 +65,8 @@ var usedApi="";
   
   
   function cat01(){
+    document.getElementById("super-code-id").classList.add("super-get-code");
+    document.getElementById("super-code-id").classList.remove("super-get-full");
     displayBlock("extra-option");
     document.getElementById('extra-option').innerHTML="<div class='facebook-link'><div class='fb-link-text'>Facebook Comments</div><div class='span-fb-text'><i class='la la-question-circle la-2x'></i></div><div class='facebook-div' id='facebook-div' onclick='toggleSwitch()'><input type='text'  class='facebook-input-type' ><span class='facebook-span' id='facebook-span'></span></div></div>";
     document.getElementById('text-inside').classList.remove('text-area-enlarge');
@@ -78,6 +80,8 @@ var usedApi="";
   function cat02(){
     displayNone("extra-option");
     document.getElementById('text-inside').classList.add('text-area-enlarge');
+    document.getElementById("super-code-id").classList.remove("super-get-code");
+    document.getElementById("super-code-id").classList.add("super-get-full");
     addActiveClass("cat02");
     removeActiveClass("cat01");
     removeActiveClass("cat03");
@@ -88,6 +92,8 @@ var usedApi="";
   
   }
   function cat03(){
+    document.getElementById("super-code-id").classList.add("super-get-code");
+    document.getElementById("super-code-id").classList.remove("super-get-full");
     displayBlock("extra-option");
     document.getElementById('text-inside').classList.remove('text-area-enlarge');
     document.getElementById('extra-option').innerHTML=
@@ -115,6 +121,8 @@ var usedApi="";
     document.getElementById('text-inside').innerText='[outgrow type="pop_up" id="'+id_used+ '" data_url="'+url3+'" ][/outgrow]';
   }
   function cat04(){
+    document.getElementById("super-code-id").classList.add("super-get-code");
+    document.getElementById("super-code-id").classList.remove("super-get-full");
     displayBlock("extra-option");
     document.getElementById('text-inside').classList.remove('text-area-enlarge');
     document.getElementById('extra-option').innerHTML="<div class='extra-option-chat-button' onclick='chatLeft()' id='chatLeft'><div class='bottom-img'><img class='bottom-min' src='https://dlvkyia8i4zmz.cloudfront.net/o1PZBSLiQuq5HTCCyrMt_bottom_left.png'></div><div class='bottom-text'>Bottom Left</div></div><div onclick='chatRight()' class='extra-option-chat-button' id='bottomRight'><div class='bottom-img'><img class='bottom-min' class='bottom-img' src='https://dlvkyia8i4zmz.cloudfront.net/5uGcgvoRIie2dwQNk9kv_bottom_right.png'></div><div class='bottom-text'>Bottom Right</div></div>";
@@ -128,6 +136,8 @@ var usedApi="";
     document.getElementById('text-inside').innerText='[outgrow type="chat" " data_url="'+url3+'" ][/outgrow]';
   }
   function cat05(){
+    document.getElementById("super-code-id").classList.add("super-get-code");
+    document.getElementById("super-code-id").classList.remove("super-get-full");
     displayBlock("extra-option");
     document.getElementById('text-inside').classList.remove('text-area-enlarge');
     document.getElementById('extra-option').innerHTML="<div><div class='extra-option-custom' id='desktop'>"+

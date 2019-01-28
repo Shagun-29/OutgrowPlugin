@@ -111,7 +111,11 @@ wp_enqueue_script('my_plugin_script');
 wp_register_style('my-plugin-style', plugins_url('outgrowPlugin/css/style.css'));
 wp_register_style('my-plugin-style2', plugins_url('outgrowPlugin/css/line-awesome/css/line-awesome-font-awesome.css'));
 wp_register_style('my-plugin-style3', plugins_url('outgrowPlugin/css/line-awesome/css/line-awesome.css'));
+<<<<<<< HEAD
 wp_register_style('my-plugin-style4','https://fonts.googleapis.com/icon?family=Material+Icons');
+=======
+wp_register_style('my-plugin-style4', 'https://fonts.googleapis.com/icon?family=Material+Icons', array() , null , false);
+>>>>>>> 70380661ce67970c310636ac7c1fbd0d0b1396fe
 wp_enqueue_style('my-plugin-style');
 wp_enqueue_style('my-plugin-style2');
 wp_enqueue_style('my-plugin-style3');

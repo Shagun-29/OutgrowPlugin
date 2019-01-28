@@ -55,13 +55,14 @@ editorShortcode="[outgrow][/outgrow]";
                   },
               }
         });
-      //     document.getElementById("tiny-mce-custom-og-body").innerHTML="<div id='getAPI'><div id='selectAPI'><form method='post'><select name='inptProduct' Placeholder='Enter API KEY' id='select-custom-api' onclick='selectAPI()'>"
-      //  +"</select></form></div></div>";
+        
+          document.getElementById("tiny-mce-custom-og-body").innerHTML="<div id='getAPI'><div id='selectAPI'><form method='post'><select name='inptProduct' Placeholder='Enter API KEY' id='select-custom-api' onclick='selectAPI()'>"
+       +"</select></form></div></div>";
       
-      document.getElementById("tiny-mce-custom-og-body").innerHTML="<div id='getAPI'>"+
-      "<div class='div-input-field'><input type='text' class='input-field-text' onclick='showSelectOptions()' placeholder='ENTER API KEY' ></div>"+
-      "<div id='selectAPI' class='hide'><form method='post'><select name='inputProduct' Placeholder='Enter API KEY' id='select-custom-api' onclick='selectAPI()'></select></form></div>"+
-      "</div>";
+      // document.getElementById("tiny-mce-custom-og-body").innerHTML="<div id='getAPI'>"+
+      // "<div class='div-input-field'><input type='text' class='input-field-text' onclick='showSelectOptions()' placeholder='ENTER API KEY' ></div>"+
+      // "<div id='selectAPI' class='hide'><form method='post'><select name='inputProduct' Placeholder='Enter API KEY' id='select-custom-api' onclick='selectAPI()'></select></form></div>"+
+      // "</div>";
 
 
     if(apiSet.length>0){
