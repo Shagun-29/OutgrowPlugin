@@ -313,7 +313,7 @@ button:hover{
 
 #text-inside {
     width: 100%;
-    font-size: 15px;
+    font-size: 14px;
     color: #666666;
     float: left;
     border: none;
@@ -323,6 +323,7 @@ button:hover{
     padding: 10px;
     resize: none;
     background: #fff;
+    font-family: Montserrat;
 }
 .get-code p {
     font-family: Montserrat;
@@ -331,55 +332,13 @@ button:hover{
     margin-bottom: 10px;
 }
 
-@media only screen and (max-width: 640px) {
-  
-    input.large-text, textarea.large-text {
-        margin-top: 2%;
-        width: 96%;
-        margin-left: 1%;
-        font-style: #c1c1c1;
-    }
-    .final_outgrow-data-button {
-        width: 50%;
-        margin-left: 25%;
-        margin-top:2%;
-    }
-    #show-data{
-        width: 40% !important;
-        margin-left: 10% !important;
-        margin-top:2%;
-    }
-    #delete-data{
-        width: 40% !important;
-        /* margin-left: 25% !important; */
-        margin-top:2%;
-    }
-    .calci-view {
-        width: 100%;
-        
-    }
-    button.view-detail {
-        width: 100%;
-        height: 37px;
-    }
-    .main-heading{
-       
-        font-size: 22px;
-    }
-    .calci-view {
-        width: 32%;
-    }
-    button.view-detail {
-        width: 99%;
-        height: 22px;
-    }
-}
 
 
 
 
 body{
     position: relative;
+    font-family:Montserrat;
 }
 /* alertbox */
 .alert {
@@ -661,11 +620,11 @@ span#close {
     border: 1px solid #d4d3d3;
     padding: 15px 20px;
     /* max-width: 472px; */
-    position: relative;
+    /* position: relative; */
     background: #fff;
 }
 .getcode-container{
-    margin-left: 10px;
+    margin-left: 0px;
 }
 
 /* for upper section */
@@ -749,7 +708,12 @@ li {
     textarea:focus, input:focus{
         outline: none!important;
     }
-      
+    .extra-option-context {
+
+        float: left;
+        width: 100%;
+    
+    }
     ul.main-list {
         width: 630px;
         height: 41px;
@@ -892,6 +856,7 @@ div#super-extra-option {
     float: left;
     width: 100%;
     padding: 30px 0px;
+    position: relative;
 } 
 
 #alert-div-1 {
@@ -936,7 +901,7 @@ div#extra-option {
     
     float: left;
     /* margin-top: 7px; */
-    width: 35%;
+    width: 40%;
 }
 div#exit-intent {
     /* margin-top: 8px; */
@@ -948,10 +913,11 @@ div#exit-intent {
     width: 100%;
     display: flex;
     align-items: center;
+    margin-top: 4px;
 }
 .super-get-code {
     float: right;
-    width: 65%;
+    width: 60%;
    
 }
 .extra-option-chat-button {
@@ -971,9 +937,13 @@ div#exit-intent {
     float: left;
     width: 100%;
     /* border: 1px solid #d6d6d7; */
-    font-size: 16px;
     display: relative;
     color: #666666;
+}
+.extra-option-context p{
+    margin: 0;
+    font-size: 16px; 
+    font-family:Montserrat;
 }
 input.input-dim {
     width: 40px;
@@ -983,6 +953,7 @@ input.input-dim {
     margin: 0;
     box-shadow: none;
     text-align: center;
+    font-size: 13px;
 }
 .super-input-dim {
     float: left;
@@ -1007,6 +978,7 @@ select.select-custom {
     line-height: 1;
     -webkit-appearance: none;
     padding: 0 16px 0 4px;
+    font-size: 13px;
 }
 .super-input-dim::after {
     border-left: 4px solid transparent;
@@ -1039,6 +1011,7 @@ input[type=text]:focus {
     margin-top: 4px;
     float: left;
     width: 100%;
+    font-family: Montserrat;
 
 }
 .classic-img,.drawerl-img,.drawerr-img{
@@ -1066,15 +1039,15 @@ input[type=text]:focus {
     width: 93% !important;
 } */
 span.facebook-span,span.time-span {
-    width: 14px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
     background-color: white;
     position: absolute;
     border-radius: 50%;
     transition: .3s ease-in;
     top: 4px;
     left:4px;
-  
+    box-shadow: 3px 2px 6px rgba(0, 0, 0, 0.54);
 }
 .facebook-div,.time-div {
     width: 50px;
@@ -1082,12 +1055,12 @@ span.facebook-span,span.time-span {
     background-color: #a8a8a8;
     position: relative;
     cursor: pointer;
-    padding: 0px 0px 0px 4px;
+    padding: 0px 0px 2px 4px;
     float: left;
 }
 .time-div {
     margin-left: 38px;
-    padding: 1px 0px 0px 4px!important;
+    padding: 1px 0px 2px 4px!important;
 }
 input.facebook-input-type,input.time-input-type {
     padding: 0;
@@ -1104,9 +1077,9 @@ input.facebook-input-type{
     content: "Off";
     color: #fff;
     font-weight: 400;
-    margin-left: 23px;
+    margin-left: 22px;
     font-size: 12px;
-    top: -2px;
+    top: 0px;
     position: relative;
 }
 .facebook-span:after,.time-span:after {
@@ -1115,17 +1088,26 @@ input.facebook-input-type{
     font-weight: 400;
     position: absolute;
     left: -25px;
-    top: -2px;
+    top: -1px;
     font-size: 12px;
+}
+.facebook-span:before {
+    font-size: 13px!important;
+    top: -2px!important;
+}
+.facebook-span::after {
+    font-size: 13px!important;
+    top: -3px!important;
 }
 .la-question-circle{
     color:#8e989f;
 }
 .fb-link-text {
     float: left;
-    font-size: 14px;
+    font-size: 13px;
     color: #62696d;
     margin-right: 15px;
+    font-family: Montserrat;
 }
 .span-fb-text {
     float: left;
@@ -1302,7 +1284,7 @@ div#exit-input-cover {
     span.select-img {
         width: 10%;
         /* top: -27px; */
-        margin-top: 14px;
+        margin-top: 18px;
     }
     span.select-img i {
         font-size: 14px;
@@ -1527,6 +1509,297 @@ select.select-custom{
         margin-left: 36px;
     }
   }
+  @media (min-width: 320px) and (max-width: 440px) {
+    .main-heading {
+        font-size: 20px;
+    }
+    .main-text-area {
+        width: 266px;
+        height: 40px;
+    }
+    input.select-box{
+        padding: 11px;
+        width: 85%;
+        font-size:12px; 
+    }
+    span.select-img{
+        margin-top: 17px;
+        width: 15%;
+    }
+    .select-img img{
+        width: 10px;
+    }
+    ul.main-list{
+        width: 266px;
+        height: 38px;
+    }
+    .option{
+        font-size: 10px;
+        padding: 10px;
+    }
+    .list-close {
+        margin-right: 18px;
+        font-size: 12px;
+    }
+    i#icon-la-calc, i#icon-la-quiz, #icon-la-poll {
+        font-size: 22px;
+    
+    }
+    .calci-view-icon{
+        float: left;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+    }
+    .section-1-round{
+        width:100%;
+    }
+    #section-1{
+        float: right;
+        margin: 0;
+        padding: 0 10px;
+    }
+    .super-class{
+        margin-top: 40px;
+    }
+    .calci-view-icon{
+        float: left;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 10px 34px;
+    }
+    .align-icon {
+        margin-right: 22px;
+    margin-bottom: 0;
+    }
+    .align-icon:first-child {
+        margin-top: 0px;
+    }
+    .align-icon:last-child {
+        margin-bottom: 0px;
+        margin-right: 0;
+    }
+    #get-calci-name {
+        font-size: 20px;
+float: left;
+position: relative;
+top: -26px;
+padding-bottom: 20px;
+left: 5px;
+    }
+    .section-2 {
+        float: left;
+        margin-top:0px;
+        width: 100%;
+    }
+    #result1 {
+        margin-left: 0px;
+    }
+    .calci-card-row {
+        width: 100%;
+    
+    }
+    .calci-card-body{
+        margin-bottom: 20px;
+    }
+    div#modal-content{
+        max-width: 320px;
+    }
+    .modal-container {
+    padding: 15px;
+}
+.modal-text{
+    font-size: 16px;
+text-align: center;
+font-weight: bold;
+}
+.b1{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius:0px;
+}
+.b4 {
+    border-top-right-radius:0px;
+    border-bottom-right-radius:0px;
+    border-right: 0;
+    border-bottom: 1px solid #d6d6d7;
+}
+.modal-button{
+    width: 100%;
+    border: 1px solid #d6d6d7;
+    margin-bottom: 12px;
+    font-size: 11px;
+    position: relative;
+}
+i.la.la-info-circle {
+    display: none;
+
+}
+.modal-button::after {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #32373c80;
+    content: '';
+    position: absolute;
+    right: 12px;
+    top: 18px;
+
+}
+#text-inside{
+    background: #f3f3f3;
+font-size: 11px;
+line-height: 1.545;
+padding: 8px;
+}
+.get-code p {
+    font-size: 13px;
+    font-weight: bold;
+}
+.msg-copy{
+    width: 55px;
+    height: 27px;
+    font-size: 11px;
+}
+.super-get-code {
+    width: 100%;
+
+}
+div#extra-option {
+    width: 100%;
+}
+.facebook-span::before, .time-span::before {
+    font-size: 11px;
+}
+.facebook-span::after, .time-span::after {
+    font-size: 11px;
+
+}
+.span-fb-text i{
+    font-size: 16px;
+    color: #707070;
+}
+.fb-link-text{
+    font-size: 11px;
+}
+.facebook-link {
+    position: absolute;
+    z-index: 9;
+    left: 12px;
+    top: 37px;
+}
+.get-code p {
+    font-size: 13px;
+    margin-bottom: 32px;
+    font-weight: bold;
+}
+.get-code{
+    padding: 11px;
+}
+span#close {
+    top: 3px;
+    right: 5px;
+    font-size: 20px!important;
+    color: rgba(134, 128, 128, 0.5);
+}
+.facebook-div {
+    padding-top: -2px!important;
+    padding-right: 0px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+}
+div#super-extra-option {
+    padding: 5px 0px;
+} 
+.main-div-option{
+    position: absolute;
+top: 65px;
+left: 12px;
+}
+.extra-option-button {
+    padding: 8px 11px;
+}
+.time-link{
+    position: absolute;
+top: 118px;
+left: 13px;
+}
+.time-link-text {
+    font-size: 12px;
+
+}
+div#modal-content {
+    top: -8%;
+
+}
+#cat031 {
+    padding: 8px 21px;
+}
+.extra-option-chat-button {
+    font-size: 12px;
+    padding: 10px 10px;
+    margin-right: 0;
+
+}
+#chatLeft{
+    position: absolute;
+top: 44px;
+left: 13px;
+padding: 10px 14px;
+}
+#bottomRight{
+    position: absolute;
+top: 44px;
+right: 62px;
+}
+.extra-option-context p{
+    font-size: 12px;
+    font-weight: 500;
+    color: #484848;
+}
+.super-dim {
+    font-size: 11px;
+
+}
+.super-input-dim::after {
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid #32373c80;
+
+}
+input.input-dim {
+    width: 36px;
+    height: 24px!important;
+    font-size: 11px!important;
+
+}
+select.select-custom{
+    font-size: 11px!important;
+    height: 24px !important;
+    padding: 0 14px 0 6px;
+}
+.extra-option-context {
+    padding-left: 14px;
+    position: absolute;
+    top: 42px;
+}
+.inpage + #super-extra-option .get-code p {
+
+    margin-bottom: 8 !important;
+
+}
+.popup + #super-extra-option .get-code p{
+    margin-bottom: 120px;
+}
+.chat + #super-extra-option .get-code p{
+    margin-bottom: 95px;
+}
+.custom + #super-extra-option .get-code p{
+margin-bottom: 256px;
+}
+}
+
 
 .calc{
     position: relative;
@@ -1534,3 +1807,7 @@ select.select-custom{
 .get-full{
     width:100%;
 }
+
+
+
+

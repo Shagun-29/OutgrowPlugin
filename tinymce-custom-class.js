@@ -94,14 +94,14 @@ function selectAPI(){
     refinedResponse.forEach(element => {
       document.getElementById("api-card").insertAdjacentHTML(`afterend`,`<div class="shortcodecard-row" id="shortcodecard-row-id"><div id="shortcodecard-col">
       <div id="shortcode-card-body">
-       <div class="shortcodecard-content" id="${element.id}" onclick="viewDetails('${element.id}','${element.calc_url}','${element.short_url}')">${element.meta_data.title}</div>
+       <div class="shortcodecard-content" id="${element.id}" onclick="viewDetails('${element.id}','${element.calc_url}','${element.short_url}')"><i class="material-icons">extension</i>${element.meta_data.title}</div>
        </div>
       </div></div>`);
     });
   
       
    }
-   document.getElementById("tiny-mce-custom-og-body").insertAdjacentHTML("afterend","</div>");
+   document.getElementById("").insertAdjacentHTML("afterend","</div>");
    },
 
    error: function(err){
@@ -116,8 +116,8 @@ function viewDetails(id,url,s_url){
   console.log("::id::",id,"::url::",url,"::surl::",s_url);
   document.getElementById(id).innerHTML=`<div id="shortcode-header"></div>`+
       `<div id="main-div-section"><div id="section-div-1">`+
-      `<div id="embed1" class="embed" onclick="getEmbedCode('embed1')"><i class="material-icons">extension</i>EMBED + MOBILE FULL SCREEN</div>`+
-      `<div id="embed2" class="embed" onclick="getEmbedCode('embed2')">EMBED + MOBILE IN PAGE</div>`+
+      `<div id="embed1" class="embed" onclick="getEmbedCode('embed1')">EMBED + MOBILE FULL SCREEN <i class="la la-info-circle"></i></div>`+
+      `<div id="embed2" class="embed" onclick="getEmbedCode('embed2')">EMBED + MOBILE IN PAGE <i class="la la-info-circle"></i></div>`+
       `<div id="embed3" class="embed" onclick="getEmbedCode('embed3')">POP UP</div>`+
       `<div id="embed4" class="embed" onclick="getEmbedCode('embed4')">CHAT</div>`+
       `<div id="embed5" class="embed" onclick="getEmbedCode('embed5')">CUSTOM EMBED</div>`+

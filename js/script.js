@@ -140,8 +140,8 @@ var usedApi="";
     document.getElementById("super-code-id").classList.remove("super-get-full");
     displayBlock("extra-option");
     document.getElementById('text-inside').classList.remove('text-area-enlarge');
-    document.getElementById('extra-option').innerHTML="<div><div class='extra-option-custom' id='desktop'>"+
-    "Desktop"+
+    document.getElementById('extra-option').innerHTML="<div class='extra-option-context'><div class='extra-option-custom' id='desktop'>"+
+    "<p>Desktop </p>"+
     "<div class='custom-dim-head'>"+
     "<div class='super-dim'>Height</div>"+
     "<div class='super-input-dim'>"+
@@ -157,9 +157,9 @@ var usedApi="";
       "<select name='selectwDesktop' id='selectwDesktop' class='select-custom' onchange='getWidthD()'><option>%</option><option selected>px</option><option>vh</option></select>"+
     "</div>"+
   "</div>"+
-    "</div></div>"+
+    "</div>"+
     // tablet
-    "<div><div class='extra-option-custom' id='tablet' >Tablet"+
+    "<div class='extra-option-custom' id='tablet' ><p>Tablet</p>"+
     "<div class='custom-dim-head'>"+
     "<div class='super-dim'>Height</div>"+
     "<div class='super-input-dim'>"+
@@ -175,9 +175,9 @@ var usedApi="";
       "<select class='select-custom' id='selectwTablet' onchange='getWidthT()' name='selectwTablet'><option>%</option><option selected>px</option><option>vh</option></select>"+
     "</div>"+
   "</div>"+
-    "</div></div>"
+    "</div>"
     // mobile
-    +"<div><div class='extra-option-custom' id='mobile'>Mobile"+
+    +"<div class='extra-option-custom' id='mobile'><p>Mobile</p>"+
     "<div class='custom-dim-head'>"+
     "<div class='super-dim'>Height</div>"+
     "<div class='super-input-dim'>"+
