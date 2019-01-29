@@ -183,6 +183,7 @@ div#shortcodecard-row-id {
   }
   
 
-  
-
-  
+  .material-icons {
+    font-family: 'Material Icons' !important;
+    color: rgb( 251, 95, 102 ) !important;
+}

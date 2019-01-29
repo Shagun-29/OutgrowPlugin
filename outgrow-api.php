@@ -104,18 +104,21 @@ static $cookie_value;
 static $apiArray=array();
 // include_once "fetch.php";
 add_action("admin_menu", "og_outgrow_calci");
+
 wp_register_script('my_plugin_script', plugins_url('/js/script.js', __FILE__), array(
     'jquery'
 ));
 wp_enqueue_script('my_plugin_script');
+
+wp_register_style('my-plugin-style4', 'https://fonts.googleapis.com/icon?family=Material+Icons');
+wp_enqueue_style('my-plugin-style4');
+
 wp_register_style('my-plugin-style', plugins_url('outgrowPlugin/css/style.css'));
 wp_register_style('my-plugin-style2', plugins_url('outgrowPlugin/css/line-awesome/css/line-awesome-font-awesome.css'));
 wp_register_style('my-plugin-style3', plugins_url('outgrowPlugin/css/line-awesome/css/line-awesome.css'));
-wp_register_style('my-plugin-style4', 'https://fonts.googleapis.com/icon?family=Material+Icons', array() , null , false);
 wp_enqueue_style('my-plugin-style');
 wp_enqueue_style('my-plugin-style2');
 wp_enqueue_style('my-plugin-style3');
-wp_enqueue_style('my-plugin-style4');
 wp_register_script( 'my_plugin_script2', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), null, false );
 wp_enqueue_script('my_plugin_script2');
 wp_register_script( 'my_plugin_script3', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), null, false );
@@ -540,6 +543,7 @@ function og_display_outgrow_calci($atts,$content,$tag){
         </style>
         <iframe id='og_iframe' src='$values[data_url]' style='border: none; overflow: hidden;' scrolling='yes'></iframe>";
         }  
+        print("---------------shortcode editing-----------");
 }
 add_shortcode('outgrow','og_display_outgrow_calci');
 
