@@ -110,7 +110,7 @@ wp_register_script('my_plugin_script', plugins_url('/js/script.js', __FILE__), a
 ));
 wp_enqueue_script('my_plugin_script');
 
-wp_register_style('my-plugin-style4', 'https://fonts.googleapis.com/icon?family=Material+Icons');
+wp_register_style('my-plugin-style4','https://fonts.googleapis.com/icon?family=Material+Icons');
 wp_enqueue_style('my-plugin-style4');
 
 wp_register_style('my-plugin-style', plugins_url('outgrowPlugin/css/style.css'));

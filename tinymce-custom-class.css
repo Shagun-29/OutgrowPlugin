@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 i.mce-i-icon {
 	font: normal 20px/1 'dashicons';
 	padding: 0;
@@ -102,8 +103,9 @@ display :none;
 }
 div#tiny-mce-custom-og-body {
     float: left;
-    width: 100%;
+    width: 100%!important;
     padding: 0 24px;
+    overflow-y: scroll;
 }
 div#getAPI {
     margin: 0;
@@ -130,9 +132,9 @@ div#selectAPI {
     margin: 10px 0 20px 0!important;
     position: relative!important;
 }
-.toggle-on{
+/* div#selectAPI.toggle-on{
     margin: 0!important;
-}
+} */
 form {
     float: left!important;
     width: 100%!important;
@@ -169,21 +171,62 @@ div#shortcodecard-row-id {
     border-bottom: 0;
 }
 #tiny-mce-custom-og {
-    background: #fafafa!important;
-    /* overflow: hidden; */
+    background: #fafafa !important;
+    width: 800px !important;
+    height: 564px !important;
 }
-. {
-    font-size: 14px;
-    font-family: "Material";
-    color: rgb( 251, 95, 102 );
-    position: absolute;
-    left: 565.044px;
-    top: 391.22px;
-    z-index: 151;
-  }
-  
 
-  .material-icons {
+#section-div-1 .embed{
+    font-size: 12px;
+    font-family: "Montserrat";
+    color: rgba( 102, 102, 102, 0.702 );
+    line-height: 3.583;
+    border: 1px solid rgb( 226, 226, 226 ) ;
+  padding: 0 15px;
+  float: left;
+    width: 100%;
+    margin: 0;
+    border-bottom: 0;
+    border-left: 0;
+    background: #f8f8f8;
+}
+
+#shortcode-card-body{
+font-size: 13px;
+font-family: "Montserrat";
+color: rgb( 102, 102, 102 );
+font-weight: bold;
+}
+div#shortcodecard-row-id{
+    padding: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb( 226, 226, 226 );
+}
+#shortcode-card-body .shortcodecard-content{
+    padding: 14px;
+}
+#shortcode-card-body .shortcodecard-content i {
+
+    font-family: Material Icons !important;
+    color: rgb( 251, 95, 102 );
+    font-size: 14px;
+    margin-right: 10px;
+}
+.material-icons {
     font-family: 'Material Icons' !important;
     color: rgb( 251, 95, 102 ) !important;
 }
+
+
+div#section-div-1{
+    margin:0!important;
+    margin-left: -14px !important;
+    margin-top: -15px !important;
+    float: left;
+width: 100%;
+}
+#main-div-section{
+    float: left;
+    width: 224px;
+}
+

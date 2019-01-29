@@ -14,17 +14,17 @@
                          Get Embed Code
                      </div>
             <ul class="button-group">
-                    <li class="modal-button b1" id="cat01" onclick="cat01()">EMBED + MOBILE FULL SCREEN<i class="la la-info-circle"></i>
+                    <li class="modal-button b1" id="cat01" onclick="cat01()" data-text="fullscreen">EMBED + MOBILE FULL SCREEN<i class="la la-info-circle"></i>
                     </li>
                     <!-- <li class="modal-button-line"></li> -->
-                    <li class="modal-button" id="cat02" onclick="cat02()">EMBED + MOBILE IN PAGE<i class="la la-info-circle"></i>
+                    <li class="modal-button" id="cat02" onclick="cat02()" data-text="inpage">EMBED + MOBILE IN PAGE<i class="la la-info-circle"></i>
                     </li>
                     <!-- <li class="modal-button-line"></li> -->
-                    <li class="modal-button" id="cat03" onclick="cat03()">POP UP</li>
+                    <li class="modal-button" id="cat03" onclick="cat03()" data-text="popup">POP UP</li>
                     <!-- <li class="modal-button-line"></li> -->
-                    <li class="modal-button " id="cat04" onclick="cat04()">CHAT</li>
+                    <li class="modal-button " id="cat04" onclick="cat04()" data-text="chat">CHAT</li>
                     <!-- <li class="modal-button-line"></li> -->
-                    <li class="modal-button b4" id="cat05" onclick="cat05()">CUSTOM EMBED</li>
+                    <li class="modal-button b4" id="cat05" onclick="cat05()" data-text="custom">CUSTOM EMBED</li>
                 </ul>
             <div class="text-head" id="super-extra-option">
                 <div id="extra-option" style="display: none">
@@ -60,3 +60,25 @@
         
     </div>
     </div>
+    <script>
+        $(document).ready(function(){
+            $('.button-group').addClass('fullscreen').removeClass('inpage').removeClass('popup').removeClass('chat').removeClass('custom');
+           $('#cat01').click(function(){
+               $(this).parent().addClass('fullscreen').removeClass('inpage').removeClass('popup').removeClass('chat').removeClass('custom');
+           })   
+           $('#cat02').click(function(){
+            $(this).parent().removeClass('fullscreen').addClass('inpage').removeClass('popup').removeClass('chat').removeClass('custom');
+           })   
+           $('#cat03').click(function(){
+            $(this).parent().removeClass('fullscreen').removeClass('inpage').addClass('popup').removeClass('chat').removeClass('custom');
+           })   
+           $('#cat04').click(function(){
+            $(this).parent().removeClass('fullscreen').removeClass('inpage').removeClass('popup').addClass('chat').removeClass('custom');
+           })   
+           $('#cat05').click(function(){
+            $(this).parent().removeClass('fullscreen').removeClass('inpage').removeClass('popup').removeClass('chat').addClass('custom');
+           })   
+            
+            
+        });
+    </script>
