@@ -51,6 +51,7 @@ div.embed {
 div#section-div-2 {
     margin-left: 50px;
     float: left;
+    padding: 20px;
 }
 .section-code {
     float: left;
@@ -189,6 +190,8 @@ div#shortcodecard-row-id {
     border-bottom: 0;
     border-left: 0;
     background: #f8f8f8;
+    position: relative;
+    cursor: pointer;
 }
 
 #shortcode-card-body{
@@ -204,6 +207,12 @@ div#shortcodecard-row-id{
 }
 #shortcode-card-body .shortcodecard-content{
     padding: 14px;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid rgb( 226, 226, 226 );
+}
+#section-div-1 .embed:first-child {
+    border-top: 0;
 }
 #shortcode-card-body .shortcodecard-content i {
 
@@ -220,13 +229,206 @@ div#shortcodecard-row-id{
 
 div#section-div-1{
     margin:0!important;
-    margin-left: -14px !important;
-    margin-top: -15px !important;
     float: left;
-width: 100%;
-}
-#main-div-section{
-    float: left;
-    width: 224px;
+width: 244px;
 }
 
+
+#section-div-1#embed1 i{
+    position: absolute;
+    right: 3px;
+    top: 13px;
+}
+i.la.la-info-circle {
+    font-size: 14px;
+    color: #a9a7a7;
+    font-weight: 600;
+    margin-left: 4px;
+    font-family: LineAwesome;
+    padding-top: 13px;
+}
+
+#shortcode-card-body .toggle-on{
+    margin-left: 0!important;
+}
+div#section-div-2 {
+    margin-left: 0px;
+    float: left;
+    width: calc(100% - 244px);
+    background: #fff;
+}
+div#textarea-div {
+    float: left;
+    width: 448px;
+}
+div#textarea-div textarea {
+    width: 100%;
+    font-size: 11px;
+    color: #666666;
+    float: left;
+    border: none;
+    box-shadow: none;
+    /* overflow-y: hidden; */
+    height: 124px !important;
+    padding: 20px;
+    resize: none;
+    background: #fafafa;
+    /* font-family: Montserrat; */
+    white-space: normal;
+    line-height: 1.6;
+}
+button#copyiing-text {
+    padding: 10px 16px;
+    background: #fb5f66;
+    color: #fff;
+    font-size: 11px;
+    font-family: Montserrat;
+    text-align: center;
+    border-radius: 4px;
+    margin-top: 15px;
+    float: right;
+}
+
+#section-div-2 .extra-option-button {
+    float: left;
+    width: 114px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    border-width: 1px;
+    border-color: rgb( 226, 226, 226 );
+    border-style: solid;
+    border-radius: 3px;
+    background-color: rgb( 255, 255, 255 );
+    padding-left: 10px;
+    margin-right: 12px;
+}
+#section-div-2 .classic-text, #section-div-2 .drawerl-text, #section-div-2 .drawerr-text {
+    font-size: 11px;
+    font-family: "Montserrat";
+    color: rgb( 102, 102, 102 );
+    font-weight: 600;
+    margin-left: 8px;
+}
+#section-div-2 .main-div-option {
+    float: left;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+#section-div-2 .time-link {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+#section-div-2 .time-link-text{
+    font-size: 12px;
+    font-family:Montserrat;
+    color: rgb( 102, 102, 102 );
+}
+#time-div {
+    width: 50px;
+    height: 20px;
+    border-radius: 30px;
+    background-color: #a8a8a8;
+    position: relative;
+    cursor: pointer;
+    margin-left: 30px;
+}
+#time-div span.time-span {
+    width: 14px;
+    height: 14px;
+    background-color: white;
+    position: absolute;
+    border-radius: 50%;
+    transition: .3s ease-in;
+    top: 3px;
+    left: 4px;
+    box-shadow: 3px 2px 6px rgba(0, 0, 0, 0.54);
+}
+#time-div .time-span:before {
+    content: "Off";
+    color: #fff;
+    font-weight: 400;
+    margin-left: 20px;
+    font-size: 12px;
+    top: 0px;
+    position: relative;
+}
+div#time-option {
+    margin-top: 16px;
+}
+#input-time label, #exit-intent-text label {
+    font-size: 11px;
+    font-family: Montserrat;
+    color: rgb( 102, 102, 102 );
+}
+ #input-time input[type=radio], #exit-intent-text input[type=radio]{
+margin:1px 4px 3px 0!important;
+min-width: 14px;
+height: 14px;
+width: 14px;
+}
+#input-time input[type=radio]:checked:before {
+    font-size: 24px;
+    width: 6px;
+    height: 6px;
+    margin: 3px;
+}
+div#timed-div {
+    float: left;
+    width: 100%;
+}
+
+ #set-time-div:nth-child(1) #set-after::after {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #32373c80;
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 46%;
+}
+select#select-time-after, input#day-value, input#exit-day {
+    line-height: 11px!important;
+    -webkit-appearance: none;
+    width: 46px;
+height: 24px !important;
+font-size: 11px;
+padding: 0;
+}
+select#select-time-after{
+    text-align: left;
+}
+div#set-time {
+    font-size: 11px;
+
+}
+#set-after{
+    position: relative;
+}
+input#timeAfter, input.dayAfter, input.exit-day-input {
+    width: 36px;
+    height: 24px!important;
+    font-size: 11px;
+    padding: 0;
+
+}
+#exit-option-text{
+    float: left;
+    font-size: 11px;
+    margin-top: 10px;
+
+}
+div#exit-repeat-day {
+    font-size: 11px;
+
+}
+input[type="radio"]:checked::before {
+    margin: 3px;
+
+}
+div#exit-intent {
+    margin-bottom: 20px;
+
+}

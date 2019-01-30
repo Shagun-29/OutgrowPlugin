@@ -98,12 +98,14 @@ function selectAPI(){
       document.getElementById("api-card").insertAdjacentHTML(`afterend`,`<div class="shortcodecard-row" id="shortcodecard-row-id">
         <div id="shortcodecard-col">
           <div id="shortcode-card-body">
-            <div class="shortcodecard-content" id="${element.id}-view" onclick='viewDetails("${element.id}")'>${element.meta_data.title}</div>
+            <div class="shortcodecard-content" id="${element.id}-view" onclick='viewDetails("${element.id}")'><i class="material-icons">
+            extension
+            </i>${element.meta_data.title}</div>
               
-            <div id="${element.id}-div-section" class="hide">
+            <div id="${element.id}-div-section" class="hide" style="float:left;width:100%">
               <div id="section-div-1">
-                <div id="embed1" class="embed" onclick="getEmbedCode('embed1','${element.dev_app}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE FULL SCREEN</div>
-                <div id="embed2" class="embed" onclick="getEmbedCode('embed2','${element.dev_app}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE IN PAGE</div>
+                <div id="embed1" class="embed" onclick="getEmbedCode('embed1','${element.dev_app}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE FULL SCREEN<i class="la la-info-circle"></i></div>
+                <div id="embed2" class="embed" onclick="getEmbedCode('embed2','${element.dev_app}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE IN PAGE<i class="la la-info-circle"></i></div>
                 <div id="embed3" class="embed" onclick="getEmbedCode('embed3','${element.dev_app}','${element.calc_url}','${element.short_url}')">POP UP</div>
                 <div id="embed4" class="embed" onclick="getEmbedCode('embed4','${element.dev_app}','${element.calc_url}','${element.short_url}')">CHAT</div>
                 <div id="embed5" class="embed" onclick="getEmbedCode('embed5','${element.dev_app}','${element.calc_url}','${element.short_url}')">CUSTOM EMBED</div>
