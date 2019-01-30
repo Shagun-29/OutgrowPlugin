@@ -710,8 +710,8 @@ li {
     }
     .extra-option-context {
 
-        float: left;
-        width: 100%;
+        float: left!important;
+        width: 100%!important;
     
     }
     ul.main-list {
