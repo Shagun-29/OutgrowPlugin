@@ -32,6 +32,7 @@ var usedApi="";
   
   
   function viewDetails(id,calci_url,short_url){
+    console.log("original id is = ",id);
     custom_url=calci_url;
     addHide("click-copy-text");
     id_used=id;
@@ -75,6 +76,7 @@ var usedApi="";
     removeActiveClass("cat03");
     removeActiveClass("cat04");
     removeActiveClass("cat05");
+    console.log("id="+id_used+"url"+url+"short url"+short_url_used);
     document.getElementById('text-inside').innerText='[outgrow type="mobile_full_screen" id="'+id_used+ '" data_url="'+url+'" short_url="'+short_url_used+'"][/outgrow]';
     }
   function cat02(){
@@ -501,10 +503,10 @@ function callAPI(api){
         displayBlock("section-1");
         if(element.type=="Calculator"){
           var url0=element.calc_url.split("{");
-          final_url=url0[0]+element.parentapp+"?sLead=1";
+          // final_url=url0[0]+element.parentapp+"?sLead=1";
           document.getElementById("result1").insertAdjacentHTML('beforeend', 
           // `<div class="calci-card-row" id="calci-card-row-id"><div class="calci-card-col" onclick="viewDetails('${element.id}','${element.calc_url}','${element.short_url}')">
-          `<div class="calci-card-row" id="calci-card-row-id"><div class="calci-card-col" onclick="viewDetails('${element.id}','${final_url}','${element.short_url}')">
+          `<div class="calci-card-row" id="calci-card-row-id"><div class="calci-card-col" onclick="viewDetails('${element.parentapp}','${element.calc_url}','${element.short_url}')">
           <div class="calci-card-body">
            <img class="img-card" id="img-card" src="${element.meta_data.image_url}" width="50%" height="15%">
            <div class="calci-card-content" id="div-content">${element.meta_data.title}</div>
@@ -515,7 +517,7 @@ function callAPI(api){
         if(element.type=="Quiz"){
           document.getElementById("result-quiz").insertAdjacentHTML('beforeend', 
           // `<div class="calci-card-row" id="calci-card-row-id"><div class="calci-card-col" onclick="viewDetails('${element.id}','${element.calc_url}','${element.short_url}')">
-          `<div class="calci-card-row" id="calci-card-row-id"><div class="calci-card-col" onclick="viewDetails('${element.id}','${final_url}','${element.short_url}')">
+          `<div class="calci-card-row" id="calci-card-row-id"><div class="calci-card-col" onclick="viewDetails('${element.parentapp}','${element.calc_url}','${element.short_url}')">
           <div class="calci-card-body">
            <img class="img-card" id="img-card" src="${element.meta_data.image_url}" width="50%" height="15%">
            <div class="calci-card-content" id="div-content">${element.meta_data.title}</div>
@@ -529,7 +531,7 @@ function callAPI(api){
             // if(countp > 0){
             document.getElementById("result3").insertAdjacentHTML('beforeend', 
             // `<div class="calci-card-row" id="calci-card-row-id"><div class="calci-card-col" onclick="viewDetails('${element.id}','${element.calc_url}','${element.short_url}')">
-             `<div class="calci-card-row" id="calci-card-row-id"><div class="calci-card-col" onclick="viewDetails('${element.id}','${final_url}','${element.short_url}')">
+             `<div class="calci-card-row" id="calci-card-row-id"><div class="calci-card-col" onclick="viewDetails('${element.parentapp}','${element.calc_url}','${element.short_url}')">
               <div class="calci-card-body">
              <img class="img-card" id="img-card" src="${element.meta_data.image_url}" width="50%" height="15%">
              <div class="calci-card-content" id="div-content">${element.meta_data.title}</div>
