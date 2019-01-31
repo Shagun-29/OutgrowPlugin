@@ -56,7 +56,7 @@ editorShortcode="[outgrow][/outgrow]";
               }
         });
 
-          document.getElementById("tiny-mce-custom-og-body").innerHTML="<div id='getAPI'><div id='selectAPI'><form method='post'><select name='inptProduct' Placeholder='Enter API KEY' id='select-custom-api' onclick='selectAPI()'>"
+          document.getElementById("tiny-mce-custom-og-body").innerHTML="<div id='getAPI'><div id='selectAPI'><form method='post'><label class='Api-selct'>Enter / Select Api Key</label><select name='inptProduct' Placeholder='Enter API KEY' id='select-custom-api' onclick='selectAPI()'>"
        +"</select></form></div></div>";
       
       // document.getElementById("tiny-mce-custom-og-body").innerHTML="<div id='getAPI'>"+
@@ -102,16 +102,17 @@ function selectAPI(){
             extension
             </i>${element.meta_data.title}</div>
               
-            <div id="${element.id}-div-section" class="hide" style="float:left;width:100%">
+            <div id="${element.id}-div-section" class="hide" style="float:left;width:100%;margin-left: 0px!important;border-top: 1px solid rgb( 226, 226, 226 );">
               <div id="section-div-1">
-                <div id="embed1" class="embed" onclick="getEmbedCode('embed1','${element.dev_app}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE FULL SCREEN<i class="la la-info-circle"></i></div>
+                <div id="embed1" class="embed white" onclick="getEmbedCode('embed1','${element.dev_app}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE FULL SCREEN<i class="la la-info-circle"></i></div>
                 <div id="embed2" class="embed" onclick="getEmbedCode('embed2','${element.dev_app}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE IN PAGE<i class="la la-info-circle"></i></div>
                 <div id="embed3" class="embed" onclick="getEmbedCode('embed3','${element.dev_app}','${element.calc_url}','${element.short_url}')">POP UP</div>
                 <div id="embed4" class="embed" onclick="getEmbedCode('embed4','${element.dev_app}','${element.calc_url}','${element.short_url}')">CHAT</div>
                 <div id="embed5" class="embed" onclick="getEmbedCode('embed5','${element.dev_app}','${element.calc_url}','${element.short_url}')">CUSTOM EMBED</div>
               </div>
               <div id="section-div-2">
-                <div id="embed-menu-${element.id}"></div>
+                <div id="embed-menu-${element.id}" style="float: left;
+                width: 100%;margin-left: 0px!important;margin-bottom: 20px;"></div>
                 <div id="textarea-div">
                   <textarea id="${element.id}" cols="40" rows="10">text here</textarea>
                   <button id="copyiing-text" onclick="getCopy">COPY</button>
@@ -190,7 +191,18 @@ function getEmbedCode(type,id,url,short_url){
   console.log("-----------------------",type,"-----------------------");
   console.log(document.getElementById(id));
   // document.getElementById(id).innerText=type; 
+  jQuery(document).ready(function(){
+      
+    jQuery('.embed').click(function(){
+      jQuery('.embed').removeClass('white');
+      jQuery(this).addClass('white');
+    });
+  });
   if(type=="embed1"){
+
+
+
+
     document.getElementById("embed-menu-"+id).classList.add('hide');
     console.log('[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url+'" short_url="'+short_url+'"][/outgrow]');
     // document.getElementById("embed-menu-"+id).innerHTML="";
@@ -240,7 +252,7 @@ function getEmbedCode(type,id,url,short_url){
     "</div>"+
   "</div>"+
 
-  "<div>"+
+  "<div class='custom-dim-head'>"+
     "<div class='super-dim'>Width</div>"+
     "<div class='super-input-dim'>"+
       "<input type='text' class='input-dim' name='widthDesktop' id='widthDesktop' onkeypress='return getDesktopWidth(event)' placeholder='100'>"+
@@ -258,7 +270,7 @@ function getEmbedCode(type,id,url,short_url){
     "</div>"+
   "</div>"+
 
-  "<div>"+
+  "<div class='custom-dim-head'>"+
     "<div class='super-dim'>Width</div>"+
     "<div class='super-input-dim'>"+
       "<input type='text' class='input-dim' name='widthTablet' id='widthTablet' onkeypress='return getTabletWidth(event)' placeholder='100'>"+
@@ -276,7 +288,7 @@ function getEmbedCode(type,id,url,short_url){
     "</div>"+
   "</div>"+
 
-  "<div>"+
+  "<div class='custom-dim-head'>"+
     "<div class='super-dim'>Width</div>"+
     "<div class='super-input-dim'>"+
       "<input type='text' class='input-dim' id='widthMobile' onkeypress='return getMobileWidth(event)' name='widthMobile' placeholder='100'>"+
@@ -314,3 +326,16 @@ function getCopy(){
 
 
 }
+
+// $(document).ready(function(){
+//   $('#embed1').click(function() {
+//    if(onclick){
+//      $(this).css('background','#fff');
+//      onclick  = false;
+//  } else {
+//      $(this).css('background','#ddd');
+//      onclick  = true;
+//  }   
+
+//   })
+// });
