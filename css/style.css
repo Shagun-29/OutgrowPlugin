@@ -1116,10 +1116,11 @@ input.facebook-input-type{
     z-index: 99;
 }
 i.la.la-info-circle {
-    font-size: 16px;
-    color: #a9a7a7;
-    font-weight: 600;
-    margin-left: 4px;
+    font-size: 16px!important;
+    color: #a9a7a7!important;
+    font-weight: 600!important;
+    margin-left: 4px!important;
+    padding-top:0!important;
    
 }
 

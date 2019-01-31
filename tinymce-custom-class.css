@@ -193,13 +193,6 @@ div#shortcodecard-row-id {
     position: relative;
     cursor: pointer;
 }
-
-#shortcode-card-body{
-font-size: 13px;
-font-family: "Montserrat";
-color: rgb( 102, 102, 102 );
-font-weight: bold;
-}
 div#shortcodecard-row-id{
     padding: 0;
     margin-bottom: 20px;
@@ -210,6 +203,10 @@ div#shortcodecard-row-id{
     float: left;
     width: 100%;
     cursor: pointer;
+    font-size: 13px;
+    font-family: Montserrat;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 #section-div-1 .embed:first-child {
     border-top: 0;
@@ -549,6 +546,6 @@ height: 30px;
 }
 @media (min-width:768px) and (max-width:1024px) {
 
-    
+
 
 }

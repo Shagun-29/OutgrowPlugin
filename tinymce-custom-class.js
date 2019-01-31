@@ -96,7 +96,9 @@ function selectAPI(){
       document.getElementById("api-card").insertAdjacentHTML(`afterend`,`<div class="shortcodecard-row" id="shortcodecard-row-id">
         <div id="shortcodecard-col">
           <div id="shortcode-card-body">
-            <div class="shortcodecard-content" id="${element.parentapp}-view" onclick='viewDetails("${element.parentapp}")'>${element.meta_data.title}</div>
+            <div class="shortcodecard-content" id="${element.parentapp}-view" onclick='viewDetails("${element.parentapp}")'><i class="material-icons">
+            extension
+            </i>${element.meta_data.title}</div>
               
             <div id="${element.id}-div-section" class="hide" style="float:left;width:100%;margin-left: 0px!important;border-top: 1px solid rgb( 226, 226, 226 );">
               <div id="section-div-1">
