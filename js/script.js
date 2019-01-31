@@ -71,11 +71,6 @@ var usedApi="";
     displayBlock("extra-option");
     document.getElementById('extra-option').innerHTML="<div class='facebook-link'><div class='fb-link-text'>Facebook Comments</div><div class='span-fb-text'><i class='la la-question-circle la-2x'></i></div><div class='facebook-div' id='facebook-div' onclick='toggleSwitch()'><input type='text'  class='facebook-input-type' ><span class='facebook-span' id='facebook-span'></span></div></div>";
     document.getElementById('text-inside').classList.remove('text-area-enlarge');
-    addActiveClass("cat01");
-    removeActiveClass("cat02");
-    removeActiveClass("cat03");
-    removeActiveClass("cat04");
-    removeActiveClass("cat05");
     console.log("id="+id_used+"url"+url+"short url"+short_url_used);
     document.getElementById('text-inside').innerText='[outgrow type="mobile_full_screen" id="'+id_used+ '" data_url="'+url+'" short_url="'+short_url_used+'"][/outgrow]';
     }
@@ -84,11 +79,6 @@ var usedApi="";
     document.getElementById('text-inside').classList.add('text-area-enlarge');
     document.getElementById("super-code-id").classList.remove("super-get-code");
     document.getElementById("super-code-id").classList.add("super-get-full");
-    addActiveClass("cat02");
-    removeActiveClass("cat01");
-    removeActiveClass("cat03");
-    removeActiveClass("cat04");
-    removeActiveClass("cat05");
     addHide("click-copy-text");
     document.getElementById('text-inside').innerText='[outgrow type="mobile_in_page" id="'+id_used+ '" data_url="'+url2+'" short_url="'+short_url_used+'"][/outgrow]';
   
@@ -114,11 +104,7 @@ var usedApi="";
     "</div></div>"+
     "<div class='time-link'><div class='time-link-text'>TIMED & EXIT INTENT<div class='time-div' id='time-div' onclick='toggleSwitch2()'><input type='text'  class='time-input-type' ><span class='time-span' id='time-span'></span></div></div></div>"+
     "<div class='time-option' id='time-option'></div>";
-    addActiveClass("cat03");
-    removeActiveClass("cat01");
-    removeActiveClass("cat02");
-    removeActiveClass("cat04");
-    removeActiveClass("cat05");
+   
     addHide("click-copy-text");
     document.getElementById('text-inside').innerText='[outgrow type="pop_up" id="'+id_used+ '" data_url="'+url3+'" ][/outgrow]';
   }
@@ -129,11 +115,6 @@ var usedApi="";
     document.getElementById('text-inside').classList.remove('text-area-enlarge');
     document.getElementById('extra-option').innerHTML="<div class='extra-option-chat-button' onclick='chatLeft()' id='chatLeft'><div class='bottom-img'><img class='bottom-min' src='https://dlvkyia8i4zmz.cloudfront.net/o1PZBSLiQuq5HTCCyrMt_bottom_left.png'></div><div class='bottom-text'>Bottom Left</div></div><div onclick='chatRight()' class='extra-option-chat-button' id='bottomRight'><div class='bottom-img'><img class='bottom-min' class='bottom-img' src='https://dlvkyia8i4zmz.cloudfront.net/5uGcgvoRIie2dwQNk9kv_bottom_right.png'></div><div class='bottom-text'>Bottom Right</div></div>";
     
-    addActiveClass("cat04");
-    removeActiveClass("cat01");
-    removeActiveClass("cat02");
-    removeActiveClass("cat03");
-    removeActiveClass("cat05");
     addHide("click-copy-text");
     document.getElementById('text-inside').innerText='[outgrow type="chat" " data_url="'+url3+'" ][/outgrow]';
   }
@@ -197,21 +178,13 @@ var usedApi="";
   "</div>"+
     "</div></div>";
    
-    addActiveClass("cat05");
-    removeActiveClass("cat01");
-    removeActiveClass("cat02");
-    removeActiveClass("cat03");
-    removeActiveClass("cat04");
+    
     addHide("click-copy-text");
     customOutput();
   }
 
   function classic(){
-    addActiveClass("cat03");
-    removeActiveClass("cat01");
-    removeActiveClass("cat02");
-    removeActiveClass("cat04");
-    removeActiveClass("cat05");
+   
     document.getElementById("cat031").classList.add("custom-active");
     document.getElementById("cat032").classList.remove("custom-active");
     document.getElementById("cat033").classList.remove("custom-active");
@@ -219,11 +192,7 @@ var usedApi="";
     document.getElementById('text-inside').innerText='[outgrow type="pop_up_classic" id="'+id_used+ '" data_url="'+url3+'" ][/outgrow]';
   }
   function drawerL(){
-    addActiveClass("cat03");
-    removeActiveClass("cat01");
-    removeActiveClass("cat02");
-    removeActiveClass("cat04");
-    removeActiveClass("cat05");
+   
     document.getElementById("cat031").classList.remove("custom-active");
     document.getElementById("cat032").classList.add("custom-active");
     document.getElementById("cat033").classList.remove("custom-active");
@@ -231,11 +200,7 @@ var usedApi="";
     document.getElementById('text-inside').innerText='[outgrow type="pop_up_l" id="'+id_used+ '" data_url="'+url3+'" ][/outgrow]';
   }
   function drawerR(){
-    addActiveClass("cat03");
-    removeActiveClass("cat01");
-    removeActiveClass("cat02");
-    removeActiveClass("cat04");
-    removeActiveClass("cat05");
+   
     document.getElementById("cat031").classList.remove("custom-active");
     document.getElementById("cat032").classList.remove("custom-active");
     document.getElementById("cat033").classList.add("custom-active");
@@ -244,11 +209,7 @@ var usedApi="";
   }
   
   function chatLeft(){
-    addActiveClass("cat04");
-    removeActiveClass("cat01");
-    removeActiveClass("cat02");
-    removeActiveClass("cat03");
-    removeActiveClass("cat05");
+    
     addHide("click-copy-text");
     document.getElementById('bottomRight').classList.remove('custom-active');
     document.getElementById('chatLeft').classList.add('custom-active');
@@ -256,11 +217,7 @@ var usedApi="";
   }
 
   function chatRight(){
-    addActiveClass("cat04");
-    removeActiveClass("cat01");
-    removeActiveClass("cat02");
-    removeActiveClass("cat03");
-    removeActiveClass("cat05");
+   
     addHide("click-copy-text");
     document.getElementById('bottomRight').classList.add('custom-active');
     document.getElementById('chatLeft').classList.remove('custom-active');
@@ -696,10 +653,10 @@ function customPop(){
 }
 
 function removeActiveClass(classname){
-  document.getElementById(classname).classList.remove('active-span');
+  // document.getElementById(classname).classList.remove('active-span');
 }
 function addActiveClass(classname){
-  document.getElementById(classname).classList.add('active-span');
+  // document.getElementById(classname).classList.add('active-span');
 }
 
 function addHide(classname){
@@ -714,3 +671,17 @@ function displayNone(id){
 function displayBlock(id){
   document.getElementById(id).style.display="block";
 }
+
+jQuery(document).ready(function(){
+  jQuery('.modal-button').click(function(){
+    jQuery('.modal-button').removeClass("active-span");
+    jQuery(this).addClass("active-span");
+});
+});
+
+jQuery(document).ready(function(){
+  jQuery('.modal-button').click(function(){
+    jQuery('.modal-button').removeClass("active-span");
+    jQuery(this).addClass("active-span");
+});
+});
