@@ -100,16 +100,16 @@ function selectAPI(){
             extension
             </i>${element.meta_data.title}</div>
               
-            <div id="${element.id}-div-section" class="hide" style="float:left;width:100%;margin-left: 0px!important;border-top: 1px solid rgb( 226, 226, 226 );">
+            <div id="${element.parentapp}-div-section" class="hide" style="float:left;width:100%;margin-left: 0px!important;border-top: 1px solid rgb( 226, 226, 226 );">
               <div id="section-div-1">
-                <div id="embed1" class="embed white" onclick="getEmbedCode('embed1','${element.dev_app}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE FULL SCREEN<i class="la la-info-circle"></i></div>
-                <div id="embed2" class="embed" onclick="getEmbedCode('embed2','${element.dev_app}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE IN PAGE<i class="la la-info-circle"></i></div>
-                <div id="embed3" class="embed" onclick="getEmbedCode('embed3','${element.dev_app}','${element.calc_url}','${element.short_url}')">POP UP</div>
-                <div id="embed4" class="embed" onclick="getEmbedCode('embed4','${element.dev_app}','${element.calc_url}','${element.short_url}')">CHAT</div>
-                <div id="embed5" class="embed" onclick="getEmbedCode('embed5','${element.dev_app}','${element.calc_url}','${element.short_url}')">CUSTOM EMBED</div>
+                <div id="embed1" class="embed white" onclick="getEmbedCode('embed1','${element.parentapp}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE FULL SCREEN<i class="la la-info-circle"></i></div>
+                <div id="embed2" class="embed" onclick="getEmbedCode('embed2','${element.parentapp}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE IN PAGE<i class="la la-info-circle"></i></div>
+                <div id="embed3" class="embed" onclick="getEmbedCode('embed3','${element.parentapp}','${element.calc_url}','${element.short_url}')">POP UP</div>
+                <div id="embed4" class="embed" onclick="getEmbedCode('embed4','${element.parentapp}','${element.calc_url}','${element.short_url}')">CHAT</div>
+                <div id="embed5" class="embed" onclick="getEmbedCode('embed5','${element.parentapp}','${element.calc_url}','${element.short_url}')">CUSTOM EMBED</div>
               </div>
               <div id="section-div-2">
-                <div id="embed-menu-${element.id}" style="float: left;
+                <div id="embed-menu-${element.parentapp}" style="float: left;
                 width: 100%;margin-left: 0px!important;margin-bottom: 20px;"></div>
                 <div id="textarea-div">
                   <textarea id="${element.parentapp}" cols="40" rows="10">text here</textarea>
