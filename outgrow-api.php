@@ -464,6 +464,7 @@ function og_display_outgrow_calci($atts,$content,$tag){
 	$output = '';
         $data="";
         if($values["type"] == "mobile_full_screen" ){
+            // print_r("Id.$values[id].-------------url=.$values[data_url].-------------shorturl=.$values[short_url]");
              $output="<div><div class='op-interactive' id='$values[id]' data-url='$values[data_url]' data-surl='$values[short_url]' data-width='100%'></div><script src='//dyv6f9ner1ir9.cloudfront.net/assets/js/sloader.js'></script><script>initIframe('$values[id]');</script></div>";
         }
         else if($values["type"] == "mobile_full_screen_facebook" ){
@@ -478,7 +479,7 @@ function og_display_outgrow_calci($atts,$content,$tag){
         else if($values["type"] == "pop_up"){
             $output="<div><div id='$values[id]' data-embedCookieDays='10' data-embedScheduling='false' data-embedTimed='true' data-embedExit='false' data-embedTimeFormat='0' data-embedTimeValue='5' data-embedBorderRadius='0' data-embedFontSize='12' data-textcolor='#fb5f66' data-bgcolor='#fb5f66' data-prop='outgrow-p' data-type='outgrow-l'  data-url='$values[data_url]' data-text='Get Started'></div><script src='https://dyv6f9ner1ir9.cloudfront.net/assets/js/nloader.js'></script><script>initIframe('$values[id]');</script></div>";
         }
-        else if($values["type"] == "pop_up_classical"){
+        else if($values["type"] == "pop_up_classic"){
             $output="<div><div id='$values[id]' data-embedCookieDays='10' data-embedScheduling='false' data-embedTimed='true' data-embedExit='false' data-embedTimeFormat='0' data-embedTimeValue='5' data-embedBorderRadius='0' data-embedFontSize='12' data-textcolor='#fb5f66' data-bgcolor='#fb5f66' data-prop='outgrow-p' data-type='outgrow-l'  data-url='$values[data_url]' data-text='Get Started'></div><script src='https://dyv6f9ner1ir9.cloudfront.net/assets/js/nloader.js'></script><script>initIframe('$values[id]');</script></div>";
         }
         else if($values["type"] == "pop_up_l"){
@@ -544,7 +545,9 @@ function og_display_outgrow_calci($atts,$content,$tag){
         </style>
         <iframe id='og_iframe' src='$values[data_url]' style='border: none; overflow: hidden;' scrolling='yes'></iframe>";
         }  
-        print("---------------shortcode editing-----------");
+        return $output;
+        // print("---------------shortcode editing-----id------.$values[id].-------url--------.$values[data_url].-----short url----$values[short_url]");
+        // print("<div><div class='op-interactive' id='$values[id]' data-url='$values[data_url]' data-surl='$values[short_url]' data-width='100%'></div><script src='//dyv6f9ner1ir9.cloudfront.net/assets/js/sloader.js'></script><script>initIframe('$values[id]');</script></div>");
 }
 add_shortcode('outgrow','og_display_outgrow_calci');
 

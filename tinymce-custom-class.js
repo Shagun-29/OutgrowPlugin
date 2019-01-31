@@ -45,10 +45,7 @@ editorShortcode="[outgrow][/outgrow]";
               id:"tiny-mce-custom-og",
               class:"editor-window",
               buttons:{
-                  text:'Cancel',
-                  onclick: function() {
-                    win.close();
-                  },
+                  id : 'copy-id',
                   text : 'Copy',
                   onclick:function getCopy(){
                     editor.insertContent(editorShortcode);
@@ -64,6 +61,7 @@ editorShortcode="[outgrow][/outgrow]";
       // "<div id='selectAPI' class='hide'><form method='post'><select name='inputProduct' Placeholder='Enter API KEY' id='select-custom-api' onclick='selectAPI()'></select></form></div>"+
       // "</div>";
 
+    document.getElementById('copy-id').style.display = "none";
 
     if(apiSet.length>0){
     apiSet.forEach(element => {
@@ -98,9 +96,7 @@ function selectAPI(){
       document.getElementById("api-card").insertAdjacentHTML(`afterend`,`<div class="shortcodecard-row" id="shortcodecard-row-id">
         <div id="shortcodecard-col">
           <div id="shortcode-card-body">
-            <div class="shortcodecard-content" id="${element.id}-view" onclick='viewDetails("${element.id}")'><i class="material-icons">
-            extension
-            </i>${element.meta_data.title}</div>
+            <div class="shortcodecard-content" id="${element.parentapp}-view" onclick='viewDetails("${element.parentapp}")'>${element.meta_data.title}</div>
               
             <div id="${element.id}-div-section" class="hide" style="float:left;width:100%;margin-left: 0px!important;border-top: 1px solid rgb( 226, 226, 226 );">
               <div id="section-div-1">
@@ -114,8 +110,8 @@ function selectAPI(){
                 <div id="embed-menu-${element.id}" style="float: left;
                 width: 100%;margin-left: 0px!important;margin-bottom: 20px;"></div>
                 <div id="textarea-div">
-                  <textarea id="${element.id}" cols="40" rows="10">text here</textarea>
-                  <button id="copyiing-text" onclick="getCopy">COPY</button>
+                  <textarea id="${element.parentapp}" cols="40" rows="10">text here</textarea>
+                  <button id="copyiing-text" onclick="getCode('${element.parentapp}')">COPY</button>
                 </div>
               </div>
             </div>
@@ -139,25 +135,8 @@ function selectAPI(){
   });
 }
 
-function viewDetails(id,url,s_url){
-
-  console.log("::id::",id,"::url::",url,"::surl::",s_url);
-  document.getElementById(id).innerHTML=`<div id="shortcode-header"></div>`+
-      `<div id="main-div-section"><div id="section-div-1">`+
-      `<div id="embed1" class="embed" onclick="getEmbedCode('embed1')">EMBED + MOBILE FULL SCREEN <i class="la la-info-circle"></i></div>`+
-      `<div id="embed2" class="embed" onclick="getEmbedCode('embed2')">EMBED + MOBILE IN PAGE <i class="la la-info-circle"></i></div>`+
-      `<div id="embed3" class="embed" onclick="getEmbedCode('embed3')">POP UP</div>`+
-      `<div id="embed4" class="embed" onclick="getEmbedCode('embed4')">CHAT</div>`+
-      `<div id="embed5" class="embed" onclick="getEmbedCode('embed5')">CUSTOM EMBED</div>`+
-      `</div>`+
-    `</div></div>`;
-
-      // editor.addButton('myblockquotebtn', {
-      //   title: 'My Blockquote',
-      //   cmd: 'myBlockquoteBtnCmd'
-      //   // image: url + '/img/quote.png'
-      // });
-
+function viewDetails(id){
+  console.log("::id::",id);
   // toggle starts
   $(document).ready(function(){
     document.getElementById(id+'-div-section').classList.toggle("toggle-on");   
@@ -206,7 +185,7 @@ function getEmbedCode(type,id,url,short_url){
     document.getElementById("embed-menu-"+id).classList.add('hide');
     console.log('[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url+'" short_url="'+short_url+'"][/outgrow]');
     // document.getElementById("embed-menu-"+id).innerHTML="";
-    document.getElementById(id).innerText=type;  
+    document.getElementById(id).innerText='[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url+'" short_url="'+short_url_used+'"][/outgrow]';  
   } 
   if(type=="embed2"){
     document.getElementById("embed-menu-"+id).classList.add('hide');
@@ -314,15 +293,18 @@ function showSelectOptions(){
   });  
 }
 
-function getCopy(){
-  console.log("getCopy works");
-  // editor.insertContent("editorShortcode");
-      tinymce.PluginManager.add( 'custom_class2', function(editor) {
-      editor.insertContent("editorShortcode");
-        
-    });
+function getCode(id){
+  console.log("getCopy works",document.getElementById(id).value);
+  // tinymce.PluginManager.add( 'custom_class2', function(editor) {
+  //   editor.insertContent("SHGN");   
+  // });
   
- 
+  var copyText = document.getElementById(id);
+  console.log("-------------------",copyText);
+  copyText.setAttribute('readonly', '');
+  copyText.select();
+  document.execCommand("copy");
+  // removeHide('click-copy-text'); 
 
 
 }
