@@ -125,7 +125,7 @@ div#getAPI {
 }
 div#mceu_62.mce-container {
     float: left;
-    width: 100%;
+    width: 100%!important;
 }
 div#selectAPI {
     float: left;
@@ -161,7 +161,7 @@ select#select-custom-api {
     font-family: Montserrat;
     color: rgb( 102, 102, 102 );
     font-size: 14px;
-    font-weight: 600;
+    /* font-weight: 600; */
     border-bottom: 1px solid rgba( 0, 0, 0,0.102 );
 }
 div#shortcodecard-row-id {
@@ -209,7 +209,7 @@ div#shortcodecard-row-id{
     padding: 14px;
     float: left;
     width: 100%;
-    border-bottom: 1px solid rgb( 226, 226, 226 );
+    cursor: pointer;
 }
 #section-div-1 .embed:first-child {
     border-top: 0;
@@ -248,9 +248,7 @@ i.la.la-info-circle {
     padding-top: 13px;
 }
 
-#shortcode-card-body .toggle-on{
-    margin-left: 0!important;
-}
+
 div#section-div-2 {
     margin-left: 0px;
     float: left;
@@ -259,7 +257,7 @@ div#section-div-2 {
 }
 div#textarea-div {
     float: left;
-    width: 448px;
+    width: 100%;
 }
 div#textarea-div textarea {
     width: 100%;
@@ -286,6 +284,7 @@ button#copyiing-text {
     text-align: center;
     border-radius: 4px;
     margin-top: 15px;
+    margin-bottom: 6px;
     float: right;
 }
 
@@ -369,6 +368,9 @@ min-width: 14px;
 height: 14px;
 width: 14px;
 }
+div#input-time {
+    margin-bottom: 0px;
+}
 #input-time input[type=radio]:checked:before {
     font-size: 24px;
     width: 6px;
@@ -383,14 +385,14 @@ div#timed-div {
  #set-time-div:nth-child(1) #set-after::after {
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
-    border-top: 5px solid #32373c80;
+    border-top: 4px solid #32373c80;
     content: '';
     position: absolute;
-    top: 9px;
-    left: 46%;
+    top: 10px;
+    left: 97px;
 }
 select#select-time-after, input#day-value, input#exit-day {
-    line-height: 11px!important;
+    line-height: 12px!important;
     -webkit-appearance: none;
     width: 46px;
 height: 24px !important;
@@ -399,6 +401,7 @@ padding: 0;
 }
 select#select-time-after{
     text-align: left;
+    padding-left: 4px;
 }
 div#set-time {
     font-size: 11px;
@@ -430,5 +433,122 @@ input[type="radio"]:checked::before {
 }
 div#exit-intent {
     margin-bottom: 20px;
+
+}
+#desktop p, #tablet p, #mobile p {
+    font-size: 13px;
+    font-weight: 600;
+}
+#section-div-2 img{ 
+    max-width: 100%;
+    float: left;
+    height: 100%;
+}
+#section-div-2 .bottom-img{
+    float: left;
+    width: 20px;
+    height: 20px;
+}
+#section-div-2 .extra-option-chat-button{
+    float: left;
+    width: 132px;
+    height: 35px;
+    border-width: 1px;
+    border-color: rgb( 226, 226, 226 );
+    border-style: solid;
+    border-radius: 3px;
+    padding: 7px 10px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+#section-div-2 .bottom-text {
+    font-size: 11px;
+    /* line-height: 20px; */
+    margin-left: 10px;
+    font-weight: 600;
+}
+#cat031 .classic-img,#cat032 .drawerl-img,#cat033 .drawerr-img{
+    width: 22px;
+    height: 18px;
+}
+div#set-time-div {
+    margin-top: 12px;
+    margin-left: 20px;
+    float: left;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+#section-div-2 .custom-dim-head {
+    float: left;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#section-div-2 .super-dim {
+    font-size: 12px;
+    width: 20%;
+}
+#section-div-2 input.input-dim {
+    width: 36px;
+    height: 24px;
+    font-size: 11px;
+}
+#section-div-2 .super-input-dim{
+    position: relative;
+}
+#section-div-2 select.select-custom {
+    height: 24px!important;
+    font-size: 11px;
+    border: 1px solid #ddd;
+    border-left: 0;
+}
+.white{
+    background: #fff!important;
+    border-right:0!important;
+}
+#selectAPI .Api-selct{
+    font-size: 11px;
+    font-family:Montserrat;
+    color: rgba( 102, 102, 102, 0.6 );
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 600;
+    float: left;
+width: 100%;
+}
+#mceu_63{
+    border: 0;
+background: 0;
+box-shadow: none;
+left: 732px;
+top: 9px;
+width: 52px;
+height: 30px;
+}
+#mceu_63-button {
+    background: #fb5f66;
+    color: #fff;
+    font-size: 11px;
+    font-family: Montserrat;
+    text-align: center;
+    border-radius: 4px;
+
+}
+#mceu_68 {
+    float: left;
+    width: 100% !important;
+
+}
+#mceu_68-body {
+    float: left;
+    width: 100% !important;
+  
+}
+@media (min-width:768px) and (max-width:1024px) {
+
+    
 
 }
