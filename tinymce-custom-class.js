@@ -53,7 +53,7 @@ editorShortcode="[outgrow][/outgrow]";
               }
         });
 
-          document.getElementById("tiny-mce-custom-og-body").innerHTML="<div id='getAPI'><div id='selectAPI'><form method='post'><label class='Api-selct'>Enter / Select Api Key</label><select name='inptProduct' Placeholder='Enter API KEY' id='select-custom-api' onclick='selectAPI()'>"
+          document.getElementById("tiny-mce-custom-og-body").innerHTML="<div id='getAPI'><div id='selectAPI'><form method='post'><select name='inptProduct' Placeholder='Enter API KEY' id='select-custom-api' onclick='selectAPI()'>"
        +"</select></form></div></div>";
       
       // document.getElementById("tiny-mce-custom-og-body").innerHTML="<div id='getAPI'>"+
@@ -90,12 +90,15 @@ function selectAPI(){
 
   if(response.success==true){
     refinedResponse.forEach(element => {
+
+      
+      console.log("--------",element.short_url);
       document.getElementById("api-card").insertAdjacentHTML(`afterend`,`<div class="shortcodecard-row" id="shortcodecard-row-id">
         <div id="shortcodecard-col">
           <div id="shortcode-card-body">
             <div class="shortcodecard-content" id="${element.parentapp}-view" onclick='viewDetails("${element.parentapp}")'>${element.meta_data.title}</div>
               
-            <div id="${element.id}-div-section" class="hide" style="float:left;width:100%;margin-left: 0px!important;border-top: 1px solid rgb( 226, 226, 226 );">
+            <div id="${element.parentapp}-div-section" class="hide">
               <div id="section-div-1">
                 <div id="embed embed1" class="embed" onclick="getEmbedCode('embed1','${element.parentapp}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE FULL SCREEN</div>
                 <div id="embed embed2" class="embed" onclick="getEmbedCode('embed2','${element.parentapp}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE IN PAGE</div>
@@ -104,8 +107,7 @@ function selectAPI(){
                 <div id="embed embed5" class="embed" onclick="getEmbedCode('embed5','${element.parentapp}','${element.calc_url}','${element.short_url}')">CUSTOM EMBED</div>
               </div>
               <div id="section-div-2">
-                <div id="embed-menu-${element.id}" style="float: left;
-                width: 100%;margin-left: 0px!important;margin-bottom: 20px;"></div>
+                <div id="embed-menu-${element.parentapp}"></div>
                 <div id="textarea-div">
                   <textarea id="${element.parentapp}" cols="40" rows="10">text here</textarea>
                   <button id="copyiing-text" onclick="getCode('${element.parentapp}')">COPY</button>
@@ -133,6 +135,7 @@ function selectAPI(){
 }
 
 function viewDetails(id){
+  console.log("::id::",id);
   // toggle starts
   $(document).ready(function(){
     document.getElementById(id+'-div-section').classList.toggle("toggle-on");   
@@ -163,28 +166,26 @@ function getEmbedCode(type,id,url,short_url){
   ex=url.split("?");
   url2=ex[0]+"?vHeight=1";
   url3=ex[0]+"?q=1";
+  console.log("-----------------------",type,"-----------------------");
+  console.log(document.getElementById(id));
   // document.getElementById(id).innerText=type; 
-  jQuery(document).ready(function(){
-      
-    jQuery('.embed').click(function(){
-      jQuery('.embed').removeClass('white');
-      jQuery(this).addClass('white');
-    });
-  });
   if(type=="embed1"){
     // document.getElementById("embed-1").style.backgroundColor="white";
     document.getElementById("embed-menu-"+id).classList.add('hide');
+    console.log('[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url+'" short_url="'+short_url+'"][/outgrow]');
     // document.getElementById("embed-menu-"+id).innerHTML="";
     document.getElementById(id).innerText='[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url+'" short_url="'+short_url_used+'"][/outgrow]';  
   } 
   if(type=="embed2"){
     document.getElementById("embed-menu-"+id).classList.add('hide');
+    console.log('[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url2+'" short_url="'+short_url+'"][/outgrow]');
     // document.getElementById("embed-menu-"+id).innerHTML="";
 
     document.getElementById(id).innerText='[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url2+'" short_url="'+short_url+'"][/outgrow]';
   } 
   if(type=="embed3"){
     document.getElementById("embed-menu-"+id).classList.remove('hide');
+    console.log('[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url+'" short_url="'+short_url+'"][/outgrow]');
     document.getElementById("embed-menu-"+id).innerHTML="<div class='main-div-option'>"+
     "<div class='extra-option-button' onclick='classic()' id='cat031'>"+
         "<div class='classic-img'><img src='https://cdn.filestackcontent.com/oCNA05WS3GwmTbYX7yn2'></div>"+
@@ -203,10 +204,12 @@ function getEmbedCode(type,id,url,short_url){
   } 
   if(type=="embed4"){
     document.getElementById("embed-menu-"+id).classList.remove('hide');
+    console.log('[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url+'" short_url="'+short_url+'"][/outgrow]');
     document.getElementById("embed-menu-"+id).innerHTML="<div class='extra-option-chat-button' onclick='chatLeft()' id='chatLeft'><div class='bottom-img'><img class='bottom-min' src='https://dlvkyia8i4zmz.cloudfront.net/o1PZBSLiQuq5HTCCyrMt_bottom_left.png'></div><div class='bottom-text'>Bottom Left</div></div><div onclick='chatRight()' class='extra-option-chat-button' id='bottomRight'><div class='bottom-img'><img class='bottom-min' class='bottom-img' src='https://dlvkyia8i4zmz.cloudfront.net/5uGcgvoRIie2dwQNk9kv_bottom_right.png'></div><div class='bottom-text'>Bottom Right</div></div>";
   } 
   if(type=="embed5"){
     document.getElementById("embed-menu-"+id).classList.remove('hide');
+    console.log('[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url+'" short_url="'+short_url+'"][/outgrow]');
     document.getElementById("embed-menu-"+id).innerHTML="<div class='extra-option-context'><div class='extra-option-custom' id='desktop'>"+
     "<p>Desktop </p>"+
     "<div class='custom-dim-head'>"+
@@ -217,7 +220,7 @@ function getEmbedCode(type,id,url,short_url){
     "</div>"+
   "</div>"+
 
-  "<div class='custom-dim-head'>"+
+  "<div>"+
     "<div class='super-dim'>Width</div>"+
     "<div class='super-input-dim'>"+
       "<input type='text' class='input-dim' name='widthDesktop' id='widthDesktop' onkeypress='return getDesktopWidth(event)' placeholder='100'>"+
@@ -235,7 +238,7 @@ function getEmbedCode(type,id,url,short_url){
     "</div>"+
   "</div>"+
 
-  "<div class='custom-dim-head'>"+
+  "<div>"+
     "<div class='super-dim'>Width</div>"+
     "<div class='super-input-dim'>"+
       "<input type='text' class='input-dim' name='widthTablet' id='widthTablet' onkeypress='return getTabletWidth(event)' placeholder='100'>"+
@@ -253,7 +256,7 @@ function getEmbedCode(type,id,url,short_url){
     "</div>"+
   "</div>"+
 
-  "<div class='custom-dim-head'>"+
+  "<div>"+
     "<div class='super-dim'>Width</div>"+
     "<div class='super-input-dim'>"+
       "<input type='text' class='input-dim' id='widthMobile' onkeypress='return getMobileWidth(event)' name='widthMobile' placeholder='100'>"+
@@ -267,6 +270,8 @@ function getEmbedCode(type,id,url,short_url){
 
 
 function showSelectOptions(){
+  console.log("---------Inside--------------"); 
+
   document.getElementById('selectAPI').classList.toggle('toggle-on');
   $(document).ready(function(){
     if ( $('#selectAPI').hasClass('toggle-on') ) {
@@ -278,20 +283,24 @@ function showSelectOptions(){
 }
 
 function getCode(id){
+  console.log("getCopy works",document.getElementById(id).value);
   // tinymce.PluginManager.add( 'custom_class2', function(editor) {
   //   editor.insertContent("SHGN");   
   // });
   
   var copyText = document.getElementById(id);
+  console.log("-------------------",copyText);
   copyText.setAttribute('readonly', '');
   copyText.select();
   document.execCommand("copy");
   // removeHide('click-copy-text'); 
-}
 
+
+}
 // jQuery(document).ready(function(){
-//   jQuery('.embed').click(function(){
-//     jQuery('.embed').css("background-color", "red");
+//   jQuery('embed').click(function(){
+//     console.log("=====================");
+//     jQuery('#embed').css("background-color", "red");
 //     jQuery(this).css("background-color", "green");
 // });
 // });
