@@ -251,7 +251,12 @@ function og_outgrow_calci_script_page($api){
     global $wpdb;
     $db_result = $wpdb->get_results('select * from wp_outgrow_calci_api_table');
     if(!$db_result){
-       apiWarning("Please add API Key"); 
+    //    apiWarning("Please add API Key"); 
+       ?>
+        <div class="add-api-msg">
+            <h2>Please Add API KEY</h2>
+        </div>
+       <?php
     }else{
         // for api-check at db
         foreach($db_result as $db_row){
