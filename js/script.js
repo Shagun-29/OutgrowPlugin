@@ -32,7 +32,6 @@ var usedApi="";
   
   
   function viewDetails(id,calci_url,short_url){
-    console.log("original id is = ",id);
     custom_url=calci_url;
     addHide("click-copy-text");
     id_used=id;
@@ -45,7 +44,7 @@ var usedApi="";
     url3=ex[0]+"?q=1";
   
     short_url_used=short_url;
-    cat01();
+    // cat01();
     document.getElementById('text-inside').innerText='[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url+'" short_url="'+short_url+'"][/outgrow]';
   }
   
@@ -65,123 +64,122 @@ var usedApi="";
   }
   
   
-  function cat01(){
-    document.getElementById("super-code-id").classList.add("super-get-code");
-    document.getElementById("super-code-id").classList.remove("super-get-full");
-    displayBlock("extra-option");
-    document.getElementById('extra-option').innerHTML="<div class='facebook-link'><div class='fb-link-text'>Facebook Comments</div><div class='span-fb-text'><i class='la la-question-circle la-2x'></i></div><div class='facebook-div' id='facebook-div' onclick='toggleSwitch()'><input type='text'  class='facebook-input-type' ><span class='facebook-span' id='facebook-span'></span></div></div>";
-    document.getElementById('text-inside').classList.remove('text-area-enlarge');
-    console.log("id="+id_used+"url"+url+"short url"+short_url_used);
-    document.getElementById('text-inside').innerText='[outgrow type="mobile_full_screen" id="'+id_used+ '" data_url="'+url+'" short_url="'+short_url_used+'"][/outgrow]';
-    }
-  function cat02(){
-    displayNone("extra-option");
-    document.getElementById('text-inside').classList.add('text-area-enlarge');
-    document.getElementById("super-code-id").classList.remove("super-get-code");
-    document.getElementById("super-code-id").classList.add("super-get-full");
-    addHide("click-copy-text");
-    document.getElementById('text-inside').innerText='[outgrow type="mobile_in_page" id="'+id_used+ '" data_url="'+url2+'" short_url="'+short_url_used+'"][/outgrow]';
+  // function cat01(){
+  //   document.getElementById("super-code-id").classList.add("super-get-code");
+  //   document.getElementById("super-code-id").classList.remove("super-get-full");
+  //   displayBlock("extra-option");
+  //   document.getElementById('extra-option').innerHTML="<div class='facebook-link'><div class='fb-link-text'>Facebook Comments</div><div class='span-fb-text'><i class='la la-question-circle la-2x'></i></div><div class='facebook-div' id='facebook-div' onclick='toggleSwitch()'><input type='text'  class='facebook-input-type' ><span class='facebook-span' id='facebook-span'></span></div></div>";
+  //   document.getElementById('text-inside').classList.remove('text-area-enlarge');
+  //   document.getElementById('text-inside').innerText='[outgrow type="mobile_full_screen" id="'+id_used+ '" data_url="'+url+'" short_url="'+short_url_used+'"][/outgrow]';
+  //   }
+  // function cat02(){
+  //   displayNone("extra-option");
+  //   document.getElementById('text-inside').classList.add('text-area-enlarge');
+  //   document.getElementById("super-code-id").classList.remove("super-get-code");
+  //   document.getElementById("super-code-id").classList.add("super-get-full");
+  //   addHide("click-copy-text");
+  //   document.getElementById('text-inside').innerText='[outgrow type="mobile_in_page" id="'+id_used+ '" data_url="'+url2+'" short_url="'+short_url_used+'"][/outgrow]';
   
-  }
-  function cat03(){
-    document.getElementById("super-code-id").classList.add("super-get-code");
-    document.getElementById("super-code-id").classList.remove("super-get-full");
-    displayBlock("extra-option");
-    document.getElementById('text-inside').classList.remove('text-area-enlarge');
-    document.getElementById('extra-option').innerHTML=
-    "<div class='main-div-option'>"+
-    "<div class='extra-option-button' onclick='classic()' id='cat031'>"+
-        "<div class='classic-img'><img src='https://cdn.filestackcontent.com/oCNA05WS3GwmTbYX7yn2'></div>"+
-        "<div class='classic-text'>Classic</div>"+
-    "</div>"+
-    "<div onclick='drawerL()' class='extra-option-button' id='cat032'>"+
-        "<div class='drawerl-img'><img src='https://cdn.filestackcontent.com/PBcvjT9Rhi6PEIXB8IGG'></div>"+
-        "<div class='drawerl-text'>Drawer (L)</div>"+
-    "</div>"+
-    "<div onclick='drawerR()' class='extra-option-button' id='cat033'>"+
-        "<div class='drawerr-img'><img src='https://cdn.filestackcontent.com/Z45pnQBoQdWcRU6YU7NM'></div>"+
-        "<div class='drawerr-text'>Drawer (R)</div>"+
-    "</div></div>"+
-    "<div class='time-link'><div class='time-link-text'>TIMED & EXIT INTENT<div class='time-div' id='time-div' onclick='toggleSwitch2()'><input type='text'  class='time-input-type' ><span class='time-span' id='time-span'></span></div></div></div>"+
-    "<div class='time-option' id='time-option'></div>";
+  // }
+  // function cat03(){
+  //   document.getElementById("super-code-id").classList.add("super-get-code");
+  //   document.getElementById("super-code-id").classList.remove("super-get-full");
+  //   displayBlock("extra-option");
+  //   document.getElementById('text-inside').classList.remove('text-area-enlarge');
+  //   document.getElementById('extra-option').innerHTML=
+  //   "<div class='main-div-option'>"+
+  //   "<div class='extra-option-button' onclick='classic()' id='cat031'>"+
+  //       "<div class='classic-img'><img src='https://cdn.filestackcontent.com/oCNA05WS3GwmTbYX7yn2'></div>"+
+  //       "<div class='classic-text'>Classic</div>"+
+  //   "</div>"+
+  //   "<div onclick='drawerL()' class='extra-option-button' id='cat032'>"+
+  //       "<div class='drawerl-img'><img src='https://cdn.filestackcontent.com/PBcvjT9Rhi6PEIXB8IGG'></div>"+
+  //       "<div class='drawerl-text'>Drawer (L)</div>"+
+  //   "</div>"+
+  //   "<div onclick='drawerR()' class='extra-option-button' id='cat033'>"+
+  //       "<div class='drawerr-img'><img src='https://cdn.filestackcontent.com/Z45pnQBoQdWcRU6YU7NM'></div>"+
+  //       "<div class='drawerr-text'>Drawer (R)</div>"+
+  //   "</div></div>"+
+  //   "<div class='time-link'><div class='time-link-text'>TIMED & EXIT INTENT<div class='time-div' id='time-div' onclick='toggleSwitch2()'><input type='text'  class='time-input-type' ><span class='time-span' id='time-span'></span></div></div></div>"+
+  //   "<div class='time-option' id='time-option'></div>";
    
-    addHide("click-copy-text");
-    document.getElementById('text-inside').innerText='[outgrow type="pop_up" id="'+id_used+ '" data_url="'+url3+'" ][/outgrow]';
-  }
-  function cat04(){
-    document.getElementById("super-code-id").classList.add("super-get-code");
-    document.getElementById("super-code-id").classList.remove("super-get-full");
-    displayBlock("extra-option");
-    document.getElementById('text-inside').classList.remove('text-area-enlarge');
-    document.getElementById('extra-option').innerHTML="<div class='extra-option-chat-button' onclick='chatLeft()' id='chatLeft'><div class='bottom-img'><img class='bottom-min' src='https://dlvkyia8i4zmz.cloudfront.net/o1PZBSLiQuq5HTCCyrMt_bottom_left.png'></div><div class='bottom-text'>Bottom Left</div></div><div onclick='chatRight()' class='extra-option-chat-button' id='bottomRight'><div class='bottom-img'><img class='bottom-min' class='bottom-img' src='https://dlvkyia8i4zmz.cloudfront.net/5uGcgvoRIie2dwQNk9kv_bottom_right.png'></div><div class='bottom-text'>Bottom Right</div></div>";
+  //   addHide("click-copy-text");
+  //   document.getElementById('text-inside').innerText='[outgrow type="pop_up" id="'+id_used+ '" data_url="'+url3+'" ][/outgrow]';
+  // }
+  // function cat04(){
+  //   document.getElementById("super-code-id").classList.add("super-get-code");
+  //   document.getElementById("super-code-id").classList.remove("super-get-full");
+  //   displayBlock("extra-option");
+  //   document.getElementById('text-inside').classList.remove('text-area-enlarge');
+  //   document.getElementById('extra-option').innerHTML="<div class='extra-option-chat-button' onclick='chatLeft()' id='chatLeft'><div class='bottom-img'><img class='bottom-min' src='https://dlvkyia8i4zmz.cloudfront.net/o1PZBSLiQuq5HTCCyrMt_bottom_left.png'></div><div class='bottom-text'>Bottom Left</div></div><div onclick='chatRight()' class='extra-option-chat-button' id='bottomRight'><div class='bottom-img'><img class='bottom-min' class='bottom-img' src='https://dlvkyia8i4zmz.cloudfront.net/5uGcgvoRIie2dwQNk9kv_bottom_right.png'></div><div class='bottom-text'>Bottom Right</div></div>";
     
-    addHide("click-copy-text");
-    document.getElementById('text-inside').innerText='[outgrow type="chat" " data_url="'+url3+'" ][/outgrow]';
-  }
-  function cat05(){
-    document.getElementById("super-code-id").classList.add("super-get-code");
-    document.getElementById("super-code-id").classList.remove("super-get-full");
-    displayBlock("extra-option");
-    document.getElementById('text-inside').classList.remove('text-area-enlarge');
-    document.getElementById('extra-option').innerHTML="<div class='extra-option-context'><div class='extra-option-custom' id='desktop'>"+
-    "<p>Desktop </p>"+
-    "<div class='custom-dim-head'>"+
-    "<div class='super-dim'>Height</div>"+
-    "<div class='super-input-dim'>"+
-      "<input type='text' class='input-dim' id='heightDesktop' name='heightDesktop' onkeypress='return getDesktopHeight(event)' placeholder='620'>"+
-      "<select class='select-custom' name='selecthDesktop' id='selecthDesktop' onchange='getHeightD()'><option>%</option><option selected>px</option><option>vh</option></select>"+
-    "</div>"+
-  "</div>"+
+  //   addHide("click-copy-text");
+  //   document.getElementById('text-inside').innerText='[outgrow type="chat" " data_url="'+url3+'" ][/outgrow]';
+  // }
+  // function cat05(){
+  //   document.getElementById("super-code-id").classList.add("super-get-code");
+  //   document.getElementById("super-code-id").classList.remove("super-get-full");
+  //   displayBlock("extra-option");
+  //   document.getElementById('text-inside').classList.remove('text-area-enlarge');
+  //   document.getElementById('extra-option').innerHTML="<div class='extra-option-context'><div class='extra-option-custom' id='desktop'>"+
+  //   "<p>Desktop </p>"+
+  //   "<div class='custom-dim-head'>"+
+  //   "<div class='super-dim'>Height</div>"+
+  //   "<div class='super-input-dim'>"+
+  //     "<input type='text' class='input-dim' id='heightDesktop' name='heightDesktop' onkeypress='return getDesktopHeight(event)' placeholder='620'>"+
+  //     "<select class='select-custom' name='selecthDesktop' id='selecthDesktop' onchange='getHeightD()'><option>%</option><option selected>px</option><option>vh</option></select>"+
+  //   "</div>"+
+  // "</div>"+
 
-  "<div>"+
-    "<div class='super-dim'>Width</div>"+
-    "<div class='super-input-dim'>"+
-      "<input type='text' class='input-dim' name='widthDesktop' id='widthDesktop' onkeypress='return getDesktopWidth(event)' placeholder='100'>"+
-      "<select name='selectwDesktop' id='selectwDesktop' class='select-custom' onchange='getWidthD()'><option>%</option><option selected>px</option><option>vh</option></select>"+
-    "</div>"+
-  "</div>"+
-    "</div>"+
-    // tablet
-    "<div class='extra-option-custom' id='tablet' ><p>Tablet</p>"+
-    "<div class='custom-dim-head'>"+
-    "<div class='super-dim'>Height</div>"+
-    "<div class='super-input-dim'>"+
-      "<input type='text' class='input-dim' name='heightTablet' id='heightTablet' onkeypress='return getTabletHeight(event)' placeholder='620'>"+
-      "<select class='select-custom' onchange='getHeightT()' id='selecthTablet' name='selecthTablet'><option>%</option><option selected>px</option><option>vh</option></select>"+
-    "</div>"+
-  "</div>"+
+  // "<div>"+
+  //   "<div class='super-dim'>Width</div>"+
+  //   "<div class='super-input-dim'>"+
+  //     "<input type='text' class='input-dim' name='widthDesktop' id='widthDesktop' onkeypress='return getDesktopWidth(event)' placeholder='100'>"+
+  //     "<select name='selectwDesktop' id='selectwDesktop' class='select-custom' onchange='getWidthD()'><option>%</option><option selected>px</option><option>vh</option></select>"+
+  //   "</div>"+
+  // "</div>"+
+  //   "</div>"+
+  //   // tablet
+  //   "<div class='extra-option-custom' id='tablet' ><p>Tablet</p>"+
+  //   "<div class='custom-dim-head'>"+
+  //   "<div class='super-dim'>Height</div>"+
+  //   "<div class='super-input-dim'>"+
+  //     "<input type='text' class='input-dim' name='heightTablet' id='heightTablet' onkeypress='return getTabletHeight(event)' placeholder='620'>"+
+  //     "<select class='select-custom' onchange='getHeightT()' id='selecthTablet' name='selecthTablet'><option>%</option><option selected>px</option><option>vh</option></select>"+
+  //   "</div>"+
+  // "</div>"+
 
-  "<div>"+
-    "<div class='super-dim'>Width</div>"+
-    "<div class='super-input-dim'>"+
-      "<input type='text' class='input-dim' name='widthTablet' id='widthTablet' onkeypress='return getTabletWidth(event)' placeholder='100'>"+
-      "<select class='select-custom' id='selectwTablet' onchange='getWidthT()' name='selectwTablet'><option>%</option><option selected>px</option><option>vh</option></select>"+
-    "</div>"+
-  "</div>"+
-    "</div>"
-    // mobile
-    +"<div class='extra-option-custom' id='mobile'><p>Mobile</p>"+
-    "<div class='custom-dim-head'>"+
-    "<div class='super-dim'>Height</div>"+
-    "<div class='super-input-dim'>"+
-      "<input type='text' class='input-dim' name='heightMobile' id='heightMobile' onkeypress='return getMobileHeight(event)' placeholder='620'>"+
-      "<select class='select-custom' id='selecthMobile' onchange='getHeightM()' name='selectwMobile'><option>%</option><option selected>px</option><option>vh</option></select>"+
-    "</div>"+
-  "</div>"+
+  // "<div>"+
+  //   "<div class='super-dim'>Width</div>"+
+  //   "<div class='super-input-dim'>"+
+  //     "<input type='text' class='input-dim' name='widthTablet' id='widthTablet' onkeypress='return getTabletWidth(event)' placeholder='100'>"+
+  //     "<select class='select-custom' id='selectwTablet' onchange='getWidthT()' name='selectwTablet'><option>%</option><option selected>px</option><option>vh</option></select>"+
+  //   "</div>"+
+  // "</div>"+
+  //   "</div>"
+  //   // mobile
+  //   +"<div class='extra-option-custom' id='mobile'><p>Mobile</p>"+
+  //   "<div class='custom-dim-head'>"+
+  //   "<div class='super-dim'>Height</div>"+
+  //   "<div class='super-input-dim'>"+
+  //     "<input type='text' class='input-dim' name='heightMobile' id='heightMobile' onkeypress='return getMobileHeight(event)' placeholder='620'>"+
+  //     "<select class='select-custom' id='selecthMobile' onchange='getHeightM()' name='selectwMobile'><option>%</option><option selected>px</option><option>vh</option></select>"+
+  //   "</div>"+
+  // "</div>"+
 
-  "<div>"+
-    "<div class='super-dim'>Width</div>"+
-    "<div class='super-input-dim'>"+
-      "<input type='text' class='input-dim' id='widthMobile' onkeypress='return getMobileWidth(event)' name='widthMobile' placeholder='100'>"+
-      "<select class='select-custom' id='selectwMobile' onchange='getWidthM()' name='selectwMobile'><option>%</option><option selected>px</option ><option>vh</option></select>"+
-    "</div>"+
-  "</div>"+
-    "</div></div>";
+  // "<div>"+
+  //   "<div class='super-dim'>Width</div>"+
+  //   "<div class='super-input-dim'>"+
+  //     "<input type='text' class='input-dim' id='widthMobile' onkeypress='return getMobileWidth(event)' name='widthMobile' placeholder='100'>"+
+  //     "<select class='select-custom' id='selectwMobile' onchange='getWidthM()' name='selectwMobile'><option>%</option><option selected>px</option ><option>vh</option></select>"+
+  //   "</div>"+
+  // "</div>"+
+  //   "</div></div>";
    
     
-    addHide("click-copy-text");
-    customOutput();
-  }
+  //   addHide("click-copy-text");
+  //   customOutput();
+  // }
 
   function classic(){
    
@@ -685,3 +683,58 @@ jQuery(document).ready(function(){
     jQuery(this).addClass("active-span");
 });
 });
+
+function mobileCat(classid){
+//   console.log("====",classid)
+//   // document.getElementById(classid).classList.add('hide');
+ 
+  switch(classid){
+    case "getcode-container1":
+    document.getElementById("getcode-container1").classList.remove('hide');
+    document.getElementById("getcode-container2").classList.add('hide');
+    document.getElementById("super-extra-option3").classList.add('hide');
+    document.getElementById("super-extra-option4").classList.add('hide');
+    document.getElementById("super-extra-option5").classList.add('hide');
+    break;
+
+    case "getcode-container2":
+    document.getElementById("getcode-container1").classList.add('hide');
+    document.getElementById("getcode-container2").classList.remove('hide');
+    document.getElementById("super-extra-option3").classList.add('hide');
+    document.getElementById("super-extra-option4").classList.add('hide');
+    document.getElementById("super-extra-option5").classList.add('hide'); 
+    break;
+
+    case "super-extra-option3":
+    document.getElementById("getcode-container1").classList.add('hide');
+    document.getElementById("getcode-container2").classList.add('hide');
+    document.getElementById("super-extra-option3").classList.remove('hide');
+    document.getElementById("super-extra-option4").classList.add('hide');
+    document.getElementById("super-extra-option5").classList.add('hide');
+    break;
+
+    case "super-extra-option4":
+    document.getElementById("getcode-container1").classList.add('hide');
+    document.getElementById("getcode-container2").classList.add('hide');
+    document.getElementById("super-extra-option3").classList.add('hide');
+    document.getElementById("super-extra-option4").classList.remove('hide');
+    document.getElementById("super-extra-option5").classList.add('hide'); 
+    break;
+
+    case "super-extra-option5":
+    document.getElementById("getcode-container1").classList.add('hide');
+    document.getElementById("getcode-container2").classList.add('hide');
+    document.getElementById("super-extra-option3").classList.add('hide');
+    document.getElementById("super-extra-option4").classList.add('hide');
+    document.getElementById("super-extra-option5").classList.remove('hide');
+    break;
+  }
+}
+
+// jQuery(document).ready(function(){
+//   console.log("------------------");
+//   jQuery('.mobileview').click(function(){
+//     jQuery('.mobileview').addClass("hide");
+//     jQuery(this).removeClass("hide");
+// });
+// });

@@ -14,19 +14,140 @@
                          Get Embed Code
                      </div>
             <ul class="button-group">
+                    <li class="modal-button b1" id="cat01" onclick="mobileCat('getcode-container1')" data-text="fullscreen">EMBED + MOBILE FULL SCREEN<i class="la la-info-circle"></i>
+                    </li>
+
+                    <!-- mobile view -->
+                        <div class="getcode-container1" id="getcode-container1">
+                            <div class="get-code">
+                                <p>Get Code</p>
+                                <textarea id="text-inside-1" class="text-hidden text-area-enlarge" rows="10" onclick="copy()">[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url+'" short_url="'+short_url+'"][/outgrow]</textarea>
+     
+                                <div id="click-copy-text" class="hide">
+                                  Copied.!
+                                </div>
+                                <button class="msg-copy" onclick="copy()">Copy</button>
+                            </div>
+                        </div>
+                   
+                    <!-- mobile view ends -->
+                    
+                    <li class="modal-button" id="cat02" onclick="mobileCat('getcode-container2')" data-text="inpage">EMBED + MOBILE IN PAGE<i class="la la-info-circle"></i>
+                    </li>
+
+                    <!-- mobile view -->
+                    <div class="getcode-container2 hide" id="getcode-container2">
+                        <div class="get-code">
+                            <p>Get Code</p>
+                            <textarea id="text-inside-2" class="text-hidden text-area-enlarge" rows="10" onclick="copy()">[outgrow type="mobile_in_page" id="'+id_used+ '" data_url="'+url2+'" short_url="'+short_url_used+'"][/outgrow]</textarea>
+ 
+                            <div id="click-copy-text" class="hide">
+                              Copied.!
+                            </div>
+                            <button class="msg-copy" onclick="copy()">Copy</button>
+                        </div>
+                    </div>
+                    <!-- mobile view ends -->
+
+                    <li class="modal-button" id="cat03" onclick="mobileCat('super-extra-option3')" data-text="popup">POP UP</li>
+
+                     <!-- mobile view -->
+                     <div class="text-head-hide hide" id="super-extra-option3">
+                        <div id="extra-option" style="display: block;"><div class="main-div-option"><div class="extra-option-button" onclick="classic()" id="cat031"><div class="classic-img"><img src="https://cdn.filestackcontent.com/oCNA05WS3GwmTbYX7yn2"></div><div class="classic-text">Classic</div></div><div onclick="drawerL()" class="extra-option-button" id="cat032"><div class="drawerl-img"><img src="https://cdn.filestackcontent.com/PBcvjT9Rhi6PEIXB8IGG"></div><div class="drawerl-text">Drawer (L)</div></div><div onclick="drawerR()" class="extra-option-button" id="cat033"><div class="drawerr-img"><img src="https://cdn.filestackcontent.com/Z45pnQBoQdWcRU6YU7NM"></div><div class="drawerr-text">Drawer (R)</div></div></div><div class="time-link"><div class="time-link-text">TIMED &amp; EXIT INTENT<div class="time-div" id="time-div" onclick="toggleSwitch2()"><input type="text" class="time-input-type"><span class="time-span" id="time-span"></span></div></div></div><div class="time-option" id="time-option"></div></div>
+        
+                        <div class="super-get-code" id="super-code-id">
+                            
+                            <div class="getcode-container-3">
+                           
+                               <div class="get-code">
+                                <p>Get Code</p>
+                               <textarea id="text-inside" class="text-hidden" rows="10" onclick="copy()" readonly="">[outgrow type="pop_up" id="594a1693f570df3b64eb5111" data_url="https://bnb22.outgrow.us/594a1693f570df3b64eb5111?q=1" ][/outgrow]</textarea>
+        
+                            <div id="click-copy-text" class="hide">
+                            Copied.!
+                            </div>
+                            
+                            <button class="msg-copy" onclick="copy()">Copy</button>
+        
+                            </div>
+                        <!-- ending adding more --> 
+                           
+                    </div>
+                        </div>
+                    </div>
+                    <!-- mobile view ends -->
+
+                    <li class="modal-button " id="cat04" onclick="mobileCat('super-extra-option4')" data-text="chat">CHAT</li>
+
+                     <!-- mobile view -->
+                     <div class="text-head-hide hide" id="super-extra-option4">
+                        <div id="extra-option" style="display: block;"><div class="extra-option-chat-button" onclick="chatLeft()" id="chatLeft"><div class="bottom-img"><img class="bottom-min" src="https://dlvkyia8i4zmz.cloudfront.net/o1PZBSLiQuq5HTCCyrMt_bottom_left.png"></div><div class="bottom-text">Bottom Left</div></div><div onclick="chatRight()" class="extra-option-chat-button" id="bottomRight"><div class="bottom-img"><img class="bottom-min" src="https://dlvkyia8i4zmz.cloudfront.net/5uGcgvoRIie2dwQNk9kv_bottom_right.png"></div><div class="bottom-text">Bottom Right</div></div></div>
+        
+                        <div class="super-get-code" id="super-code-id">
+                            
+                            <div class="getcode-container-4">
+                           
+                               <div class="get-code">
+                                <p>Get Code</p>
+                               <textarea id="text-inside" class="text-hidden" rows="10" onclick="copy()" readonly="">[outgrow type="chat" " data_url="https://bnb22.outgrow.us/594a1693f570df3b64eb5111?q=1" ][/outgrow]</textarea>
+        
+                            <div id="click-copy-text" class="hide">
+                            Copied.!
+                            </div>
+                            
+                            <button class="msg-copy" onclick="copy()">Copy</button>
+        
+                            </div>
+                        <!-- ending adding more --> 
+                           
+                    </div>
+                        </div>
+                    </div>
+                    <!-- mobile view ends -->
+
+                    <li class="modal-button b4" id="cat05" onclick="mobileCat('super-extra-option5')" data-text="custom">CUSTOM EMBED</li>
+
+                     <!-- mobile view --> 
+                     <div class="text-head-hide hide" id="super-extra-option5">
+                        <div id="extra-option" style="display: block;"><div class="extra-option-context"><div class="extra-option-custom" id="desktop"><p>Desktop </p><div class="custom-dim-head"><div class="super-dim">Height</div><div class="super-input-dim"><input type="text" class="input-dim" id="heightDesktop" name="heightDesktop" onkeypress="return getDesktopHeight(event)" placeholder="620"><select class="select-custom" name="selecthDesktop" id="selecthDesktop" onchange="getHeightD()"><option>%</option><option selected="">px</option><option>vh</option></select></div></div><div><div class="super-dim">Width</div><div class="super-input-dim"><input type="text" class="input-dim" name="widthDesktop" id="widthDesktop" onkeypress="return getDesktopWidth(event)" placeholder="100"><select name="selectwDesktop" id="selectwDesktop" class="select-custom" onchange="getWidthD()"><option>%</option><option selected="">px</option><option>vh</option></select></div></div></div><div class="extra-option-custom" id="tablet"><p>Tablet</p><div class="custom-dim-head"><div class="super-dim">Height</div><div class="super-input-dim"><input type="text" class="input-dim" name="heightTablet" id="heightTablet" onkeypress="return getTabletHeight(event)" placeholder="620"><select class="select-custom" onchange="getHeightT()" id="selecthTablet" name="selecthTablet"><option>%</option><option selected="">px</option><option>vh</option></select></div></div><div><div class="super-dim">Width</div><div class="super-input-dim"><input type="text" class="input-dim" name="widthTablet" id="widthTablet" onkeypress="return getTabletWidth(event)" placeholder="100"><select class="select-custom" id="selectwTablet" onchange="getWidthT()" name="selectwTablet"><option>%</option><option selected="">px</option><option>vh</option></select></div></div></div><div class="extra-option-custom" id="mobile"><p>Mobile</p><div class="custom-dim-head"><div class="super-dim">Height</div><div class="super-input-dim"><input type="text" class="input-dim" name="heightMobile" id="heightMobile" onkeypress="return getMobileHeight(event)" placeholder="620"><select class="select-custom" id="selecthMobile" onchange="getHeightM()" name="selectwMobile"><option>%</option><option selected="">px</option><option>vh</option></select></div></div><div><div class="super-dim">Width</div><div class="super-input-dim"><input type="text" class="input-dim" id="widthMobile" onkeypress="return getMobileWidth(event)" name="widthMobile" placeholder="100"><select class="select-custom" id="selectwMobile" onchange="getWidthM()" name="selectwMobile"><option>%</option><option selected="">px</option><option>vh</option></select></div></div></div></div></div>
+        
+                        <div class="super-get-code" id="super-code-id">
+                            
+                            <div class="getcode-container-5">
+                           
+                               <div class="get-code">
+                                <p>Get Code</p>
+                               <textarea id="text-inside" class="text-hidden" rows="10" onclick="copy()" readonly="">[outgrow type="custom_type" " data_url="https://bnb22.outgrow.us/594a1693f570df3b64eb5111" "dh"="620" dhd="px" "dw"="100" dwd="px" "th"="620" thd="px" "tw"="100" twd="px" "mh"="620" mhd="px" "mw"="100" mwd="px"][/outgrow]</textarea>
+        
+                            <div id="click-copy-text" class="hide">
+                            Copied.!
+                            </div>
+                            
+                            <button class="msg-copy" onclick="copy()">Copy</button>
+        
+                            </div>
+                        <!-- ending adding more --> 
+                           
+                    </div>
+                        </div>
+                    </div>
+                    <!-- mobile view ends -->
+
+                </ul>
+
+
+                <!-- for website -->
+                <!-- <ul class="button-group">
                     <li class="modal-button b1" id="cat01" onclick="cat01()" data-text="fullscreen">EMBED + MOBILE FULL SCREEN<i class="la la-info-circle"></i>
                     </li>
-                    <!-- <li class="modal-button-line"></li> -->
                     <li class="modal-button" id="cat02" onclick="cat02()" data-text="inpage">EMBED + MOBILE IN PAGE<i class="la la-info-circle"></i>
                     </li>
-                    <!-- <li class="modal-button-line"></li> -->
                     <li class="modal-button" id="cat03" onclick="cat03()" data-text="popup">POP UP</li>
-                    <!-- <li class="modal-button-line"></li> -->
                     <li class="modal-button " id="cat04" onclick="cat04()" data-text="chat">CHAT</li>
-                    <!-- <li class="modal-button-line"></li> -->
                     <li class="modal-button b4" id="cat05" onclick="cat05()" data-text="custom">CUSTOM EMBED</li>
                 </ul>
-            <div class="text-head" id="super-extra-option">
+                
+            <div class="text-head-hide " id="super-extra-option">
                 <div id="extra-option" style="display: none">
                     <div class='extra-option-button' onclick='classic()' id='classic cat031'>Classic</div>
                     <div onclick='drawerL()' class='extra-option-button' id='drawer-l cat032'>Drawer L</div>
@@ -50,11 +171,12 @@
                     <button class="msg-copy" onclick="copy()">Copy</button>
 
                     </div>
-                <!-- ending adding more --> 
+                
                    
             </div>
                 </div>
-            </div>
+            </div> -->
+            <!-- website ends -->
             </div>
         </div>
         
