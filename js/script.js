@@ -32,7 +32,6 @@ var usedApi="";
   
   
   function viewDetails(id,calci_url,short_url){
-    console.log("original id is = ",id);
     custom_url=calci_url;
     addHide("click-copy-text");
     id_used=id;
@@ -71,7 +70,6 @@ var usedApi="";
     displayBlock("extra-option");
     document.getElementById('extra-option').innerHTML="<div class='facebook-link'><div class='fb-link-text'>Facebook Comments</div><div class='span-fb-text'><i class='la la-question-circle la-2x'></i></div><div class='facebook-div' id='facebook-div' onclick='toggleSwitch()'><input type='text'  class='facebook-input-type' ><span class='facebook-span' id='facebook-span'></span></div></div>";
     document.getElementById('text-inside').classList.remove('text-area-enlarge');
-    console.log("id="+id_used+"url"+url+"short url"+short_url_used);
     document.getElementById('text-inside').innerText='[outgrow type="mobile_full_screen" id="'+id_used+ '" data_url="'+url+'" short_url="'+short_url_used+'"][/outgrow]';
     }
   function cat02(){

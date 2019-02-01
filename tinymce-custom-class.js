@@ -90,9 +90,6 @@ function selectAPI(){
 
   if(response.success==true){
     refinedResponse.forEach(element => {
-
-      
-      console.log("--------",element.short_url);
       document.getElementById("api-card").insertAdjacentHTML(`afterend`,`<div class="shortcodecard-row" id="shortcodecard-row-id">
         <div id="shortcodecard-col">
           <div id="shortcode-card-body">
@@ -138,7 +135,6 @@ function selectAPI(){
 }
 
 function viewDetails(id){
-  console.log("::id::",id);
   // toggle starts
   $(document).ready(function(){
     document.getElementById(id+'-div-section').classList.toggle("toggle-on");   
@@ -165,12 +161,10 @@ function viewDetails(id){
     
 }
 
-function getEmbedCode(type,id,url,short_url){
+function getEmbedCode(type,passid,url,short_url){
   ex=url.split("?");
   url2=ex[0]+"?vHeight=1";
   url3=ex[0]+"?q=1";
-  console.log("-----------------------",type,"-----------------------");
-  console.log(document.getElementById(id));
   // document.getElementById(id).innerText=type; 
   jQuery(document).ready(function(){
       
@@ -179,51 +173,48 @@ function getEmbedCode(type,id,url,short_url){
       jQuery(this).addClass('white');
     });
   });
+
   if(type=="embed1"){
-
-
-
-
-    document.getElementById("embed-menu-"+id).classList.add('hide');
-    console.log('[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url+'" short_url="'+short_url+'"][/outgrow]');
+    document.getElementById("embed-menu-"+passid).classList.add('hide');
     // document.getElementById("embed-menu-"+id).innerHTML="";
-    document.getElementById(id).innerText='[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url+'" short_url="'+short_url_used+'"][/outgrow]';  
+    document.getElementById(passid).innerText='[outgrow type="mobile_full_screen" id="'+passid+ '" data_url="'+url+'" short_url="'+short_url_used+'"][/outgrow]';  
   } 
   if(type=="embed2"){
-    document.getElementById("embed-menu-"+id).classList.add('hide');
-    console.log('[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url2+'" short_url="'+short_url+'"][/outgrow]');
+    document.getElementById("embed-menu-"+passid).classList.add('hide');
     // document.getElementById("embed-menu-"+id).innerHTML="";
 
-    document.getElementById(id).innerText='[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url2+'" short_url="'+short_url+'"][/outgrow]';
+    document.getElementById(passid).innerText='[outgrow type="mobile_in_page" id="'+passid+ '" data_url="'+url2+'" short_url="'+short_url_used+'"][/outgrow]';
   } 
   if(type=="embed3"){
-    document.getElementById("embed-menu-"+id).classList.remove('hide');
-    console.log('[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url+'" short_url="'+short_url+'"][/outgrow]');
-    document.getElementById("embed-menu-"+id).innerHTML="<div class='main-div-option'>"+
-    "<div class='extra-option-button' onclick='classic()' id='cat031'>"+
-        "<div class='classic-img'><img src='https://cdn.filestackcontent.com/oCNA05WS3GwmTbYX7yn2'></div>"+
-        "<div class='classic-text'>Classic</div>"+
-    "</div>"+
-    "<div onclick='drawerL()' class='extra-option-button' id='cat032'>"+
-        "<div class='drawerl-img'><img src='https://cdn.filestackcontent.com/PBcvjT9Rhi6PEIXB8IGG'></div>"+
-        "<div class='drawerl-text'>Drawer (L)</div>"+
-    "</div>"+
-    "<div onclick='drawerR()' class='extra-option-button' id='cat033'>"+
-        "<div class='drawerr-img'><img src='https://cdn.filestackcontent.com/Z45pnQBoQdWcRU6YU7NM'></div>"+
-        "<div class='drawerr-text'>Drawer (R)</div>"+
-    "</div></div>"+
-    "<div class='time-link'><div class='time-link-text'>TIMED & EXIT INTENT<div class='time-div' id='time-div' onclick='toggleSwitch2()'><input type='text'  class='time-input-type' ><span class='time-span' id='time-span'></span></div></div></div>"+
-    "<div class='time-option' id='time-option'></div>";;
+    // var passid=id;
+    document.getElementById(passid).innerText='[outgrow type="pop_up" id="'+passid+ '" data_url="'+url3+'" ][/outgrow]';
+    document.getElementById("embed-menu-"+passid).classList.remove('hide');
+    console.log("--embed3--",passid);
+
+    document.getElementById("embed-menu-"+passid).innerHTML=`<div class='main-div-option'>
+    <div class='extra-option-button' onclick='getEmbedCode("classic","${passid}","${url}","${short_url_used}")' id='cat031'>
+        <div class='classic-img'><img src='https://cdn.filestackcontent.com/oCNA05WS3GwmTbYX7yn2'></div>
+        <div class='classic-text'>Classic</div>
+    </div>
+    <div onclick='drawerL()' class='extra-option-button' id='cat032'>
+        <div class='drawerl-img'><img src='https://cdn.filestackcontent.com/PBcvjT9Rhi6PEIXB8IGG'></div>
+        <div class='drawerl-text'>Drawer (L)</div>
+    </div>
+    <div onclick='drawerR()' class='extra-option-button' id='cat033'>
+        <div class='drawerr-img'><img src='https://cdn.filestackcontent.com/Z45pnQBoQdWcRU6YU7NM'></div>
+        <div class='drawerr-text'>Drawer (R)</div>
+    </div></div>
+    <div class='time-link'><div class='time-link-text'>TIMED & EXIT INTENT<div class='time-div' id='time-div' onclick='toggleSwitch2()'><input type='text'  class='time-input-type' ><span class='time-span' id='time-span'></span></div></div></div>
+    <div class='time-option' id='time-option'></div>`;
+    
   } 
   if(type=="embed4"){
-    document.getElementById("embed-menu-"+id).classList.remove('hide');
-    console.log('[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url+'" short_url="'+short_url+'"][/outgrow]');
-    document.getElementById("embed-menu-"+id).innerHTML="<div class='extra-option-chat-button' onclick='chatLeft()' id='chatLeft'><div class='bottom-img'><img class='bottom-min' src='https://dlvkyia8i4zmz.cloudfront.net/o1PZBSLiQuq5HTCCyrMt_bottom_left.png'></div><div class='bottom-text'>Bottom Left</div></div><div onclick='chatRight()' class='extra-option-chat-button' id='bottomRight'><div class='bottom-img'><img class='bottom-min' class='bottom-img' src='https://dlvkyia8i4zmz.cloudfront.net/5uGcgvoRIie2dwQNk9kv_bottom_right.png'></div><div class='bottom-text'>Bottom Right</div></div>";
+    // document.getElementById("embed-menu-"+id).classList.remove('hide');
+    document.getElementById("embed-menu-"+passid).innerHTML="<div class='extra-option-chat-button' onclick='chatLeftEditor()' id='chatLeft'><div class='bottom-img'><img class='bottom-min' src='https://dlvkyia8i4zmz.cloudfront.net/o1PZBSLiQuq5HTCCyrMt_bottom_left.png'></div><div class='bottom-text'>Bottom Left</div></div><div onclick='chatRightEditor()' class='extra-option-chat-button' id='bottomRight'><div class='bottom-img'><img class='bottom-min' class='bottom-img' src='https://dlvkyia8i4zmz.cloudfront.net/5uGcgvoRIie2dwQNk9kv_bottom_right.png'></div><div class='bottom-text'>Bottom Right</div></div>";
   } 
   if(type=="embed5"){
-    document.getElementById("embed-menu-"+id).classList.remove('hide');
-    console.log('[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url+'" short_url="'+short_url+'"][/outgrow]');
-    document.getElementById("embed-menu-"+id).innerHTML="<div class='extra-option-context'><div class='extra-option-custom' id='desktop'>"+
+    // document.getElementById("embed-menu-"+id).classList.remove('hide');
+    document.getElementById("embed-menu-"+passid).innerHTML="<div class='extra-option-context'><div class='extra-option-custom' id='desktop'>"+
     "<p>Desktop </p>"+
     "<div class='custom-dim-head'>"+
     "<div class='super-dim'>Height</div>"+
@@ -279,12 +270,14 @@ function getEmbedCode(type,id,url,short_url){
     "</div></div>";
   } 
   // document.getElementById(type).style.backgroundColor="red";
+  if(type=="classic"){
+    console.log("----------inside classic part-------------",passid);
+    document.getElementById(passid).innerText='[outgrow type="pop_up_classic" id="'+passid+ '" data_url="'+url3+'" ][/outgrow]';
+  }
 }
 
 
 function showSelectOptions(){
-  console.log("---------Inside--------------"); 
-
   document.getElementById('selectAPI').classList.toggle('toggle-on');
   $(document).ready(function(){
     if ( $('#selectAPI').hasClass('toggle-on') ) {
@@ -296,13 +289,11 @@ function showSelectOptions(){
 }
 
 function getCode(id){
-  console.log("getCopy works",document.getElementById(id).value);
   // tinymce.PluginManager.add( 'custom_class2', function(editor) {
   //   editor.insertContent("SHGN");   
   // });
   
   var copyText = document.getElementById(id);
-  console.log("-------------------",copyText);
   copyText.setAttribute('readonly', '');
   copyText.select();
   document.execCommand("copy");
@@ -323,3 +314,10 @@ function getCode(id){
 
 //   })
 // });
+// function classic(id,url){
+//   console.log("------------id----------",id,"--------url--------",url);
+//   document.getElementById("textarea-text").innerText='[outgrow type="pop_up_classic" id="'+id+ '" data_url="'+url+'" ][/outgrow]';
+// }
+// function chatLeftEditor(){
+
+// }
