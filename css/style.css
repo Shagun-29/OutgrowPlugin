@@ -311,7 +311,7 @@ button:hover{
     cursor: pointer;
 }
 
-#text-inside {
+#text-inside,#text-inside-1 {
     width: 100%;
     font-size: 14px;
     color: #666666;
@@ -333,6 +333,12 @@ button:hover{
 }
 
 
+.get-code-1 p {
+    font-family: Montserrat;
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 10px;
+}
 
 
 
@@ -612,7 +618,7 @@ span#close {
     font-size: 24px;
     margin-bottom: 30px;
 }
-.get-code {
+.get-code, .get-code-1 {
     font-size: 20px;
     float: left;
     color: #666666;
@@ -897,7 +903,7 @@ img.loader-image {
     border-radius: 5px;
 }
 
-div#extra-option {
+div#extra-option,.extra-option-1 {
     
     float: left;
     /* margin-top: 7px; */
@@ -1381,7 +1387,7 @@ div#exit-input-cover {
         font-size: 20px;
         margin-bottom: 20px;
     }
-    .get-code {
+    .get-code, .get-code-1 {
      padding: 10px 15px;
  }
  .msg-copy {
@@ -1394,7 +1400,7 @@ div#exit-input-cover {
     font-size: 16px;
     bottom: 16px;
 }
-#text-inside {
+#text-inside,#text-inside-1 {
     font-size: 13px;
 }
 .extra-option-button {
@@ -1648,13 +1654,17 @@ i.la.la-info-circle {
     top: 18px;
 
 }
-#text-inside{
+#text-inside,#text-inside-1{
     background: #f3f3f3;
 font-size: 11px;
 line-height: 1.545;
 padding: 8px;
 }
 .get-code p {
+    font-size: 13px;
+    font-weight: bold;
+}
+.get-code-1 p {
     font-size: 13px;
     font-weight: bold;
 }
@@ -1667,7 +1677,7 @@ padding: 8px;
     width: 100%;
 
 }
-div#extra-option {
+div#extra-option,div#extra-option-1 {
     width: 100%;
 }
 .facebook-span::before, .time-span::before {
@@ -1698,6 +1708,16 @@ div#extra-option {
 .get-code{
     padding: 11px;
 }
+
+.get-code-1 p {
+    font-size: 13px;
+    margin-bottom: 32px;
+    font-weight: bold;
+}
+.get-code-1{
+    padding: 11px;
+}
+
 span#close {
     top: 3px;
     right: 5px;
@@ -1799,6 +1819,23 @@ select.select-custom{
 .custom + #super-extra-option .get-code p{
 margin-bottom: 256px;
 }
+
+
+.inpage + #super-extra-option .get-code-1 p {
+
+    margin-bottom: 8 !important;
+
+}
+.popup + #super-extra-option .get-code-1 p{
+    margin-bottom: 120px;
+}
+.chat + #super-extra-option .get-code-1 p{
+    margin-bottom: 95px;
+}
+.custom + #super-extra-option .get-code-1 p{
+margin-bottom: 256px;
+}
+
 }
 
 
