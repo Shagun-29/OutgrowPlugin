@@ -724,7 +724,6 @@ function customOutput(){
 function timed(){
   displayBlock("timed-div");
   displayNone("exit-input-value");
-
 }
 function exitIntend(){
   displayNone("timed-div");
