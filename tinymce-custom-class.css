@@ -326,6 +326,10 @@ button#copyiing-text {
     font-family:Montserrat;
     color: rgb( 102, 102, 102 );
 }
+#section-div-2 .classic-img, #section-div-2 .drawerl-img, #section-div-2 .drawerr-img {
+width: 22px;
+height:19px;
+}
 #time-div {
     width: 50px;
     height: 20px;
@@ -428,10 +432,12 @@ div#exit-repeat-day {
     font-size: 11px;
 
 }
-input[type="radio"]:checked::before {
+
+div#exit-intent input[type="radio"]:checked::before,#input-time input[type="radio"]:checked::before {
     margin: 3px;
 
 }
+
 div#exit-intent {
     margin-bottom: 20px;
 
@@ -707,6 +713,9 @@ height: 30px;
         font-size: 22px;
     }
     div#mceu_59 {
+        display: none;
+    }
+    div#mceu_67 {
         display: none;
     }
 }
