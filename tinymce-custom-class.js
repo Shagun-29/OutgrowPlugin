@@ -109,8 +109,8 @@ function selectAPI(){
               
             <div id="${element.parentapp}-div-section" class="hide" style="float:left;width:100%;margin-left: 0px!important;border-top: 1px solid rgb( 226, 226, 226 );">
               <div id="section-div-1">
-                <div id="embed1" class="embed white" onclick="getEmbedCode('embed1','${element.parentapp}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE FULL SCREEN<i class="la la-info-circle"></i></div>
-                <div id="embed2" class="embed" onclick="getEmbedCode('embed2','${element.parentapp}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE IN PAGE<i class="la la-info-circle"></i></div>
+                <div id="embed1" class="embed white cir" onclick="getEmbedCode('embed1','${element.parentapp}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE FULL SCREEN<i class="la la-info-circle"></i></div>
+                <div id="embed2" class="embed cir" onclick="getEmbedCode('embed2','${element.parentapp}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE IN PAGE<i class="la la-info-circle"></i></div>
                 <div id="embed3" class="embed" onclick="getEmbedCode('embed3','${element.parentapp}','${element.calc_url}','${element.short_url}')">POP UP</div>
                 <div id="embed4" class="embed" onclick="getEmbedCode('embed4','${element.parentapp}','${element.calc_url}','${element.short_url}')">CHAT</div>
                 <div id="embed5" class="embed" onclick="getEmbedCode('embed5','${element.parentapp}','${element.calc_url}','${element.short_url}')">CUSTOM EMBED</div>
@@ -198,6 +198,25 @@ function getEmbedCode(type,passid,url,short_url){
     document.getElementById(passid).innerText='[outgrow type="mobile_in_page" id="'+passid+ '" data_url="'+url2+'" short_url="'+short_url_used+'"][/outgrow]';
   } 
   if(type=="embed3"){
+<<<<<<< HEAD
+    document.getElementById("embed-menu-"+id).classList.remove('hide');
+    console.log('[outgrow type="mobile_full_screen" id="'+id+ '" data_url="'+url+'" short_url="'+short_url+'"][/outgrow]');
+    document.getElementById("embed-menu-"+id).innerHTML="<div class='main-div-option'>"+
+    "<div class='extra-option-button' onclick='classic()' id='cat031'>"+
+        "<div class='classic-img cm'><img src='https://cdn.filestackcontent.com/oCNA05WS3GwmTbYX7yn2'></div>"+
+        "<div class='classic-text'>Classic</div>"+
+    "</div>"+
+    "<div onclick='drawerL()' class='extra-option-button' id='cat032'>"+
+        "<div class='drawerl-img cm'><img src='https://cdn.filestackcontent.com/PBcvjT9Rhi6PEIXB8IGG'></div>"+
+        "<div class='drawerl-text'>Drawer (L)</div>"+
+    "</div>"+
+    "<div onclick='drawerR()' class='extra-option-button' id='cat033'>"+
+        "<div class='drawerr-img cm'><img src='https://cdn.filestackcontent.com/Z45pnQBoQdWcRU6YU7NM'></div>"+
+        "<div class='drawerr-text'>Drawer (R)</div>"+
+    "</div></div>"+
+    "<div class='time-link'><div class='time-link-text'>TIMED & EXIT INTENT<div class='time-div' id='time-div' onclick='toggleSwitch2()'><input type='text'  class='time-input-type' ><span class='time-span' id='time-span'></span></div></div></div>"+
+    "<div class='time-option' id='time-option'></div>";;
+=======
     // var passid=id;
     document.getElementById(passid).innerText='[outgrow type="pop_up" id="'+passid+ '" data_url="'+url3+'" ][/outgrow]';
     document.getElementById("embed-menu-"+passid).classList.remove('hide');
@@ -219,6 +238,7 @@ function getEmbedCode(type,passid,url,short_url){
     <div class='time-link'><div class='time-link-text'>TIMED & EXIT INTENT<div class='time-div' id='time-div' onclick='toggleSwitch2()'><input type='text'  class='time-input-type' ><span class='time-span' id='time-span'></span></div></div></div>
     <div class='time-option' id='time-option'></div>`;
     
+>>>>>>> 26912a255381569b6ded70ce11aa6a0bda7748b2
   } 
   if(type=="embed4"){
     // document.getElementById("embed-menu-"+id).classList.remove('hide');

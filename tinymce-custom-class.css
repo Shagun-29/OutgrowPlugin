@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+* {
+    box-sizing: border-box!important;
+}
 i.mce-i-icon {
 	font: normal 20px/1 'dashicons';
 	padding: 0;
@@ -236,13 +240,13 @@ width: 244px;
     right: 3px;
     top: 13px;
 }
-i.la.la-info-circle {
-    font-size: 14px;
-    color: #a9a7a7;
-    font-weight: 600;
-    margin-left: 4px;
-    font-family: LineAwesome;
-    padding-top: 13px;
+#section-div-1 .cir i  {
+    font-size: 14px!important;
+    color: #a9a7a7!important;
+    font-weight: 600!important;
+    margin-left: 4px!important;
+    font-family: LineAwesome!important;
+    padding-top: 14px!important;
 }
 
 
@@ -465,9 +469,9 @@ div#exit-intent {
     margin-left: 10px;
     font-weight: 600;
 }
-#cat031 .classic-img,#cat032 .drawerl-img,#cat033 .drawerr-img{
+#cat031 .cm,#cat032 .cm,#cat033 .cm{
     width: 22px;
-    height: 18px;
+    height: 18px
 }
 div#set-time-div {
     margin-top: 12px;
@@ -544,8 +548,165 @@ height: 30px;
     width: 100% !important;
   
 }
+
 @media (min-width:768px) and (max-width:1024px) {
 
+    #tiny-mce-custom-og {
+        float: left;
+        width: 100% !important;
+        left: 0 !important;
+        right: 0;
+        height: 0 !important;
+        text-align: center;
+    }
+    #tiny-mce-custom-og .mce-reset{
+        max-width: 600px;
+        width: 100%;
+        background: #fff;
+        display: inline-block;
+    
+    }
+    div#tiny-mce-custom-og-head {
+        background: #fff;
+    
+    }
+    #mceu_61 {
+        display: none;
+    }
+    div#tiny-mce-custom-og-title {
+        line-height: 18px;
+    
+    }
+    select#select-custom-api {
+        font-size: 12px;
+    
+    }
+    #shortcode-card-body .shortcodecard-content {
 
+        padding: 11px;
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+    
+    }
+    #shortcode-card-body .shortcodecard-content i {
+        font-size: 12px;
+    
+    }
+    #section-div-1 .embed {
+        font-size: 10px;
+        line-height: 4;
+        padding: 0 20px;
+    
+    }
+    #section-div-1 .cir i {
+        font-size: 12px !important;
+        padding-top: 12px !important;
+        margin-left: 6px !important;
+    }
+    div#section-div-2 {
+        padding: 14px;
+    }
+    div#textarea-div textarea {
+        font-size: 10px;
+        padding: 12px;
+    
+    }
+    button#copyiing-text {
 
+        padding: 7 12px;
+        font-size: 10px;
+        margin-top: 10px;
+     
+    
+    }
+    #section-div-2 .extra-option-button {
+        margin-right: 6px;
+        padding: 0 8px;
+        height: 32px;
+    }
+    #cat031 .cm, #cat032 .cm, #cat033 .cm {
+
+        width: 18px;
+        height: 14px;
+    
+    }
+    #time-div .time-span::before {
+        font-size: 11px;
+    
+    }
+    .facebook-span::after, .time-span::after {
+        top: 0px;
+        font-size: 11px;
+    
+    }
+    #input-time label, #exit-intent-text label {
+        font-size: 10px;
+    }
+    div#set-time {
+        font-size: 10px;
+    }
+    select#select-time-after {
+        padding-left: 2px;
+    }
+    select#select-time-after, input#day-value, input#exit-day {
+        font-size: 10px;
+    
+    }
+    #set-time-div:nth-child(1) #set-after::after {
+        left: 82px;
+    
+    }
+    input#timeAfter, input.dayAfter, input.exit-day-input {
+        font-size: 10px;
+    
+    }
+    #section-div-2 .bottom-img {
+        width: 16px;
+        height: 16px;
+    
+    }
+    #section-div-2 .extra-option-chat-button {
+        width: 112px;
+        height: 32px;
+        padding: 7px 7px;
+        margin-right: 14px;
+    
+    }
+    #section-div-2 .bottom-img {
+        width: 16px;
+        height: 16px;
+    }
+    #section-div-2 .bottom-text {
+        font-size: 10px;
+        margin-left: 6px;
+    }
+    #desktop p, #tablet p, #mobile p {
+        font-size: 11px;
+    }
+    #section-div-2 .super-dim {
+        font-size: 10px;
+    }
+    select.select-custom {
+        font-size: 11px !important;
+    }
+    #section-div-2 input.input-dim {
+        height: 24px;
+    }
+    #section-div-2 .classic-text, #section-div-2 .drawerl-text, #section-div-2 .drawerr-text {
+        font-size: 10px;
+        margin-left: 6px;
+    }
+    #tiny-mce-custom-og-head .mce-close i.mce-ico.mce-i-remove::after {
+        font: normal normal normal 18px/1 LineAwesome;
+    }
+    #tiny-mce-custom-og-head .mce-close {
+        top: -11px;
+    }
+    div#tiny-mce-custom-og-title {
+        font-size: 22px;
+    }
+    div#mceu_59 {
+        display: none;
+    }
 }
