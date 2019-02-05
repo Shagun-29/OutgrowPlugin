@@ -20,9 +20,9 @@
                 <div class="tab-outer">
                 <div class="tabs">
                     <input type="radio" name="tabs" id="tabone" checked="checked" onclick="cat01()">
-                    <label for="tabone">Tab One</label>
+                    <label for="tabone" class="b1">Embed + Mobile Full Screen <i class="la la-info-circle"></i></label>
                     <div class="tab">
-                      <h1>Tab One Content</h1>
+                    
                       <div class="super-get-code" id="super-code-id">
                             <div class="getcode-container">
                                 <div class="get-code">
@@ -37,9 +37,9 @@
                     </div>
                     
                     <input type="radio" name="tabs" id="tabtwo" onclick="cat02()">
-                    <label for="tabtwo">Tab Two</label>
+                    <label for="tabtwo">Embed + Mobile in Page <i class="la la-info-circle"></i></label>
                     <div class="tab">
-                      <h1>Tab Two Content</h1>
+                    
                       <div class="super-get-code" id="super-code-id">
                         <div class="getcode-container">
                             <div class="get-code">
@@ -54,9 +54,9 @@
                     </div>
 
                     <input type="radio" name="tabs" id="tabthree" onclick="cat03()">
-                    <label for="tabthree">Tab Three</label>
+                    <label for="tabthree">Pop up</label>
                     <div class="tab">
-                      <h1>Tab Three Content</h1>
+                     
                       <div id="extra-option-tthree">
                         </div>
                       <div class="getcode-container">
@@ -71,9 +71,9 @@
 
 
                     <input type="radio" name="tabs" id="tabfour" onclick="cat04()">
-                    <label for="tabfour">Tab Four</label>
+                    <label for="tabfour">Chat</label>
                     <div class="tab">
-                      <h1>Tab Three Content</h1>
+                      
                       <div id="extra-option-tfour">
                         </div>
                       <div class="getcode-container">
@@ -88,9 +88,9 @@
 
 
                     <input type="radio" name="tabs" id="tabfive" onclick="cat05()">
-                    <label for="tabfive">Tab Five</label>
+                    <label for="tabfive" class="b4">Custom Embed</label>
                     <div class="tab">
-                      <h1>Tab Three Content</h1>
+                    
                       <div id="extra-option-tfive">
                         </div>
                       <div class="getcode-container">
@@ -115,25 +115,3 @@
         
     </div>
     </div>
-    <script>
-        $(document).ready(function(){
-            $('.button-group').addClass('fullscreen').removeClass('inpage').removeClass('popup').removeClass('chat').removeClass('custom');
-           $('#cat01').click(function(){
-               $(this).parent().addClass('fullscreen').removeClass('inpage').removeClass('popup').removeClass('chat').removeClass('custom');
-           })   
-           $('#cat02').click(function(){
-            $(this).parent().removeClass('fullscreen').addClass('inpage').removeClass('popup').removeClass('chat').removeClass('custom');
-           })   
-           $('#cat03').click(function(){
-            $(this).parent().removeClass('fullscreen').removeClass('inpage').addClass('popup').removeClass('chat').removeClass('custom');
-           })   
-           $('#cat04').click(function(){
-            $(this).parent().removeClass('fullscreen').removeClass('inpage').removeClass('popup').addClass('chat').removeClass('custom');
-           })   
-           $('#cat05').click(function(){
-            $(this).parent().removeClass('fullscreen').removeClass('inpage').removeClass('popup').removeClass('chat').addClass('custom');
-           })   
-            
-          
-        });
-    </script>

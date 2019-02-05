@@ -71,7 +71,7 @@ button.view-detail2 {
 /* Style the tab */
 .tab {
     overflow: hidden;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     background-color: #f1f1f1;
 }
 
@@ -312,10 +312,9 @@ div#modal-content {
 button:hover{
     cursor: pointer;
 }
-
-#text-inside,#text-inside-1 {
+textarea {
     width: 100%;
-    font-size: 14px;
+    font-size: 12px;
     color: #666666;
     float: left;
     border: none;
@@ -631,8 +630,10 @@ span#close {
     /* position: relative; */
     background: #fff;
 }
-.getcode-container{
+.getcode-container {
     margin-left: 0px;
+    float: left;
+    width: 60%;
 }
 
 /* for upper section */
@@ -895,7 +896,7 @@ img.loader-image {
     float: left;
     border: 1px solid #d6d6d7;
     font-size: 14px;
-    padding: 8px 10px;
+    padding: 8px 0px;
     margin-right: 10px;
     display: relative;
     cursor: pointer;
@@ -903,6 +904,8 @@ img.loader-image {
     color: #666666;
     cursor: pointer;
     border-radius: 5px;
+    width: 100%;
+max-width: 76px;
 }
 
 div#extra-option,.extra-option-1 {
@@ -1087,7 +1090,7 @@ input.facebook-input-type{
     font-weight: 400;
     margin-left: 22px;
     font-size: 12px;
-    top: 0px;
+    top: -2px;
     position: relative;
 }
 .facebook-span:after,.time-span:after {
@@ -1096,7 +1099,7 @@ input.facebook-input-type{
     font-weight: 400;
     position: absolute;
     left: -25px;
-    top: -1px;
+    top: -1px!important;
     font-size: 12px;
 }
 .facebook-span:before {
@@ -1222,8 +1225,8 @@ div#set-time-div {
     margin-left: 20px;
 }
 div#exit-input-value {
-    margin-left: 19px;
-    margin-top: 6px;
+    margin-left: 32px;
+    /* margin-top: 6px; */
 }
 div#input-exit {
     float: left;
@@ -1879,27 +1882,32 @@ margin-bottom: 256px;
     
     
   }
-  
+
   .tabs label {
     order: 1;
-    display: block;
-    padding: 1rem 2rem;
-    margin-right: 0.2rem;
+    display: inline-flex;
+    padding: 10px 16px;
+    /* margin-right: 0.2rem; */
     cursor: pointer;
-    background: #90CAF9;
+    /* background: #90CAF9; */
     font-weight: bold;
-    transition: background ease 0.2s;width: auto;
-  }
-  
-  .tabs .tab {
+    transition: background ease 0.2s;
+    width: auto;
+    border: 1px solid #ccc;
+    margin-left: -1px;
+    font-size: 12px;
+    color: #666;
+font-weight: normal;
+}
+.tabs .tab {
     order: 99;
     flex-grow: 1;
     width: 100%;
     display: none;
-    padding: 1rem;
-    background: #fff;
-  }
-  
+    padding: 16px;
+    background: #f6f8f9;
+    margin-top: 22px;
+}
   .tabs input[type="radio"] {
     display: none;
   }
@@ -1924,21 +1932,23 @@ margin-bottom: 256px;
       margin-top: 0.2rem;
     }
   }
-  /**
-   * Generic Styling
-  */
-  /* body {
-    background: #eee;
-    min-height: 100vh;
-    box-sizing: border-box;
-    padding-top: 10vh;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 300;
-    line-height: 1.5;
-    max-width: 60rem;
-    margin: 0 auto;
-    font-size: 112%;
-  }
-   */
-
+  div#extra-option-tfive {
+    float: left;
+    width: 40%;
+}
    .tab-outer{ float: left; width: 100%; }
+
+   #extra-option-tthree {
+    float: left;
+    width: 40%;
+}
+#input-time label,#exit-intent-text label,#exit-input-value label{
+    border: 0;
+}
+#input-time input[type="radio"],#exit-intent-text input[type="radio"]{
+    display:block!important;
+}
+#exit-option-text {
+    padding: 0;
+    margin-top: 0!important;
+}
