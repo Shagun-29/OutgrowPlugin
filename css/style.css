@@ -267,8 +267,8 @@ button.modal-button {
 .msg-copy {
     height: 35px;
     width: 70px;
-    background-color: #fb5f66;
-    color: white;
+    background-color: #fb5f66!important;
+    color: white !important;
     font-family: Montserrat;
     font-size: 18px;
     border: 0;
