@@ -1,6 +1,16 @@
 // // editor
 editorShortcode="[outgrow][/outgrow]";
-
+var showExacte=5, repeatTimee=10, showExactDe='0';
+// heights
+var ecustomHeightD=620, ecustomHeightDDim="px";
+var ecustomHeightT=620, ecustomHeightTDim="px";
+var ecustomHeightM=620, ecustomHeightMDim="px";
+// width
+var ecustomWidthD=100, ecustomWidthDDim="px";
+var ecustomWidthT=100, ecustomWidthTDim="px";
+var ecustomWidthM=100, ecustomWidthMDim="px";
+var   custom_url2;
+var editorId="";
 // reading cookies
 (function(){
   APIset=[];
@@ -162,6 +172,8 @@ function viewDetails(id){
 }
 
 function getEmbedCode(type,passid,url,short_url){
+  editorId=passid;
+  custom_url2=url;
   ex=url.split("?");
   url2=ex[0]+"?vHeight=1";
   url3=ex[0]+"?q=1";
@@ -196,39 +208,42 @@ function getEmbedCode(type,passid,url,short_url){
         <div class='classic-img'><img src='https://cdn.filestackcontent.com/oCNA05WS3GwmTbYX7yn2'></div>
         <div class='classic-text'>Classic</div>
     </div>
-    <div onclick='drawerL()' class='extra-option-button' id='cat032'>
+    <div onclick='getEmbedCode("drawerl","${passid}","${url}","${short_url_used}")' class='extra-option-button' id='cat032'>
         <div class='drawerl-img'><img src='https://cdn.filestackcontent.com/PBcvjT9Rhi6PEIXB8IGG'></div>
         <div class='drawerl-text'>Drawer (L)</div>
     </div>
-    <div onclick='drawerR()' class='extra-option-button' id='cat033'>
+    <div onclick='getEmbedCode("drawerr","${passid}","${url}","${short_url_used}")' class='extra-option-button' id='cat033'>
         <div class='drawerr-img'><img src='https://cdn.filestackcontent.com/Z45pnQBoQdWcRU6YU7NM'></div>
         <div class='drawerr-text'>Drawer (R)</div>
     </div></div>
-    <div class='time-link'><div class='time-link-text'>TIMED & EXIT INTENT<div class='time-div' id='time-div' onclick='toggleSwitch2()'><input type='text'  class='time-input-type' ><span class='time-span' id='time-span'></span></div></div></div>
+    <div class='time-link'><div class='time-link-text'>TIMED & EXIT INTENT<div class='time-div' id='time-div' onclick='toggleSwitchEditor()'><input type='text' class='time-input-type' ><span class='time-span' id='time-span'></span></div></div></div>
     <div class='time-option' id='time-option'></div>`;
     
   } 
   if(type=="embed4"){
     // document.getElementById("embed-menu-"+id).classList.remove('hide');
-    document.getElementById("embed-menu-"+passid).innerHTML="<div class='extra-option-chat-button' onclick='chatLeftEditor()' id='chatLeft'><div class='bottom-img'><img class='bottom-min' src='https://dlvkyia8i4zmz.cloudfront.net/o1PZBSLiQuq5HTCCyrMt_bottom_left.png'></div><div class='bottom-text'>Bottom Left</div></div><div onclick='chatRightEditor()' class='extra-option-chat-button' id='bottomRight'><div class='bottom-img'><img class='bottom-min' class='bottom-img' src='https://dlvkyia8i4zmz.cloudfront.net/5uGcgvoRIie2dwQNk9kv_bottom_right.png'></div><div class='bottom-text'>Bottom Right</div></div>";
+    document.getElementById("embed-menu-"+passid).innerHTML=`<div class='extra-option-chat-button' onclick='getEmbedCode("chatLeft","${passid}","${url}","${short_url_used}")' id='chatLeft'><div class='bottom-img'><img class='bottom-min' src='https://dlvkyia8i4zmz.cloudfront.net/o1PZBSLiQuq5HTCCyrMt_bottom_left.png'></div><div class='bottom-text'>Bottom Left</div></div><div onclick='getEmbedCode("chatRight","${passid}","${url}","${short_url_used}")' class='extra-option-chat-button' id='bottomRight'><div class='bottom-img'><img class='bottom-min' class='bottom-img' src='https://dlvkyia8i4zmz.cloudfront.net/5uGcgvoRIie2dwQNk9kv_bottom_right.png'></div><div class='bottom-text'>Bottom Right</div></div>`;
   } 
   if(type=="embed5"){
+    curl=url.split("?");
+    console.log("----",curl);
+    document.getElementById(passid).innerText='[outgrow type="custom_type" " data_url="'+curl[0]+'" "dh"="'+ecustomHeightD+'" dhd="'+ecustomHeightDDim+'" "dw"="'+ecustomWidthD+'" dwd="'+ecustomWidthDDim+'" "th"="'+ecustomHeightT+'" thd="'+ecustomHeightTDim+'" "tw"="'+ecustomWidthT+'" twd="'+ecustomWidthTDim+'" "mh"="'+ecustomHeightM+'" mhd="'+ecustomHeightMDim+'" "mw"="'+ecustomWidthM+'" mwd="'+ecustomWidthMDim+'"][/outgrow]';
     // document.getElementById("embed-menu-"+id).classList.remove('hide');
     document.getElementById("embed-menu-"+passid).innerHTML="<div class='extra-option-context'><div class='extra-option-custom' id='desktop'>"+
     "<p>Desktop </p>"+
     "<div class='custom-dim-head'>"+
     "<div class='super-dim'>Height</div>"+
     "<div class='super-input-dim'>"+
-      "<input type='text' class='input-dim' id='heightDesktop' name='heightDesktop' onkeypress='return getDesktopHeight(event)' placeholder='620'>"+
-      "<select class='select-custom' name='selecthDesktop' id='selecthDesktop' onchange='getHeightD()'><option>%</option><option selected>px</option><option>vh</option></select>"+
+      "<input type='text' class='input-dim' id='heightDesktop' name='heightDesktop' onkeypress='return getDesktopHeightEditor(event)' placeholder='620'>"+
+      "<select class='select-custom' name='selecthDesktop' id='selecthDesktop' onchange='getHeightEditorD()'><option>%</option><option selected>px</option><option>vh</option></select>"+
     "</div>"+
   "</div>"+
 
   "<div class='custom-dim-head'>"+
     "<div class='super-dim'>Width</div>"+
     "<div class='super-input-dim'>"+
-      "<input type='text' class='input-dim' name='widthDesktop' id='widthDesktop' onkeypress='return getDesktopWidth(event)' placeholder='100'>"+
-      "<select name='selectwDesktop' id='selectwDesktop' class='select-custom' onchange='getWidthD()'><option>%</option><option selected>px</option><option>vh</option></select>"+
+      "<input type='text' class='input-dim' name='widthDesktop' id='widthDesktop' onkeypress='return getDesktopWidthEditor(event)' placeholder='100'>"+
+      "<select name='selectwDesktop' id='selectwDesktop' class='select-custom' onchange='getWidthEditorD()'><option>%</option><option selected>px</option><option>vh</option></select>"+
     "</div>"+
   "</div>"+
     "</div>"+
@@ -237,16 +252,16 @@ function getEmbedCode(type,passid,url,short_url){
     "<div class='custom-dim-head'>"+
     "<div class='super-dim'>Height</div>"+
     "<div class='super-input-dim'>"+
-      "<input type='text' class='input-dim' name='heightTablet' id='heightTablet' onkeypress='return getTabletHeight(event)' placeholder='620'>"+
-      "<select class='select-custom' onchange='getHeightT()' id='selecthTablet' name='selecthTablet'><option>%</option><option selected>px</option><option>vh</option></select>"+
+      "<input type='text' class='input-dim' name='heightTablet' id='heightTablet' onkeypress='return getTabletHeightEditor(event)' placeholder='620'>"+
+      "<select class='select-custom' onchange='getHeightEditorT()' id='selecthTablet' name='selecthTablet'><option>%</option><option selected>px</option><option>vh</option></select>"+
     "</div>"+
   "</div>"+
 
   "<div class='custom-dim-head'>"+
     "<div class='super-dim'>Width</div>"+
     "<div class='super-input-dim'>"+
-      "<input type='text' class='input-dim' name='widthTablet' id='widthTablet' onkeypress='return getTabletWidth(event)' placeholder='100'>"+
-      "<select class='select-custom' id='selectwTablet' onchange='getWidthT()' name='selectwTablet'><option>%</option><option selected>px</option><option>vh</option></select>"+
+      "<input type='text' class='input-dim' name='widthTablet' id='widthTablet' onkeypress='return getTabletWidthEditor(event)' placeholder='100'>"+
+      "<select class='select-custom' id='selectwTablet' onchange='getWidthEditorT()' name='selectwTablet'><option>%</option><option selected>px</option><option>vh</option></select>"+
     "</div>"+
   "</div>"+
     "</div>"
@@ -255,16 +270,16 @@ function getEmbedCode(type,passid,url,short_url){
     "<div class='custom-dim-head'>"+
     "<div class='super-dim'>Height</div>"+
     "<div class='super-input-dim'>"+
-      "<input type='text' class='input-dim' name='heightMobile' id='heightMobile' onkeypress='return getMobileHeight(event)' placeholder='620'>"+
-      "<select class='select-custom' id='selecthMobile' onchange='getHeightM()' name='selectwMobile'><option>%</option><option selected>px</option><option>vh</option></select>"+
+      "<input type='text' class='input-dim' name='heightMobile' id='heightMobile' onkeypress='return getMobileHeightEditor(event)' placeholder='620'>"+
+      "<select class='select-custom' id='selecthMobile' onchange='getHeightEditorM()' name='selectwMobile'><option>%</option><option selected>px</option><option>vh</option></select>"+
     "</div>"+
   "</div>"+
 
   "<div class='custom-dim-head'>"+
     "<div class='super-dim'>Width</div>"+
     "<div class='super-input-dim'>"+
-      "<input type='text' class='input-dim' id='widthMobile' onkeypress='return getMobileWidth(event)' name='widthMobile' placeholder='100'>"+
-      "<select class='select-custom' id='selectwMobile' onchange='getWidthM()' name='selectwMobile'><option>%</option><option selected>px</option ><option>vh</option></select>"+
+      "<input type='text' class='input-dim' id='widthMobile' onkeypress='return getMobileWidthEditor(event)' name='widthMobile' placeholder='100'>"+
+      "<select class='select-custom' id='selectwMobile' onchange='getWidthEditorM()' name='selectwMobile'><option>%</option><option selected>px</option ><option>vh</option></select>"+
     "</div>"+
   "</div>"+
     "</div></div>";
@@ -273,6 +288,20 @@ function getEmbedCode(type,passid,url,short_url){
   if(type=="classic"){
     console.log("----------inside classic part-------------",passid);
     document.getElementById(passid).innerText='[outgrow type="pop_up_classic" id="'+passid+ '" data_url="'+url3+'" ][/outgrow]';
+  }
+  if(type=="drawerl"){
+    console.log("----------inside classic part-------------",passid);
+    document.getElementById(passid).innerText='[outgrow type="pop_up_l" id="'+passid+ '" data_url="'+url3+'" ][/outgrow]';
+  }
+  if(type=="drawerr"){
+    console.log("----------inside classic part-------------",passid);
+    document.getElementById(passid).innerText='[outgrow type="pop_up_r" id="'+passid+ '" data_url="'+url3+'" ][/outgrow]';
+  }
+  if(type=="chatLeft"){
+    document.getElementById(passid).innerText='[outgrow type="chat_left" " data_url="'+url3+'" ][/outgrow]';
+  }
+  if(type=="chatRight"){
+    document.getElementById(passid).innerText='[outgrow type="chat_right" " data_url="'+url3+'" ][/outgrow]';
   }
 }
 
@@ -321,3 +350,251 @@ function getCode(id){
 // function chatLeftEditor(){
 
 // }
+
+function getDesktopHeightEditor(e){
+  var count1=0;
+  if(e.which >=48 && e.which <=57 || e.which == 8 || e.which == 46){
+    window.onclick=function(){
+      if(count1==0){
+        var heightD=document.getElementById("heightDesktop").value;
+        textcustom=document.getElementById('text-inside');
+        ecustomHeightD=heightD;
+        // custom='[outgrow type="custom_desktop_height" " data_url="'+url3+'" "height"="'+heightD+'"][/outgrow]';
+        // document.getElementById('text-inside').innerText='[outgrow type="custom_desktop_height" " data_url="'+url3+'" "height"="'+heightD+'"][/outgrow]';
+        customOutputEditor();
+        count1++; 
+      }
+      return true;
+    }
+  }else{
+    return false;
+  }
+    
+}
+
+function getTabletHeightEditor(e){
+  var count2=0;
+  if(e.which >=48 && e.which <=57){
+    window.onclick=function(){
+      if(count2==0){
+        var heightD=document.getElementById("heightTablet").value;
+         count2++; 
+        ecustomHeightT=heightD;
+        customOutputEditor();
+
+      }
+      return true;
+
+    }
+  }else{
+    return false;
+  }
+    
+}
+
+function getMobileHeightEditor(e){
+  var count3=0;
+  if(e.which >=48 && e.which <=57){
+    window.onclick=function(){
+      if(count3==0){
+        var heightD=document.getElementById("heightMobile").value;
+         ecustomHeightM=heightD;
+        customOutputEditor();
+
+        count3++; 
+      }
+      return true;
+    }
+  }else{
+    return false;
+  }
+    
+}
+
+function getDesktopWidthEditor(e){
+  var count4=0;
+  if(e.which >=48 && e.which <=57){
+  window.onclick=function(){
+    if(count4==0){
+      var widthD=document.getElementById("widthDesktop").value;
+       ecustomWidthD=widthD;
+      customOutputEditor();
+
+      count4++;
+    }
+      return true;
+    }
+  }else{
+  return false;
+}
+}
+
+function getTabletWidthEditor(e){
+  var count5=0;
+  if(e.which >=48 && e.which <=57){
+    window.onclick=function(){
+      if(count5==0){
+        var widthD=document.getElementById("widthTablet").value;
+         ecustomWidthT=widthD;
+        customOutputEditor();
+
+        count5++;
+      }
+      return true;
+    }
+  }else{
+    return false;
+  }
+}
+
+function getMobileWidthEditor(e){
+  var count6=0;
+  if(e.which >=48 && e.which <=57){
+    window.onclick=function(){
+      if(count6==0){
+        var widthD=document.getElementById("widthMobile").value;
+        ecustomWidthM=widthD;
+        customOutputEditor();
+
+        count6++;
+      }
+      return true;
+    }
+  }else{
+    return false;
+  }
+}
+
+function getHeightEditorD(){
+  hdim=document.getElementById("selecthDesktop").value;
+  ecustomHeightDDim=hdim;
+  customOutputEditor();
+}
+function getHeightEditorT(){
+  hdim=document.getElementById("selecthTablet").value;
+  ecustomHeightTDim=hdim;
+  customOutputEditor();
+}
+function getHeightEditorM(){
+  hdim=document.getElementById("selecthMobile").value;
+  ecustomHeightMDim=hdim;
+  customOutputEditor();
+}
+function getWidthEditorD(){
+  wdim=document.getElementById("selectwDesktop").value;
+  ecustomWidthDDim=wdim;
+  customOutputEditor();
+}
+function getWidthEditorT(){
+  wdim=document.getElementById("selectwTablet").value;
+  ecustomWidthTDim=wdim;
+  customOutputEditor();
+}
+function getWidthEditorM(){
+  wdim=document.getElementById("selectwMobile").value;
+  ecustomWidthMDim=wdim;
+  customOutputEditor();
+ }
+
+ function customOutputEditor(){
+  curl=custom_url2.split("?");
+  document.getElementById(editorId).innerText='[outgrow type="custom_type" " data_url="'+curl[0]+'" "dh"="'+ecustomHeightD+'" dhd="'+ecustomHeightDDim+'" "dw"="'+ecustomWidthD+'" dwd="'+ecustomWidthDDim+'" "th"="'+ecustomHeightT+'" thd="'+ecustomHeightTDim+'" "tw"="'+ecustomWidthT+'" twd="'+ecustomWidthTDim+'" "mh"="'+ecustomHeightM+'" mhd="'+ecustomHeightMDim+'" "mw"="'+ecustomWidthM+'" mwd="'+ecustomWidthMDim+'"][/outgrow]';
+}
+
+function toggleSwitchEditor(){
+  document.getElementById('time-span').classList.toggle('toggle-on');
+  $(document).ready(function(){
+    if ( $('#time-span').hasClass('toggle-on') ) {
+      document.getElementById('time-div').style.backgroundColor="#fb5f66";
+      document.getElementById(editorId).innerText='[outgrow type="pop_up_custom" id="'+editorId+ '"  data_url="'+url3+'" ][/outgrow]';
+      // document.getElementById('text-inside-1').innerText='[outgrow type="pop_up_custom" id="'+editorId+ '"  data_url="'+url3+'" ][/outgrow]';
+    
+    }else{
+      document.getElementById('time-div').style.backgroundColor="#a8a8a8";
+      document.getElementById(editorId).innerText='[outgrow type="pop_up" id="'+editorId+ '" data_url="'+url3+'" ][/outgrow]'; 
+      // document.getElementById('text-inside-1').innerText='[outgrow type="pop_up" id="'+editorId+ '" data_url="'+url3+'" ][/outgrow]';   
+
+    }
+  });  
+timeOption = document.getElementById('time-option');
+timeOption.innerHTML="<div id='input-time'><label><input type='radio' name='selectOptionName' onclick='timedEditor()' value='timed'>Timed (Control exactly when your popup appears.)</label></div>"+ 
+  "<div id='timed-div' style='display:none'><div id='set-time-div'><div id='set-time'>Show exactly after</div><div id='set-after'><input type='text' id='timeAfter' onkeypress='return updatePopTimeEditor(event)' placeholder='5'><select id='select-time-after' onchange='getOptionPopEditor()'><option value='0'>Secs</option><option value='1'>Mins</option></select></div></div>"+
+  "<div id='set-time-div'><div id='set-time'>Repeat After</div><div id='set-after'><input type='text' class='dayAfter' id='get-day' onkeypress='return updatePopDayEditor(event)' placeholder='10'><input type='text' id='day-value'  placeholder='Days' disabled></div></div></div></div></div>"+
+  
+  "<div id='exit-intent'><div id='exit-intent-text'><label><input type='radio' onclick='exitIntendEditor()' name='selectOptionName' value='exit'>Exit Intend</label></div>"+
+  "<div id='exit-input-value' style='display:none'><label id='exit-option-text'>Show before a user leaves your page</label>"+
+  "<div id='exit-input-cover'><div id='exit-repeat-day'>Repeat After</div><div id='input-exit'><input type='text' class='exit-day-input' id='get-day2'  onkeypress='return updatePopDayEditor2(event)' placeholder='10'><input type='text' id='exit-day' placeholder='Days' disabled></div></div></div>"+
+  "</div>";
+}
+function timedEditor(){
+  displayBlock("timed-div");
+  displayNone("exit-input-value");
+}
+function exitIntendEditor(){
+  displayNone("timed-div");
+  displayBlock("exit-input-value");
+}
+function updatePopDayEditor(e){
+  var countd=0;
+  if(e.which >=48 && e.which <=57){
+    window.onclick=function(){
+      if(countd==0){
+        var popDay=document.getElementById("get-day").value;
+        repeatTimee=popDay;
+        customPopEditor();
+
+        countd++;
+      }
+      return true;
+    }
+  }else{ 
+    return false;
+  }
+}
+
+function updatePopDayEditor2(e){
+  var countd=0;
+  if(e.which >=48 && e.which <=57){
+    window.onclick=function(){
+      if(countd==0){
+        var popDay=document.getElementById("get-day2").value;
+        repeatTimee=popDay;
+        customPopEditor();
+
+        countd++;
+      }
+      return true;
+    }
+  }else{ 
+    return false;
+  }
+}
+
+function updatePopTimeEditor(e){
+  var countp=0;
+  if(e.which >=48 && e.which <=57){
+    window.onclick=function(){
+      if(countp==0){
+        var popTime=document.getElementById("timeAfter").value;
+       showExacte=popTime;
+        customPopEditor();
+
+        countp++;
+      }
+      return true;
+    }
+  }else{ 
+    return false;
+  }
+}
+
+function getOptionPopEditor(){
+  showExactDe=document.getElementById('select-time-after').value;
+  customPopEditor();
+}
+
+function customPopEditor(){
+  document.getElementById(editorId).innerText='[outgrow type="pop_up_custom" id="'+editorId+ '" data_url="'+url3+'" "showExact"="'+showExacte+'" "showExactD"="'+showExactDe+'" "repeatTime"="'+repeatTimee+'" ][/outgrow]';
+  document.getElementById(editorId).innerText='[outgrow type="pop_up_custom" id="'+editorId+ '" data_url="'+url3+'" "showExact"="'+showExacte+'" "showExactD"="'+showExactDe+'" "repeatTime"="'+repeatTimee+'" ][/outgrow]';
+
+}

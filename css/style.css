@@ -313,7 +313,7 @@ button:hover{
     cursor: pointer;
 }
 
-#text-inside {
+#text-inside,#text-inside-1 {
     width: 100%;
     font-size: 14px;
     color: #666666;
@@ -335,6 +335,12 @@ button:hover{
 }
 
 
+.get-code-1 p {
+    font-family: Montserrat;
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 10px;
+}
 
 
 
@@ -614,7 +620,7 @@ span#close {
     font-size: 24px;
     margin-bottom: 30px;
 }
-.get-code {
+.get-code, .get-code-1 {
     font-size: 20px;
     float: left;
     color: #666666;
@@ -899,7 +905,7 @@ img.loader-image {
     border-radius: 5px;
 }
 
-div#extra-option {
+div#extra-option,.extra-option-1 {
     
     float: left;
     /* margin-top: 7px; */
@@ -1383,7 +1389,7 @@ div#exit-input-cover {
         font-size: 20px;
         margin-bottom: 20px;
     }
-    .get-code {
+    .get-code, .get-code-1 {
      padding: 10px 15px;
  }
  .msg-copy {
@@ -1396,7 +1402,7 @@ div#exit-input-cover {
     font-size: 16px;
     bottom: 16px;
 }
-#text-inside {
+#text-inside,#text-inside-1 {
     font-size: 13px;
 }
 .extra-option-button {
@@ -1653,13 +1659,17 @@ i.la.la-info-circle {
     top: 18px;
 
 }
-#text-inside{
+#text-inside,#text-inside-1{
     background: #f3f3f3;
 font-size: 11px;
 line-height: 1.545;
 padding: 8px;
 }
 .get-code p {
+    font-size: 13px;
+    font-weight: bold;
+}
+.get-code-1 p {
     font-size: 13px;
     font-weight: bold;
 }
@@ -1673,7 +1683,7 @@ padding: 8px;
     margin-top: -29px;
     margin-bottom: 12px;
 }
-div#extra-option {
+div#extra-option,div#extra-option-1 {
     width: 100%;
 }
 .facebook-span::before, .time-span::before {
@@ -1704,6 +1714,16 @@ div#extra-option {
 .get-code{
     padding: 11px;
 }
+
+.get-code-1 p {
+    font-size: 13px;
+    margin-bottom: 32px;
+    font-weight: bold;
+}
+.get-code-1{
+    padding: 11px;
+}
+
 span#close {
     top: 3px;
     right: 5px;
@@ -1805,6 +1825,35 @@ select.select-custom{
 .custom + #super-extra-option .get-code p{
 margin-bottom: 256px;
 }
+
+
+.inpage + #super-extra-option .get-code-1 p {
+
+    margin-bottom: 8 !important;
+
+}
+.popup + #super-extra-option .get-code-1 p{
+    margin-bottom: 120px;
+}
+.chat + #super-extra-option .get-code-1 p{
+    margin-bottom: 95px;
+}
+.custom + #super-extra-option .get-code-1 p{
+margin-bottom: 256px;
+}
+#super-extra-option.mob,.button-group.mob {
+    display: block!important;
+}
+#super-extra-option.web,.button-group.web {
+    display: none!important;
+}
+}
+
+#super-extra-option.mob,.button-group.mob {
+    display: none;
+}
+#super-extra-option.web,.button-group.web {
+    display: block;
 }
 
 
@@ -1819,3 +1868,77 @@ margin-bottom: 256px;
 
 
 
+.hide{ display: none;}
+
+/**
+ * Tabs
+ */
+ .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    
+    
+  }
+  
+  .tabs label {
+    order: 1;
+    display: block;
+    padding: 1rem 2rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    background: #90CAF9;
+    font-weight: bold;
+    transition: background ease 0.2s;width: auto;
+  }
+  
+  .tabs .tab {
+    order: 99;
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+    background: #fff;
+  }
+  
+  .tabs input[type="radio"] {
+    display: none;
+  }
+  
+  .tabs input[type="radio"]:checked + label {
+    background: #fff;
+  }
+  
+  .tabs input[type="radio"]:checked + label + .tab {
+    display: block;
+  }
+  
+  @media (max-width: 45em) {
+    .tabs .tab,
+    .tabs label {
+      order: initial;
+    }
+  
+    .tabs label {
+      width: 100%;
+      margin-right: 0;
+      margin-top: 0.2rem;
+    }
+  }
+  /**
+   * Generic Styling
+  */
+  /* body {
+    background: #eee;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-top: 10vh;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    max-width: 60rem;
+    margin: 0 auto;
+    font-size: 112%;
+  }
+   */
+
+   .tab-outer{ float: left; width: 100%; }
