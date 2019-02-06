@@ -76,16 +76,6 @@ button.view-detail2 {
 }
 
 /* Style the buttons inside the tab */
-.tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-}
 
 /* Change background color of buttons on hover */
 .tab button:hover {
@@ -267,8 +257,8 @@ button.modal-button {
 .msg-copy {
     height: 35px;
     width: 70px;
-    background-color: #fb5f66;
-    color: white;
+    background-color: #fb5f66!important;
+    color: white !important;
     font-family: Montserrat;
     font-size: 18px;
     border: 0;
@@ -323,9 +313,10 @@ textarea {
     height: 124px!important;
     padding: 10px;
     resize: none;
-    background: #fff;
+    background: #f0f0f0;
     font-family: Montserrat;
 }
+
 .get-code p {
     font-family: Montserrat;
     font-size: 18px;
@@ -480,7 +471,6 @@ h4{
     border-radius: 6px;
     font-family: Montserrat;
     font-size: 16px;
-    border: 1px solid;
 }
 
 /* extra */
@@ -627,8 +617,8 @@ span#close {
     border: 1px solid #d4d3d3;
     padding: 15px 20px;
     /* max-width: 472px; */
-    /* position: relative; */
     background: #fff;
+    position: relative;
 }
 .getcode-container {
     margin-left: 0px;
@@ -935,9 +925,9 @@ div#exit-intent {
     position: relative;
     float: left;
     border: 1px solid #d6d6d7;
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
-    padding: 20px 12px;
+    padding: 14px 12px;
     background-color: white;
     color: #666666;
     border-radius: 15px;
@@ -1050,13 +1040,13 @@ input[type=text]:focus {
     width: 93% !important;
 } */
 span.facebook-span,span.time-span {
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
     background-color: white;
     position: absolute;
     border-radius: 50%;
     transition: .3s ease-in;
-    top: 4px;
+    top: 3px;
     left:4px;
     box-shadow: 3px 2px 6px rgba(0, 0, 0, 0.54);
 }
@@ -1066,7 +1056,7 @@ span.facebook-span,span.time-span {
     background-color: #a8a8a8;
     position: relative;
     cursor: pointer;
-    padding: 0px 0px 2px 4px;
+    padding: 0px 0px 0px 4px;
     float: left;
 }
 .time-div {
@@ -1084,16 +1074,16 @@ input.facebook-input-type,input.time-input-type {
 input.facebook-input-type{
     visibility: hidden;
 }
-.facebook-span:before,.time-span:before {
+.tab .facebook-span:before,.time-span:before {
     content: "Off";
     color: #fff;
     font-weight: 400;
-    margin-left: 22px;
+    margin-left: 20px;
     font-size: 12px;
-    top: -2px;
+    top: -1px!important;
     position: relative;
 }
-.facebook-span:after,.time-span:after {
+.tab .facebook-span:after,.time-span:after {
     content: "On";
     color: #fff;
     font-weight: 400;
@@ -1102,13 +1092,13 @@ input.facebook-input-type{
     top: -1px!important;
     font-size: 12px;
 }
-.facebook-span:before {
+.tab .facebook-span:before {
     font-size: 13px!important;
     top: -2px!important;
 }
-.facebook-span::after {
+.tab .facebook-span::after {
     font-size: 13px!important;
-    top: -3px!important;
+    top: -2px!important;
 }
 .la-question-circle{
     color:#8e989f;
@@ -1277,6 +1267,25 @@ div#exit-input-cover {
 }
 
   @media (min-width:768px) and (max-width:1024px){
+    .tab .facebook-span::before,.tab #time-div .time-span::before {
+        font-size: 11px !important;
+        top: -2px !important;
+        margin-left: 20px;
+    }
+    .tab .facebook-span::after,.tab #time-div .time-span::after {
+        font-size: 11px !important;
+        top: -2px !important;
+        left: -22px;
+    }
+    .tabs .tab {
+        padding: 12px;
+    }
+   .tab #desktop p, .tab #tablet p,.tab #mobile p {
+        font-size: 12px;
+    }
+    .get-code p{
+        font-size: 14px;
+    }
     .main-heading {
         margin-left: 0;
         font-size:26px; 
@@ -1409,8 +1418,9 @@ div#exit-input-cover {
     font-size: 13px;
 }
 .extra-option-button {
-    padding: 8px 7px;
+    padding: 8px 6px;
     margin-right: 8px;
+    max-width: 68px;
 }
 .classic-text,.drawerl-text,.drawerr-text{
     font-size: 10px;
@@ -1464,8 +1474,8 @@ input.dayAfter {
     margin-left: 43px!important;
 }
 .extra-option-chat-button {
-    font-size: 12px;
-    padding: 15px 10px;
+    font-size: 10px;
+    padding: 7px 10px;
     margin-right: 12px;
 }
 input.input-dim {
@@ -1479,6 +1489,13 @@ select.select-custom{
 }
 .calci-card-content{
     font-size: 12px;
+}
+.tabs label {
+    padding: 10px 11px!important;
+    font-size: 11px!important;
+}
+textarea {
+    font-size: 11px;
 }
   }
 
@@ -1522,6 +1539,15 @@ select.select-custom{
     }
   }
   @media (min-width: 320px) and (max-width: 440px) {
+    .tabs label.ns::after {
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 5px solid #32373c80;
+        content: '';
+        position: absolute;
+        right: 15px;
+        top: 16px;
+    }
       .np{
           display:block;
       }
@@ -1683,18 +1709,20 @@ padding: 8px;
 }
 .super-get-code {
     width: 100%;
-    margin-top: -29px;
-    margin-bottom: 12px;
+    /* margin-bottom: 12px; */
 }
 div#extra-option,div#extra-option-1 {
     width: 100%;
 }
 .facebook-span::before, .time-span::before {
-    font-size: 11px;
+    font-size: 11px!important;
+    top: -1px !important;
+margin-left: 20px !important;
 }
 .facebook-span::after, .time-span::after {
-    font-size: 11px;
-
+    font-size: 11px!important;
+    top: -1px !important;
+    left: -22px !important;
 }
 .span-fb-text i{
     font-size: 16px;
@@ -1711,7 +1739,7 @@ div#extra-option,div#extra-option-1 {
 }
 .get-code p {
     font-size: 13px;
-    margin-bottom: 32px;
+    margin-bottom: 42px;
     font-weight: bold;
 }
 .get-code{
@@ -1736,7 +1764,7 @@ span#close {
 .facebook-div {
     padding-top: -2px!important;
     padding-right: 0px;
-    padding-bottom: 2px;
+    padding-bottom: 0px;
     padding-left: 4px;
 }
 div#super-extra-option {
@@ -1752,8 +1780,8 @@ div#super-extra-option {
 }
 .time-link{
     position: absolute;
-top: 118px;
-left: 13px;
+    top: 100px;
+    left: 15px;
 }
 .time-link-text {
     font-size: 12px;
@@ -1763,12 +1791,10 @@ div#modal-content {
     top: -8%;
 
 }
-#cat031 {
-    padding: 8px 21px;
-}
+
 .extra-option-chat-button {
-    font-size: 12px;
-    padding: 10px 10px;
+    font-size: 10px;
+    padding: 10px 8px;
     margin-right: 0;
 
 }
@@ -1776,12 +1802,12 @@ div#modal-content {
     position: absolute;
 top: 44px;
 left: 13px;
-padding: 10px 14px;
+padding: 10px 11px;
 }
 #bottomRight{
     position: absolute;
 top: 44px;
-right: 62px;
+left: 111px;
 }
 .extra-option-context p{
     font-size: 12px;
@@ -1807,57 +1833,66 @@ input.input-dim {
 select.select-custom{
     font-size: 11px!important;
     height: 24px !important;
-    padding: 0 14px 0 6px;
+    padding: 0 10px 0 3px;
 }
 .extra-option-context {
     padding-left: 14px;
     position: absolute;
     top: 42px;
 }
-.inpage + #super-extra-option .get-code p {
-
-    margin-bottom: 8 !important;
-
+.inpage + .tab .super-get-code .getcode-container .get-code p {
+    margin-bottom: 0px;
 }
-.popup + #super-extra-option .get-code p{
+.popup + .tab .getcode-container .get-code p{
     margin-bottom: 120px;
 }
-.chat + #super-extra-option .get-code p{
-    margin-bottom: 95px;
+.chat + .tab .getcode-container .get-code p{
+    margin-bottom: 94px;
 }
-.custom + #super-extra-option .get-code p{
-margin-bottom: 256px;
-}
-
-
-.inpage + #super-extra-option .get-code-1 p {
-
-    margin-bottom: 8 !important;
-
-}
-.popup + #super-extra-option .get-code-1 p{
-    margin-bottom: 120px;
-}
-.chat + #super-extra-option .get-code-1 p{
-    margin-bottom: 95px;
-}
-.custom + #super-extra-option .get-code-1 p{
-margin-bottom: 256px;
-}
-#super-extra-option.mob,.button-group.mob {
-    display: block!important;
-}
-#super-extra-option.web,.button-group.web {
-    display: none!important;
-}
+.custom +  .tab .getcode-container .get-code p{
+margin-bottom: 252px;
 }
 
-#super-extra-option.mob,.button-group.mob {
-    display: none;
+.tabs .tab{
+    padding: 0 !important;
+    flex-grow: 0 !important;
+    margin-top: -1px !important;
+    margin-left: -1px;
+    position: relative;
 }
-#super-extra-option.web,.button-group.web {
-    display: block;
+.getcode-container{
+    width:100%;
 }
+.tabs label {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 16px!important;
+}
+#extra-option-tthree {
+    width: 0!important;
+}
+.extra-option-button{
+    max-width: 82px!important;
+    padding: 8px 0;
+    margin-top: 12px;
+}
+textarea {
+    font-size: 11px;
+}
+span.facebook-span {
+    width: 14px!important;
+    height: 14px!important;
+    top: 3px!important;
+}
+.bottom-min {
+    width: 20px;
+    height: 20px;
+}
+.bottom-img {
+    margin-bottom: 4px;
+}
+
+  }
 
 
 .calc{
@@ -1897,8 +1932,11 @@ margin-bottom: 256px;
     margin-left: -1px;
     font-size: 12px;
     color: #666;
-font-weight: normal;
+    font-weight: normal;
+    position: relative;
+
 }
+
 .tabs .tab {
     order: 99;
     flex-grow: 1;
@@ -1920,22 +1958,11 @@ font-weight: normal;
     display: block;
   }
   
-  @media (max-width: 45em) {
-    .tabs .tab,
-    .tabs label {
-      order: initial;
-    }
-  
-    .tabs label {
-      width: 100%;
-      margin-right: 0;
-      margin-top: 0.2rem;
-    }
-  }
-  div#extra-option-tfive {
+ 
+  div#extra-option-tfive,#extra-option-tone,  div#extra-option-tfour {
     float: left;
     width: 40%;
-}
+} 
    .tab-outer{ float: left; width: 100%; }
 
    #extra-option-tthree {
@@ -1951,4 +1978,33 @@ font-weight: normal;
 #exit-option-text {
     padding: 0;
     margin-top: 0!important;
+}
+#cat01 {
+    margin-top: 0 !important;
+}
+#super-code-id .getcode-container {
+    float: left;
+    width: 100%;
+}
+@media (max-width: 45em) {
+    .tabs .tab,
+    .tabs label {
+      order: initial;
+    }
+  
+    .tabs label {
+      width: 100%;
+      margin-right: 0;
+      margin-top: 0.2rem;
+    }
+}
+
+  #extra-option-tfive #desktop{
+      margin-left: 0;
+  }
+  #no-found {
+    font-size: 18px;
+    float: left;
+    width: 100%;
+    margin-left: 10px;
 }

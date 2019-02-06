@@ -20,16 +20,17 @@
                 <div class="tab-outer">
                 <div class="tabs">
                     <input type="radio" name="tabs" id="tabone" checked="checked" onclick="cat01()">
-                    <label for="tabone" class="b1">Embed + Mobile Full Screen <i class="la la-info-circle"></i></label>
+                    <label for="tabone" class="b1 ns"  id="cat01" data-text="fullscreen">Embed + Mobile Full Screen <i class="la la-info-circle"></i></label>
                     <div class="tab">
-                    
+                      <div id="extra-option-tone">
+                        </div>
                       <div class="super-get-code" id="super-code-id">
                             <div class="getcode-container">
                                 <div class="get-code">
                                     <p>Get Code</p>
-                                    <textarea id="text-inside-tone" class="text-hidden" rows="10" onclick="copy()"></textarea>
+                                    <textarea id="text-inside-tone" class="text-hidden" rows="10" onclick="copy('text-inside-tone')"></textarea>
                                     <div id="click-copy-text" class="hide">Copied.!</div>
-                                    <button class="msg-copy" onclick="copy()">Copy</button>
+                                    <button class="msg-copy" onclick="copy('text-inside-tone')">Copy</button>
                                 </div>        
                             </div>
                         </div>
@@ -37,16 +38,16 @@
                     </div>
                     
                     <input type="radio" name="tabs" id="tabtwo" onclick="cat02()">
-                    <label for="tabtwo">Embed + Mobile in Page <i class="la la-info-circle"></i></label>
+                    <label for="tabtwo" class="ns"  id="cat02" data-text="inpage">Embed + Mobile in Page <i class="la la-info-circle"></i></label>
                     <div class="tab">
                     
                       <div class="super-get-code" id="super-code-id">
                         <div class="getcode-container">
                             <div class="get-code">
                                 <p>Get Code</p>
-                                <textarea id="text-inside-ttwo" class="text-hidden" rows="10" onclick="copy()"></textarea>
+                                <textarea id="text-inside-ttwo" class="text-hidden" rows="10" onclick="copy('text-inside-tthree')"></textarea>
                                 <div id="click-copy-text" class="hide">Copied.!</div>
-                                <button class="msg-copy" onclick="copy()">Copy</button>
+                                <button class="msg-copy" onclick="copy('text-inside-ttwo')">Copy</button>
                             </div>        
                         </div>  
 
@@ -54,7 +55,7 @@
                     </div>
 
                     <input type="radio" name="tabs" id="tabthree" onclick="cat03()">
-                    <label for="tabthree">Pop up</label>
+                    <label for="tabthree" class="ns" id="cat03"  data-text="popup">Pop up</label>
                     <div class="tab">
                      
                       <div id="extra-option-tthree">
@@ -62,16 +63,16 @@
                       <div class="getcode-container">
                         <div class="get-code">
                             <p>Get Code</p>
-                            <textarea id="text-inside-tthree" class="text-hidden" rows="10" onclick="copy()"></textarea>
+                            <textarea id="text-inside-tthree" class="text-hidden" rows="10" onclick="copy('text-inside-tfour')"></textarea>
                             <div id="click-copy-text" class="hide">Copied.!</div>
-                            <button class="msg-copy" onclick="copy()">Copy</button>
+                            <button class="msg-copy" onclick="copy('text-inside-tthree')">Copy</button>
                         </div>        
                     </div>  
                     </div>
 
 
                     <input type="radio" name="tabs" id="tabfour" onclick="cat04()">
-                    <label for="tabfour">Chat</label>
+                    <label for="tabfour" class="ns" id="cat04"  data-text="chat">Chat</label>
                     <div class="tab">
                       
                       <div id="extra-option-tfour">
@@ -79,16 +80,16 @@
                       <div class="getcode-container">
                         <div class="get-code">
                             <p>Get Code</p>
-                            <textarea id="text-inside-tfour" class="text-hidden" rows="10" onclick="copy()"></textarea>
+                            <textarea id="text-inside-tfour" class="text-hidden" rows="10" onclick="copy('text-inside-tfive')"></textarea>
                             <div id="click-copy-text" class="hide">Copied.!</div>
-                            <button class="msg-copy" onclick="copy()">Copy</button>
+                            <button class="msg-copy" onclick="copy('text-inside-tfour')">Copy</button>
                         </div>        
                     </div>  
                     </div>
 
 
                     <input type="radio" name="tabs" id="tabfive" onclick="cat05()">
-                    <label for="tabfive" class="b4">Custom Embed</label>
+                    <label for="tabfive" class="ns b4"  id="cat05" data-text="custom">Custom Embed</label>
                     <div class="tab">
                     
                       <div id="extra-option-tfive">
@@ -98,7 +99,7 @@
                             <p>Get Code</p>
                             <textarea id="text-inside-tfive" class="text-hidden" rows="10" onclick="copy()"></textarea>
                             <div id="click-copy-text" class="hide">Copied.!</div>
-                            <button class="msg-copy" onclick="copy()">Copy</button>
+                            <button class="msg-copy" onclick="copy('text-inside-tfive')">Copy</button>
                         </div>        
                     </div>  
                     </div>
@@ -115,3 +116,25 @@
         
     </div>
     </div>
+    <script>
+        $(document).ready(function(){
+         $('.tab-outer').addClass('fullscreen').removeClass('inpage').removeClass('popup').removeClass('chat').removeClass('custom');
+           $('#cat01').click(function(){
+               $(this).addClass('fullscreen').removeClass('inpage').removeClass('popup').removeClass('chat').removeClass('custom');
+           })   
+           $('#cat02').click(function(){
+            $(this).removeClass('fullscreen').addClass('inpage').removeClass('popup').removeClass('chat').removeClass('custom');
+           })   
+           $('#cat03').click(function(){
+            $(this).removeClass('fullscreen').removeClass('inpage').addClass('popup').removeClass('chat').removeClass('custom');
+           })   
+           $('#cat04').click(function(){
+            $(this).removeClass('fullscreen').removeClass('inpage').removeClass('popup').addClass('chat').removeClass('custom');
+           })   
+           $('#cat05').click(function(){
+            $(this).removeClass('fullscreen').removeClass('inpage').removeClass('popup').removeClass('chat').addClass('custom');
+           })   
+            
+          
+        })
+    </script>;

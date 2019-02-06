@@ -198,6 +198,7 @@ function getEmbedCode(type,passid,url,short_url){
     document.getElementById(passid).innerText='[outgrow type="mobile_in_page" id="'+passid+ '" data_url="'+url2+'" short_url="'+short_url_used+'"][/outgrow]';
   } 
   if(type=="embed3"){
+
     // var passid=id;
     document.getElementById(passid).innerText='[outgrow type="pop_up" id="'+passid+ '" data_url="'+url3+'" ][/outgrow]';
     document.getElementById("embed-menu-"+passid).classList.remove('hide');
@@ -229,7 +230,7 @@ function getEmbedCode(type,passid,url,short_url){
     console.log("----",curl);
     document.getElementById(passid).innerText='[outgrow type="custom_type" " data_url="'+curl[0]+'" "dh"="'+ecustomHeightD+'" dhd="'+ecustomHeightDDim+'" "dw"="'+ecustomWidthD+'" dwd="'+ecustomWidthDDim+'" "th"="'+ecustomHeightT+'" thd="'+ecustomHeightTDim+'" "tw"="'+ecustomWidthT+'" twd="'+ecustomWidthTDim+'" "mh"="'+ecustomHeightM+'" mhd="'+ecustomHeightMDim+'" "mw"="'+ecustomWidthM+'" mwd="'+ecustomWidthMDim+'"][/outgrow]';
     // document.getElementById("embed-menu-"+id).classList.remove('hide');
-    document.getElementById("embed-menu-"+passid).innerHTML="<div class='extra-option-context'><div class='extra-option-custom' id='desktop'>"+
+    document.getElementById("embed-menu-"+passid).innerHTML="<div class='extra-option-context'><div class='extra-option-custom ex' id='desktop'>"+
     "<p>Desktop </p>"+
     "<div class='custom-dim-head'>"+
     "<div class='super-dim'>Height</div>"+
@@ -248,7 +249,7 @@ function getEmbedCode(type,passid,url,short_url){
   "</div>"+
     "</div>"+
     // tablet
-    "<div class='extra-option-custom' id='tablet' ><p>Tablet</p>"+
+    "<div class='extra-option-custom ex' id='tablet' ><p>Tablet</p>"+
     "<div class='custom-dim-head'>"+
     "<div class='super-dim'>Height</div>"+
     "<div class='super-input-dim'>"+
@@ -266,7 +267,7 @@ function getEmbedCode(type,passid,url,short_url){
   "</div>"+
     "</div>"
     // mobile
-    +"<div class='extra-option-custom' id='mobile'><p>Mobile</p>"+
+    +"<div class='extra-option-custom ex' id='mobile'><p>Mobile</p>"+
     "<div class='custom-dim-head'>"+
     "<div class='super-dim'>Height</div>"+
     "<div class='super-input-dim'>"+
@@ -286,21 +287,37 @@ function getEmbedCode(type,passid,url,short_url){
   } 
   // document.getElementById(type).style.backgroundColor="red";
   if(type=="classic"){
-    console.log("----------inside classic part-------------",passid);
+    jQuery('#cat031').addClass("active-span1");
+    jQuery('#cat032').removeClass("active-span1");
+    jQuery('#cat033').removeClass("active-span1");
+
+        console.log("----------inside classic part-------------",passid);
     document.getElementById(passid).innerText='[outgrow type="pop_up_classic" id="'+passid+ '" data_url="'+url3+'" ][/outgrow]';
   }
   if(type=="drawerl"){
+    jQuery('#cat032').addClass("active-span1");
+    jQuery('#cat031').removeClass("active-span1");
+    jQuery('#cat033').removeClass("active-span1");
+
     console.log("----------inside classic part-------------",passid);
     document.getElementById(passid).innerText='[outgrow type="pop_up_l" id="'+passid+ '" data_url="'+url3+'" ][/outgrow]';
   }
   if(type=="drawerr"){
+    jQuery('#cat033').addClass("active-span1");
+    jQuery('#cat032').removeClass("active-span1");
+    jQuery('#cat031').removeClass("active-span1");
+
     console.log("----------inside classic part-------------",passid);
     document.getElementById(passid).innerText='[outgrow type="pop_up_r" id="'+passid+ '" data_url="'+url3+'" ][/outgrow]';
   }
   if(type=="chatLeft"){
+    jQuery('#chatLeft').addClass("active-span1");
+    jQuery('#bottomRight').removeClass("active-span1");
     document.getElementById(passid).innerText='[outgrow type="chat_left" " data_url="'+url3+'" ][/outgrow]';
   }
   if(type=="chatRight"){
+    jQuery('#bottomRight').addClass("active-span1");
+    jQuery('#chatLeft').removeClass("active-span1");
     document.getElementById(passid).innerText='[outgrow type="chat_right" " data_url="'+url3+'" ][/outgrow]';
   }
 }
@@ -510,6 +527,7 @@ function toggleSwitchEditor(){
       // document.getElementById('text-inside-1').innerText='[outgrow type="pop_up_custom" id="'+editorId+ '"  data_url="'+url3+'" ][/outgrow]';
     
     }else{
+      document.getElementById('time-option').classList.add('hide');
       document.getElementById('time-div').style.backgroundColor="#a8a8a8";
       document.getElementById(editorId).innerText='[outgrow type="pop_up" id="'+editorId+ '" data_url="'+url3+'" ][/outgrow]'; 
       // document.getElementById('text-inside-1').innerText='[outgrow type="pop_up" id="'+editorId+ '" data_url="'+url3+'" ][/outgrow]';   
@@ -598,3 +616,11 @@ function customPopEditor(){
   document.getElementById(editorId).innerText='[outgrow type="pop_up_custom" id="'+editorId+ '" data_url="'+url3+'" "showExact"="'+showExacte+'" "showExactD"="'+showExactDe+'" "repeatTime"="'+repeatTimee+'" ][/outgrow]';
 
 }
+
+
+  jQuery(document).ready(function(){
+    jQuery('.extra-option-button').click(function(){
+      jQuery('.extra-option-button').removeClass("active-span1");
+      jQuery(this).addClass("active-span1");
+  });
+  });
