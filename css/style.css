@@ -625,9 +625,32 @@ span#close {
     float: left;
     width: 60%;
 }
+.add-api-msg{
+    float: left;
+width: 100%;
+position: absolute;
+top: 50%;
+text-align: center;
+}
+#wpcontent {
+    position: relative;
+}
+#wpbody {
+
+    position: unset;
+
+}
+
 
 /* for upper section */
-
+.tab input[type="radio"],.tab input[type="checkbox"] {
+    height: 14px;
+    width: 14px;
+    min-width: 14px;
+}
+.tab input[type="radio"]:checked::before {
+    margin: 3px;
+}
 li {
     list-style-type: none;
     cursor: pointer;
@@ -1170,21 +1193,24 @@ input#timeAfter, input.dayAfter,input.exit-day-input{
     box-shadow: none;
 }
 select#select-time-after,input#day-value,input#exit-day{
-    width: 56px;
-    height: 28px!important;
+    width: 46px;
+    height: 24px!important;
     margin-left: -2px;
     margin-top: 0;
     margin-bottom: 0;
     color: #62696d;
     vertical-align: top;
-    font-size: 13px;
-    /* padding: 0px 5px; */
-    line-height: 0;
+    padding-left: 0px;
+    /* line-height: 0; */
     box-shadow: none;
     background: #fff;
     text-align: center;
-    
+    -webkit-appearance: none;
     border: 1px solid #ddd;
+    font-size: 11px;
+}
+#select-time-after:nth-child(2) {
+    text-align: left;
 }
 div#input-time {
     float: left;
@@ -1192,7 +1218,7 @@ div#input-time {
     margin-bottom: 8px;
     display: flex;
 }
-#input-time input[type=radio],#exit-intent-text input[type=radio]{
+.tab #input-time input[type=radio],.tab #exit-intent-text input[type=radio]{
     margin: 2px 4px 0 0!important;
 }
 #exit-intent-text{
@@ -1267,6 +1293,8 @@ div#exit-input-cover {
 }
 
   @media (min-width:768px) and (max-width:1024px){
+
+   
     .tab .facebook-span::before,.tab #time-div .time-span::before {
         font-size: 11px !important;
         top: -2px !important;
@@ -1468,7 +1496,7 @@ select#select-time-after, input#day-value, input#exit-day {
    
     height: 24px!important;
     font-size: 11px;
-    width: 52px;
+    width: 45px;
 }
 input.dayAfter {
     margin-left: 43px!important;
