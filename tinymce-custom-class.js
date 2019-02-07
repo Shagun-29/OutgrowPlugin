@@ -11,6 +11,7 @@ var ecustomWidthT=100, ecustomWidthTDim="px";
 var ecustomWidthM=100, ecustomWidthMDim="px";
 var   custom_url2;
 var editorId="";
+var calc_url0="",short_url0="";
 // reading cookies
 (function(){
   APIset=[];
@@ -100,6 +101,8 @@ function selectAPI(){
 
   if(response.success==true){
     refinedResponse.forEach(element => {
+      calc_url0=`${element.calc_url}`;
+      short_url0=`${element.short_url}`;
       document.getElementById("api-card").insertAdjacentHTML(`afterend`,`<div class="shortcodecard-row" id="shortcodecard-row-id">
         <div id="shortcodecard-col">
           <div id="shortcode-card-body">
@@ -109,7 +112,7 @@ function selectAPI(){
               
             <div id="${element.parentapp}-div-section" class="hide" style="float:left;width:100%;margin-left: 0px!important;border-top: 1px solid rgb( 226, 226, 226 );">
               <div id="section-div-1">
-                <div id="embed1" class="embed white cir" onclick="getEmbedCode('embed1','${element.parentapp}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE FULL SCREEN<i class="la la-info-circle"></i></div>
+                <div id="embed1" class="embed cir white" onclick="getEmbedCode('embed1','${element.parentapp}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE FULL SCREEN<i class="la la-info-circle"></i></div>
                 <div id="embed2" class="embed cir" onclick="getEmbedCode('embed2','${element.parentapp}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE IN PAGE<i class="la la-info-circle"></i></div>
                 <div id="embed3" class="embed" onclick="getEmbedCode('embed3','${element.parentapp}','${element.calc_url}','${element.short_url}')">POP UP</div>
                 <div id="embed4" class="embed" onclick="getEmbedCode('embed4','${element.parentapp}','${element.calc_url}','${element.short_url}')">CHAT</div>
@@ -145,6 +148,7 @@ function selectAPI(){
 }
 
 function viewDetails(id){
+  getEmbedCode('embed1',id,calc_url0,short_url0);
   // toggle starts
   $(document).ready(function(){
     document.getElementById(id+'-div-section').classList.toggle("toggle-on");   
@@ -187,8 +191,8 @@ function getEmbedCode(type,passid,url,short_url){
   });
 
   if(type=="embed1"){
-    document.getElementById("embed-menu-"+passid).classList.add('hide');
-    // document.getElementById("embed-menu-"+id).innerHTML="";
+    // document.getElementById("embed-menu-"+passid).classList.add('hide');
+    document.getElementById("embed-menu-"+passid).innerHTML=`<div class='editor-facebook-link'><div class='editor-fb-link-text'>Facebook Comments</div><div class='editor-span-fb-text'><i class='la la-question-circle la-2x'></i></div><div class='editor-facebook-div' id='editor-facebook-div' onclick='toggleSwitchFecebook()'><input type='text'  class='editor-facebook-input-type' ><span class='editor-facebook-span' id='editor-facebook-span'></span></div></div>`;
     document.getElementById(passid).innerText='[outgrow type="mobile_full_screen" id="'+passid+ '" data_url="'+url+'" short_url="'+short_url_used+'"][/outgrow]';  
   } 
   if(type=="embed2"){
@@ -624,3 +628,21 @@ function customPopEditor(){
       jQuery(this).addClass("active-span1");
   });
   });
+
+
+  function toggleSwitchFecebook(){
+    document.getElementById('editor-facebook-span').classList.toggle('toggle-on');
+    $(document).ready(function(){
+      if ( $('#editor-facebook-span').hasClass('toggle-on') ) {
+        document.getElementById('editor-facebook-div').style.backgroundColor="#fb5f66";
+        document.getElementById(editorId).innerText='[outgrow type="mobile_full_screen_facebook" id="'+editorId+ '" data_url="'+calc_url0+'" short_url="'+short_url0+'"][/outgrow]';
+        // document.getElementById('text-inside-1').innerText='[outgrow type="mobile_full_screen_facebook" id="'+id_used+ '" data_url="'+url+'" short_url="'+short_url_used+'"][/outgrow]';
+      
+      }else{
+        document.getElementById('editor-facebook-div').style.backgroundColor="#a8a8a8";
+        document.getElementById(editorId).innerText='[outgrow type="mobile_full_screen" id="'+editorId+ '" data_url="'+calc_url0+'" short_url="'+short_url0+'"][/outgrow]';
+        // document.getElementById('text-inside-1').innerText='[outgrow type="mobile_full_screen" id="'+id_used+ '" data_url="'+url+'" short_url="'+short_url_used+'"][/outgrow]';
+      
+      }
+    });  
+  }
