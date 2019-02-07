@@ -340,7 +340,7 @@ height:19px;
     cursor: pointer;
     margin-left: 30px;
 }
-#time-div span.time-span {
+#time-div span.time-span,#editor-facebook-span {
     width: 14px;
     height: 14px;
     background-color: white;
@@ -351,7 +351,7 @@ height:19px;
     left: 4px;
     box-shadow: 3px 2px 6px rgba(0, 0, 0, 0.54);
 }
-#time-div .time-span:before {
+#time-div .time-span::before,#editor-facebook-span::before {
     content: "Off";
     color: #fff;
     font-weight: 400;
@@ -360,17 +360,29 @@ height:19px;
     top: 0px;
     position: relative;
 }
+#editor-facebook-span::after {
+    content: "On";
+    color: #fff;
+    font-weight: 400;
+    position: absolute;
+    left: -25px;
+    top: -1px!important;
+    font-size: 12px;
+}
+input.editor-facebook-input-type {
+    visibility: hidden;
+}
 div#time-option {
     margin-top: 16px;
 }
-#input-time label, #exit-intent-text label {
+#section-div-2 #input-time label, #section-div-2 #exit-intent-text label {
     font-size: 11px;
     font-family: Montserrat;
     color: rgb( 102, 102, 102 );
     display: flex;
 align-items: center;
 }
- #input-time input[type=radio], #exit-intent-text input[type=radio]{
+ #section-div-2 #input-time input[type=radio], #section-div-2 #exit-intent-text input[type=radio]{
 margin:1px 4px 3px 0!important;
 min-width: 14px;
 height: 14px;
@@ -379,7 +391,7 @@ width: 14px;
 div#input-time {
     margin-bottom: 0px;
 }
-#input-time input[type=radio]:checked:before {
+#section-div-2 #input-time input[type=radio]:checked:before {
     font-size: 24px;
     width: 6px;
     height: 6px;
@@ -399,7 +411,7 @@ div#timed-div {
     top: 10px;
     left: 97px;
 }
-select#select-time-after, input#day-value, input#exit-day {
+#section-div-2 select#select-time-after, input#day-value, input#exit-day {
     line-height: 12px!important;
     -webkit-appearance: none;
     width: 46px;
@@ -407,7 +419,7 @@ height: 24px !important;
 font-size: 11px;
 padding: 0;
 }
-select#select-time-after{
+#section-div-2 select#select-time-after{
     text-align: left;
     padding-left: 0px;
 }
@@ -436,10 +448,6 @@ div#exit-repeat-day {
 
 }
 
-div#exit-intent input[type="radio"]:checked::before,#input-time input[type="radio"]:checked::before {
-    margin: 3px;
-
-}
 
 div#exit-intent {
     margin-bottom: 20px;
@@ -578,7 +586,7 @@ height: 30px;
     position: absolute;
     left: 17px;
 }
-.facebook-span::before, .time-span::before {
+/* .facebook-span::before, .time-span::before {
     content: "Off";
     color: #fff;
     font-weight: 400;
@@ -586,13 +594,37 @@ height: 30px;
     font-size: 12px;
     top: 0px !important;
     position: relative;
-}
+} */
 div#exit-input-value {
     margin-left: 19px!important;
     /* margin-top: 6px; */
 }
 @media (min-width:768px) and (max-width:1024px) {
-
+    #desktop{
+        margin-left: 0!important;
+    }
+    .ex {
+        width: 100%!important;
+    }
+    .super-dim {
+        width: 40%;
+    }
+    #section-div-2 .extra-option-context {
+        background: #fff !important;
+        padding: 8px!important;
+    }
+    #section-div-2 .super-dim {
+        width: 35%!important;
+        position: unset;
+        color:#666;
+    }
+    input.editor-facebook-input-type {
+        padding: 0;
+    }
+    #section-div-2 .classic-img, #section-div-2 .drawerl-img, #section-div-2 .drawerr-img {
+        width: 18px;
+        height: 16px;
+    }
     #tiny-mce-custom-og {
         float: left;
         width: 100% !important;
@@ -663,8 +695,8 @@ div#exit-input-value {
     
     }
     #section-div-2 .extra-option-button {
-        margin-right: 6px;
-        padding: 0 8px;
+        margin-right: 10px;
+        padding: 0 6px;
         height: 32px;
     }
     #cat031 .cm, #cat032 .cm, #cat033 .cm {
@@ -688,10 +720,10 @@ div#exit-input-value {
     div#set-time {
         font-size: 10px;
     }
-    select#select-time-after {
+    #section-div-2 select#select-time-after {
         padding-left: 2px;
     }
-    select#select-time-after, input#day-value, input#exit-day {
+    #section-div-2 select#select-time-after, input#day-value, input#exit-day {
         font-size: 10px;
     
     }
@@ -758,4 +790,33 @@ div#exit-input-value {
 }
 .active-span1{
     border:1px solid #3589c0!important;
+}
+#editor-facebook-div {
+    width: 50px;
+    border-radius: 30px;
+    background-color: #a8a8a8;
+    position: relative;
+    cursor: pointer;
+    padding: 0px 0px 0px 4px;
+    float: left;
+    margin-left: 10px;
+}
+.editor-span-fb-text i {
+    font-size: 18px;
+    font-family: LineAwesome;
+    margin-left: 10px;
+    color: #757575;
+    position: relative;
+z-index: 99;
+}
+.editor-facebook-link {
+    float: left;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+#section-div-2 .editor-fb-link-text {
+    font-size: 11px;
+    color: #666;
+
 }
