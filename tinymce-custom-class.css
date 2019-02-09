@@ -275,6 +275,7 @@ div#textarea-div textarea {
     /* font-family: Montserrat; */
     white-space: normal;
     line-height: 1.6;
+    box-shadow:none!important;
 }
 button#copyiing-text {
     padding: 10px 16px;
@@ -819,4 +820,7 @@ z-index: 99;
     font-size: 11px;
     color: #666;
 
+}
+#mceu_58{
+    display: none!important;
 }

@@ -122,7 +122,7 @@ function selectAPI(){
                 <div id="embed-menu-${element.parentapp}" style="float: left;
                 width: 100%;margin-left: 0px!important;margin-bottom: 20px;"></div>
                 <div id="textarea-div">
-                  <textarea id="${element.parentapp}" cols="40" rows="10">text here</textarea>
+                  <textarea id="${element.parentapp}" cols="40" rows="10" readonly>text here</textarea>
                   <button id="copyiing-text" onclick="getCode('${element.parentapp}')">COPY</button>
                 </div>
               </div>
