@@ -90,7 +90,7 @@ Version: 1.0.0
 
 }
 
-
+$msgError=0;
 // add_action( 'calling_db_script_enq', 'calling_db_scripts');
 
 $outgrow_api_class = new Outgrow_API_Class;
@@ -252,11 +252,20 @@ function og_outgrow_calci_script_page($api){
     global $wpdb;
     $db_result = $wpdb->get_results('select * from wp_outgrow_calci_api_table');
     if(!$db_result){
+        $msgError++;
     //    apiWarning("Please add API Key"); 
        ?>
-        <div class="add-api-msg">
+        
+        <div class="add-api-msg" id="adding-api-key">
             <h2>Please Add API KEY</h2>
         </div>
+
+        <script>
+        if(document.getElementById("api-warning")){
+            document.getElementById("adding-api-key").classList.add("hide");
+        }
+    </script>
+
        <?php
     }else{
         // for api-check at db
@@ -644,12 +653,15 @@ function checkRepeat($api){
 }
 
 function apiWarning($msg){
+    // print_r("------------Error Count----------",$msgError);
+
     ?>
      <div class="no-api" id="api-warning" style="display:block">
                 
                 <strong> <?php echo $msg; ?></strong> 
             </div>
     <?php
+    
 }
 
 
