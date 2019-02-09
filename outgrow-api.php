@@ -242,7 +242,9 @@ if (isset($_POST['header_script1'])) {
             }
            
         }else{
-            apiWarning("No API Found - Please add your API to view Calculators.");
+            // apiWarning("No API Found - Please add your API to view Calculators.");
+            apiWarning("INVALID API");
+
         } 
     }   
     }
