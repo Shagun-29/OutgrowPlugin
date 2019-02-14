@@ -60,7 +60,7 @@ Version: 1.1
 	 */
 	function add_tinymce_plugin( $plugin_array ) {
 	 
-	    $plugin_array['custom_class'] = plugin_dir_url( __FILE__ ) . './tinymce-custom-class.js';
+	    $plugin_array['custom_class'] = plugin_dir_url( __FILE__ ) . '/outgrow/tinymce-custom-class.js';
 	    return $plugin_array;
 	 
 	}
@@ -84,7 +84,7 @@ Version: 1.1
 	*/
 	function admin_scripts_css() {
 
-		wp_enqueue_style( 'TinyMCE1-custom-class', plugins_url( './tinymce-custom-class.css', __FILE__ ) );
+		wp_enqueue_style( 'TinyMCE1-custom-class', plugins_url( '/outgrow/tinymce-custom-class.css', __FILE__ ) );
 		// add_menu_page("Outgrow", "Outgrow", "manage_options", 'final_outgrow_calci_menu', "og_outgrow_calci_script_page", "dashicons-cake", 50);
 	}
 
@@ -173,7 +173,7 @@ function wdm_register_mce_button( $buttons ) {
 // declare a script for the new button
 // the script will insert the shortcode on the click event
 function wdm_add_tinymce_plugin( $plugin_array ) {
-  $plugin_array['wdm_mce_dropbutton'] =  plugins_url('/outgrow/tinymce-custom-class.js');
+  $plugin_array['wdm_mce_dropbutton'] =  plugins_url('/tinymce-custom-class.js');
   return $plugin_array;
 }
 

@@ -26,9 +26,9 @@ var calc_url0="",short_url0="";
     }
     apiValues=value.split("+");
       apiValues.forEach(element => {
-        if(this.apiSet.indexOf(element)==-1){
-          // console.log("----",element);
-          this.apiSet.push(element);
+        if(this.indexOf(element)==-1){
+          console.log("----",element);
+          apiSet.push(element);
         }
       });
   }else{
@@ -81,8 +81,6 @@ var calc_url0="",short_url0="";
     apiSet.forEach(element => {
       document.getElementById("select-custom-api").insertAdjacentHTML('afterbegin',"<option>"+element+"</option>")
     });
-
-    document.getElementById("select-custom-api").insertAdjacentHTML('afterend',"<div id='loader-section'></div>");
     }
    
       });  
@@ -93,9 +91,6 @@ var calc_url0="",short_url0="";
 
 
 function selectAPI(){
-  console.log("------selectAPI------",document.getElementById("loader-section"));
-  document.getElementById("loader-section").innerHTML="<div id='loader-div-class-editor'>"
-  +"<img class='loader-image-editor' src='https://d1httwb3aso1fd.cloudfront.net/logoAnim.gif' alt=''></div>";
   // var data="";
   // document.getElementById("api-card").innerHTML=data;
   api=document.getElementById('select-custom-api').value;
@@ -108,7 +103,6 @@ function selectAPI(){
    document.getElementById("tiny-mce-custom-og-body").insertAdjacentHTML("beforeend","<div id='api-card'>");
 
   if(response.success==true){
-    document.getElementById("loader-section").classList.add('hide');
     refinedResponse.forEach(element => {
       calc_url0=`${element.calc_url}`;
       short_url0=`${element.short_url}`;
@@ -532,9 +526,9 @@ function getWidthEditorM(){
 }
 
 function toggleSwitchEditor(){
-  document.getElementById('time-span').classList.toggle('toggle-on-editor');
+  document.getElementById('time-span').classList.toggle('toggle-on');
   $(document).ready(function(){
-    if ( $('#time-span').hasClass('toggle-on-editor') ) {
+    if ( $('#time-span').hasClass('toggle-on') ) {
       document.getElementById('time-div').style.backgroundColor="#fb5f66";
       document.getElementById(editorId).innerText='[outgrow type="pop_up_custom" id="'+editorId+ '"  data_url="'+url3+'" ][/outgrow]';
       // document.getElementById('text-inside-1').innerText='[outgrow type="pop_up_custom" id="'+editorId+ '"  data_url="'+url3+'" ][/outgrow]';
@@ -640,9 +634,9 @@ function customPopEditor(){
 
 
   function toggleSwitchFecebook(){
-    document.getElementById('editor-facebook-span').classList.toggle('toggle-on-editor');
+    document.getElementById('editor-facebook-span').classList.toggle('toggle-on');
     $(document).ready(function(){
-      if ( $('#editor-facebook-span').hasClass('toggle-on-editor') ) {
+      if ( $('#editor-facebook-span').hasClass('toggle-on') ) {
         document.getElementById('editor-facebook-div').style.backgroundColor="#fb5f66";
         document.getElementById(editorId).innerText='[outgrow type="mobile_full_screen_facebook" id="'+editorId+ '" data_url="'+calc_url0+'" short_url="'+short_url0+'"][/outgrow]';
         // document.getElementById('text-inside-1').innerText='[outgrow type="mobile_full_screen_facebook" id="'+id_used+ '" data_url="'+url+'" short_url="'+short_url_used+'"][/outgrow]';

@@ -1,0 +1,64 @@
+=== Outgrow ===
+Contributors: shagun29
+Donate link: https://outgrow.co/blog
+Tags: outgrow, quizzes, calculators, polls, interactive calculators, trending calculators, trending quizzes,outgrow calci, outgrow calculator, outgrow quiz, outgrow quizzes, calculator, quiz
+Requires at least: 4.6
+Tested up to: 1.1.0
+Stable tag: 1.1
+Requires PHP: 5.2.4
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+Outgrow - Customers today want to be helped. Not sold to. And hence, landing pages filled with marketing talk don't convert any more. And while ebooks and white-papers are great, the customer is inundated with too much content and doesn't have the time to consume all of it. Hence, we need Interactive content...content that engages the customer by making it a part of the narrative, instantly.
+
+== Description ==
+
+Outgrow provides the service which account to accessing the calculators, quizzes and polls that a users can built in his account. 
+The data associated with account can be used by API KEY provided with every account.
+== Installation ==
+
+1. Upload the plugin files to the `/wp-content/plugins/Outgrow Quizzes` directory, or install the plugin through the WordPress plugins screen directly.
+1. Activate the plugin through the 'Plugins' screen in WordPress
+1. Use the Settings->Plugin Name screen to configure the plugin
+1. (Make your instructions match the desired user flow for activating and installing your plugin. Include any steps that might be needed for explanatory purposes)
+
+
+== Frequently Asked Questions ==
+
+= What is this plugin about =
+
+Outgrow Quizzes Plugin is based on Outgrow Service i.e https://outgrow.co which is the main site.
+ User can login to the outgrow service via https://app.outgrow.co/login
+and can create account for the same to create calculators, quizzes and polls, 
+which further have more subscriptions to indulge.
+
+== How to use this plugin ==
+
+For using plugin user need to use his account's API Key which is available in the Username -> Billing & Setting -> click on the API KEY and copy api key available.
+Paste in the main section of the plugin and select API from select box and click on "Show". List of the calculators, Quizzes and Polls will be visible .
+Now last step is to choose which view user wants i.e embeds sunch as - Mobile Full Screen, Mobile inPage and Pop Ups.
+Choosing as per requirement copy the shortcode and paste to the posts or sidebars where user want to place.
+
+== Screenshots ==
+
+1. When user enter api key and correspondinng results are shown.
+2. When user click on any of the card to get shortcode 
+3. Click to copy the code 
+3. Paste it to the post to show calcular in the posts.
+
+== Changelog ==
+
+= 1.0 =
+* A new plugin for embeding quizzes, calculators and polls in the posts or in sidebars
+* New plugin and first version for outgrow clients  
+
+ == Upgrade Notice == 
+ * New Plugin further notice will be given soon. 
+
+== A brief Markdown Example ==
+
+1. Outgrow Clients are now free to use to this api and can access any quizzes or calculators or polls.
+2. This plugin helps in the interaction with the data user has build in his/her account.
+3. Easy way to access the data( quiz, calculator, poll) created.
+
+

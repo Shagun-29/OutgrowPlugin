@@ -60,7 +60,7 @@ Version: 1.1
 	 */
 	function add_tinymce_plugin( $plugin_array ) {
 	 
-	    $plugin_array['custom_class'] = plugin_dir_url( __FILE__ ) . './tinymce-custom-class.js';
+	    $plugin_array['custom_class'] = plugin_dir_url( __FILE__ ) . 'tinymce-custom-class.js';
 	    return $plugin_array;
 	 
 	}
@@ -84,7 +84,7 @@ Version: 1.1
 	*/
 	function admin_scripts_css() {
 
-		wp_enqueue_style( 'TinyMCE1-custom-class', plugins_url( './tinymce-custom-class.css', __FILE__ ) );
+		wp_enqueue_style( 'TinyMCE1-custom-class', plugins_url( 'outgrow/tinymce-custom-class.css', __FILE__ ) );
 		// add_menu_page("Outgrow", "Outgrow", "manage_options", 'final_outgrow_calci_menu', "og_outgrow_calci_script_page", "dashicons-cake", 50);
 	}
 
@@ -114,9 +114,9 @@ wp_enqueue_script('my_plugin_script');
 wp_register_style('my-plugin-style4','https://fonts.googleapis.com/icon?family=Material+Icons');
 wp_enqueue_style('my-plugin-style4');
 
-wp_register_style('my-plugin-style', plugins_url('/outgrow/css/style.css'));
-wp_register_style('my-plugin-style2', plugins_url('/outgrow/css/line-awesome/css/line-awesome-font-awesome.css'));
-wp_register_style('my-plugin-style3', plugins_url('/outgrow/css/line-awesome/css/line-awesome.css'));
+wp_register_style('my-plugin-style', plugins_url('/css/style.css'));
+wp_register_style('my-plugin-style2', plugins_url('/css/line-awesome/css/line-awesome-font-awesome.css'));
+wp_register_style('my-plugin-style3', plugins_url('/css/line-awesome/css/line-awesome.css'));
 wp_enqueue_style('my-plugin-style');
 wp_enqueue_style('my-plugin-style2');
 wp_enqueue_style('my-plugin-style3');
@@ -173,7 +173,7 @@ function wdm_register_mce_button( $buttons ) {
 // declare a script for the new button
 // the script will insert the shortcode on the click event
 function wdm_add_tinymce_plugin( $plugin_array ) {
-  $plugin_array['wdm_mce_dropbutton'] =  plugins_url('/outgrow/tinymce-custom-class.js');
+  $plugin_array['wdm_mce_dropbutton'] =  plugins_url('outgrow/tinymce-custom-class.js');
   return $plugin_array;
 }
 

@@ -824,6 +824,3 @@ z-index: 99;
 #mceu_58{
     display: none!important;
 }
-.toggle-on-editor{
-    margin-left: 56px !important;
-}
