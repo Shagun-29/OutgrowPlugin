@@ -82,7 +82,11 @@ var calc_url0="",short_url0="";
       document.getElementById("select-custom-api").insertAdjacentHTML('afterbegin',"<option>"+element+"</option>")
     });
 
-    document.getElementById("select-custom-api").insertAdjacentHTML('afterend',"<div id='loader-section'></div>");
+    document.getElementById("select-custom-api").insertAdjacentHTML('afterend',"<div id='loader-section'><div id='loader-div-class-editor'>"
+    +"<img class='loader-image-editor' src='https://d1httwb3aso1fd.cloudfront.net/logoAnim.gif' alt=''></div></div>");
+    // document.getElementById("loader-section").innerHTML="";
+    document.getElementById("select-custom-api").value=document.getElementById("select-custom-api")[0].value;
+    callingAPI(document.getElementById("select-custom-api")[0].value);
     }
    
       });  
@@ -99,6 +103,10 @@ function selectAPI(){
   // var data="";
   // document.getElementById("api-card").innerHTML=data;
   api=document.getElementById('select-custom-api').value;
+  callingAPI(api);
+}
+
+function callingAPI(api){
   $.ajax({
     url:'https://api-calc.outgrow.co/api/v1/calculator?status=Live&type=All&sort=alpha_as',
     headers: {'API-KEY': api},
