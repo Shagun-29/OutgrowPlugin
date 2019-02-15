@@ -166,7 +166,9 @@ select#select-custom-api {
     color: rgb( 102, 102, 102 );
     font-size: 14px;
     /* font-weight: 600; */
-    border-bottom: 1px solid rgba( 0, 0, 0,0.102 );
+    border-bottom: 1px solid rgba( 0, 0, 0,0.102 )!important;
+    border-color:transparent;
+
 }
 div#shortcodecard-row-id {
     float: left;
@@ -358,7 +360,7 @@ height:19px;
     font-weight: 400;
     margin-left: 20px;
     font-size: 12px;
-    top: 0px;
+    top: 0px!important;
     position: relative;
 }
 #editor-facebook-span::after {
@@ -781,10 +783,7 @@ div#exit-input-value {
     div#tiny-mce-custom-og-title {
         font-size: 22px;
     }
-    div#mceu_59 {
-        display: none;
-    }
-    div#mceu_67 {
+    #tiny-mce-custom-og .mce-foot {
         display: none;
     }
     
@@ -825,5 +824,5 @@ z-index: 99;
     display: none!important;
 }
 .toggle-on-editor{
-    margin-left: 56px !important;
+    margin-left: 27px !important;
 }
