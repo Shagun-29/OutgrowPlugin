@@ -813,6 +813,13 @@ div#exit-input-value {
         top: 30px!important;
         left: 93px!important;
     }
+    #shortcode-card-body .shortcodecard-content::after {
+        border-left: 4px solid transparent!important;
+        border-right: 4px solid transparent!important;
+        border-top: 4px solid rgba(102, 102, 102, 0.87)!important;
+        bottom: 14px!important;
+    
+    }
     
 }
 .active-span1{
