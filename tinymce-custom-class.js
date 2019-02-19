@@ -107,6 +107,7 @@ function selectAPI(){
 }
 
 function callingAPI(api){
+  document.getElementById("loader-section").classList.remove('hide');
   $.ajax({
     url:'https://api-calc.outgrow.co/api/v1/calculator?status=Live&type=All&sort=alpha_as',
     headers: {'API-KEY': api},
@@ -208,8 +209,11 @@ function getEmbedCode(type,passid,url,short_url){
   });
 
   if(type=="embed1"){
-    // document.getElementById("embed-menu-"+passid).classList.add('hide');
-    document.getElementById("embed-menu-"+passid).innerHTML=`<div class='editor-facebook-link'><div class='editor-fb-link-text'>Facebook Comments</div><div class='editor-span-fb-text'><i class='la la-question-circle la-2x'></i></div><div class='editor-facebook-div' id='editor-facebook-div' onclick='toggleSwitchFecebook()'><input type='text'  class='editor-facebook-input-type' ><span class='editor-facebook-span' id='editor-facebook-span'></span></div></div>`;
+    document.getElementById("embed-menu-"+passid).classList.remove('hide');
+    document.getElementById("embed-menu-"+passid).innerHTML=`<div class='editor-facebook-link' id='editor-facebook-link-editor'>
+    <div class='editor-fb-link-text'>Facebook Comments</div>
+    <div class='editor-span-fb-text'><i class='la la-question-circle la-2x'></i></div>
+    <div class='editor-facebook-div' id='editor-facebook-div' onclick='toggleSwitchFacebook()'><input type='text' class='editor-facebook-input-type' id="facebook-input-type-editor" ><span class='editor-facebook-span' id='editor-facebook-span'></span></div></div>`;
     document.getElementById(passid).innerText='[outgrow type="mobile_full_screen" id="'+passid+ '" data_url="'+url+'" short_url="'+short_url_used+'"][/outgrow]';  
   } 
   if(type=="embed2"){
@@ -647,7 +651,7 @@ function customPopEditor(){
   });
 
 
-  function toggleSwitchFecebook(){
+  function toggleSwitchFacebook(){
     document.getElementById('editor-facebook-span').classList.toggle('toggle-on-editor');
     $(document).ready(function(){
       if ( $('#editor-facebook-span').hasClass('toggle-on-editor') ) {
