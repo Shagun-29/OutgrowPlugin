@@ -1703,10 +1703,7 @@ font-weight: bold;
     font-size: 11px;
     position: relative;
 }
-i.la.la-info-circle {
-    display: none;
 
-}
 .modal-button::after {
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
@@ -2040,4 +2037,49 @@ span.facebook-span {
 
 div#wpfooter {
     display: none;
+}
+#cat01 .help-checktip,#cat02 .help-checktip {
+    float: left;
+    background-color: #61696c;
+    color: #fff;
+    padding: 8px 11px;
+    width: 180px;
+    font-size: 9px;
+    position: absolute;
+    border-radius: 3px;
+    visibility: hidden;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.5);
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.5);
+    text-align: left;
+    line-height: 14px;
+    text-transform: none;
+    z-index: 9999;
+    /* font-family: montserratlight; */
+}
+#cat01 .help-checktip{
+    top: 31px;
+    left: 106px;
+}
+#cat02 .help-checktip{
+    top: 31px;
+    left:85px;
+}
+
+#cat01.ns .help-checktip::before,#cat02.ns .help-checktip::before  {
+    position: absolute;
+    top: -10px;
+    left: 47%;
+    display: inline-block;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #62696d;
+        border-bottom-color: rgb(98, 105, 109);
+    border-left: 5px solid transparent;
+    border-bottom-color: #62696d;
+    content: '';
+    border-top: transparent;
+    height: 5px;
+}
+#cat01.ns:hover > .help-checktip,#cat02.ns:hover > .help-checktip  {
+    visibility: visible;
+    z-index: 999;
 }

@@ -130,8 +130,8 @@ function callingAPI(api){
               
             <div id="${element.parentapp}-div-section" class="hide" style="float:left;width:100%;margin-left: 0px!important;border-top: 1px solid rgb( 226, 226, 226 );">
               <div id="section-div-1">
-                <div id="embed1" class="embed cir white" onclick="getEmbedCode('embed1','${element.parentapp}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE FULL SCREEN<i class="la la-info-circle"></i></div>
-                <div id="embed2" class="embed cir" onclick="getEmbedCode('embed2','${element.parentapp}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE IN PAGE<i class="la la-info-circle"></i></div>
+                <div id="embed1" class="embed cir white" onclick="getEmbedCode('embed1','${element.parentapp}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE FULL SCREEN<i class="la la-info-circle"></i> <div class="help-checktip">Here an embed can be placed in a full screen view or in page but on mobile when you click on the embed, the calculator will load and take over the whole screen.</div></div>
+                <div id="embed2" class="embed cir" onclick="getEmbedCode('embed2','${element.parentapp}','${element.calc_url}','${element.short_url}')">EMBED + MOBILE IN PAGE<i class="la la-info-circle"></i> <div class="help-checktip">Here an embed can be placed in a full screen view or in page but on mobile when you click on the embed, the calculator will load and take over the whole screen.</div></div>
                 <div id="embed3" class="embed" onclick="getEmbedCode('embed3','${element.parentapp}','${element.calc_url}','${element.short_url}')">POP UP</div>
                 <div id="embed4" class="embed" onclick="getEmbedCode('embed4','${element.parentapp}','${element.calc_url}','${element.short_url}')">CHAT</div>
                 <div id="embed5" class="embed" onclick="getEmbedCode('embed5','${element.parentapp}','${element.calc_url}','${element.short_url}')">CUSTOM EMBED</div>
