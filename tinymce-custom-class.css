@@ -860,12 +860,21 @@ z-index: 99;
 .toggle-on-editor{
     margin-left: 27px !important;
 }
+#loader-outer-section{
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: white;
+
+}
 #loader-section{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    top: 174px;
-    z-index: 99;
+    top:222px;
 }
 #embed1.embed .help-checktip,#embed2.embed .help-checktip {
     float: left;
