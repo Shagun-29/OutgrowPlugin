@@ -82,8 +82,8 @@ var calc_url0="",short_url0="";
       document.getElementById("select-custom-api").insertAdjacentHTML('afterbegin',"<option>"+element+"</option>")
     });
 
-    document.getElementById("select-custom-api").insertAdjacentHTML('afterend',"<div id='loader-section'><div id='loader-div-class-editor'>"
-    +"<img class='loader-image-editor' src='https://d1httwb3aso1fd.cloudfront.net/logoAnim.gif' alt=''></div></div>");
+    document.getElementById("select-custom-api").insertAdjacentHTML('afterend',"<div id='loader-outer-section'><div id='loader-section'><div id='loader-div-class-editor'>"
+    +"<img class='loader-image-editor' src='https://d1httwb3aso1fd.cloudfront.net/logoAnim.gif' alt=''></div></div></div>");
     // document.getElementById("loader-section").innerHTML="";
     document.getElementById("select-custom-api").value=document.getElementById("select-custom-api")[0].value;
     callingAPI(document.getElementById("select-custom-api")[0].value);
