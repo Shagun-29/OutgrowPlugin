@@ -107,7 +107,7 @@ function selectAPI(){
 }
 
 function callingAPI(api){
-  document.getElementById("loader-section").classList.remove('hide');
+  document.getElementById("loader-outer-section").classList.remove('hide');
   $.ajax({
     url:'https://api-calc.outgrow.co/api/v1/calculator?status=Live&type=All&sort=alpha_as',
     headers: {'API-KEY': api},
@@ -117,7 +117,7 @@ function callingAPI(api){
    document.getElementById("tiny-mce-custom-og-body").insertAdjacentHTML("beforeend","<div id='api-card'>");
 
   if(response.success==true){
-    document.getElementById("loader-section").classList.add('hide');
+    document.getElementById("loader-outer-section").classList.add('hide');
     refinedResponse.forEach(element => {
       calc_url0=`${element.calc_url}`;
       short_url0=`${element.short_url}`;
