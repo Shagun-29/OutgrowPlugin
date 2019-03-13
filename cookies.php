@@ -11,4 +11,3 @@ if(!$db_result){
     }
       setcookie('API',implode(" ",$apiArray), time() + (172800* 30), "/");
 }
-?>

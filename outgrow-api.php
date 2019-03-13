@@ -302,7 +302,7 @@ function og_outgrow_calci_script_page($api){
         <img class="loader-image" src="https://d1httwb3aso1fd.cloudfront.net/logoAnim.gif" alt="">
     </div>
     <div class="main-section" style="position: static;background-image:url(<?php echo plugins_url('/images/og-banner.png', __FILE__) ?>); background-size: cover;background-repeat: no-repeat;background-position: center;">
-        <p class="main-heading">Outgrow Quizzess</p>
+        <p class="main-heading">Outgrow Quizzes</p>
 
         <!-- start -->
     <div class="main-div-section">
@@ -394,7 +394,7 @@ function og_outgrow_calci_script_page($api){
         <div id="get-calci-name"></div>
 <?php
         
-        include_once "view.php";                
+        include_once "view.html";                
     
 ?>
       
